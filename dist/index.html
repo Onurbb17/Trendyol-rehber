@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Trendyol satıcıları için profesyonel kar hesaplayıcı. Komisyon, kargo ve diğer maliyetleri hesaplayarak net karınızı öğrenin." />
     <title>Trendyol Kar Hesaplayıcı - Profesyonel Satıcı Aracı</title>
+    
+    <!-- Google AdSense Başlangıç Kodu -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_PUBLISHER_ID"
+     crossorigin="anonymous"></script>
+    <!-- Google AdSense Bitiş Kodu -->
+
     <script type="module" crossorigin src="/assets/index-DCTaKFmQ.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BehjH3cC.css">
     <style>
@@ -134,11 +140,11 @@
       // Wait for the React app to load, then insert the blog CTA section
       setTimeout(function() {
         // Find a suitable place to insert the blog CTA
-        const rootElement = document.getElementById('root');
+        const rootElement = document.getElementById("root");
         if (rootElement && rootElement.children.length > 0) {
           // Create the blog CTA section
-          const blogCTASection = document.createElement('div');
-          blogCTASection.className = 'blog-cta-section';
+          const blogCTASection = document.createElement("div");
+          blogCTASection.className = "blog-cta-section";
           blogCTASection.innerHTML = `
             <h2 class="blog-cta-title">E-ticaret Başarınızı Artırın</h2>
             <p class="blog-cta-description">
@@ -152,7 +158,7 @@
           `;
           
           // Try to insert after the main calculator content
-          const mainContent = rootElement.querySelector('main') || rootElement.firstElementChild;
+          const mainContent = rootElement.querySelector("main") || rootElement.firstElementChild;
           if (mainContent && mainContent.parentNode) {
             mainContent.parentNode.insertBefore(blogCTASection, mainContent.nextSibling);
           } else {
@@ -162,6 +168,20 @@
         }
       }, 2000); // Wait 2 seconds for React to load
     </script>
+
+    <!-- AdSense Reklam Birimi Örneği - Ana Sayfa -->
+    <div style="text-align: center; margin: 20px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-YOUR_ADSENSE_PUBLISHER_ID"
+           data-ad-slot="YOUR_ADSENSE_AD_SLOT_ID"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
   </body>
 </html>
 
