@@ -224,79 +224,7 @@
         <p class="text-xl opacity-90">E-ticaret başarınızı artıracak rehber yazıları</p>
       </div>
       
-      <div class="blog-grid">
-        <!-- Blog Post 1 -->
-        <article class="blog-card">
-          <div class="blog-card-image">
-            📊
-          </div>
-          <div class="blog-card-content">
-            <h2 class="blog-card-title">Trendyol'da Nasıl Hesap Açılır? Adım Adım Rehber</h2>
-            <div class="blog-card-meta">
-              <span>5 dk okuma</span>
-              <span>Başlangıç Rehberi</span>
-            </div>
-            <p class="blog-card-excerpt">
-              Trendyol'da satıcı hesabı açmak için gereken tüm adımları, belgeler ve süreçleri detaylı olarak öğrenin.
-            </p>
-            <a href="#hesap-acma" class="read-more-btn" onclick="showArticle(\'hesap-acma\')">Devamını Oku</a>
-          </div>
-        </article>
-        
-        <!-- Blog Post 2 -->
-        <article class="blog-card">
-          <div class="blog-card-image">
-            💰
-          </div>
-          <div class="blog-card-content">
-            <h2 class="blog-card-title">Trendyol Kar Hesaplama: Doğru Fiyatlandırma Stratejileri</h2>
-            <div class="blog-card-meta">
-              <span>8 dk okuma</span>
-              <span>Kar Optimizasyonu</span>
-            </div>
-            <p class="blog-card-excerpt">
-              Komisyon, kargo ve diğer maliyetleri hesaplayarak karlı fiyatlandırma yapmanın püf noktalarını keşfedin.
-            </p>
-            <a href="#kar-hesaplama" class="read-more-btn" onclick="showArticle(\'kar-hesaplama\')">Devamını Oku</a>
-          </div>
-        </article>
-        
-        <!-- Blog Post 3 -->
-        <article class="blog-card">
-          <div class="blog-card-image">
-            📦
-          </div>
-          <div class="blog-card-content">
-            <h2 class="blog-card-title">Ürün Listeleme ve Optimizasyon Teknikleri</h2>
-            <div class="blog-card-meta">
-              <span>6 dk okuma</span>
-              <span>SEO & Optimizasyon</span>
-            </div>
-            <p class="blog-card-excerpt">
-              Ürünlerinizi Trendyol'da nasıl etkili şekilde listeleyeceğinizi ve görünürlüğünüzü nasıl artıracağınızı öğrenin.
-            </p>
-            <a href="#urun-listeleme" class="read-more-btn" onclick="showArticle(\'urun-listeleme\')">Devamını Oku</a>
-          </div>
-        </article>
-        
-        <!-- Blog Post 4 -->
-        <article class="blog-card">
-          <div class="blog-card-image">
-            🚀
-          </div>
-          <div class="blog-card-content">
-            <h2 class="blog-card-title">Satış Artırma Stratejileri ve Pazarlama İpuçları</h2>
-            <div class="blog-card-meta">
-              <span>10 dk okuma</span>
-              <span>Pazarlama</span>
-            </div>
-            <p class="blog-card-excerpt">
-              Trendyol'da satışlarınızı artırmak için kullanabileceğiniz kanıtlanmış stratejiler ve pazarlama teknikleri.
-            </p>
-            <a href="#satis-artirma" class="read-more-btn" onclick="showArticle(\'satis-artirma\')">Devamını Oku</a>
-          </div>
-        </article>
-      </div>
+      <div class="blog-grid" id="blog-list"></div>
       
       <div class="back-to-home">
         <a href="index.html" class="back-btn">← Ana Sayfaya Dön</a>
@@ -304,142 +232,100 @@
     </div>
 
     <!-- Blog Articles (Hidden by default) -->
-    <div id="blog-articles" style="display: none;">
-      <!-- Article 1: Hesap Açma -->
-      <article id="hesap-acma-article" class="blog-article" style="display: none;">
-        <h1>Trendyol'da Nasıl Hesap Açılır? Adım Adım Rehber</h1>
-        
-        <p>Trendyol, Türkiye'nin en büyük e-ticaret platformlarından biri olarak milyonlarca müşteriye ulaşma fırsatı sunuyor. Bu rehberde, Trendyol'da satıcı hesabı açmak için gereken tüm adımları detaylı olarak ele alacağız.</p>
-        
-        <h2>Başlamadan Önce Hazırlamanız Gerekenler</h2>
-        
-        <p>Trendyol satıcı hesabı açmadan önce aşağıdaki belge ve bilgileri hazırlamanız gerekiyor:</p>
-        
-        <ul>
-          <li><strong>Vergi Levhası:</strong> Güncel vergi levhanızın fotokopisi</li>
-          <li><strong>İmza Sirküleri:</strong> Banka imza sirküleri</li>
-          <li><strong>Kimlik Fotokopisi:</strong> Şirket sahibi/ortaklarının kimlik fotokopileri</li>
-          <li><strong>Banka Hesap Bilgileri:</strong> IBAN ve hesap bilgileri</li>
-          <li><strong>İletişim Bilgileri:</strong> Güncel telefon ve e-posta adresi</li>
-        </ul>
-        
-        <h2>Adım 1: Trendyol Satıcı Paneline Başvuru</h2>
-        
-        <p>İlk adım olarak Trendyol'un resmi satıcı başvuru sayfasına gitmeniz gerekiyor. "partner.trendyol.com" adresinden başvuru formunu doldurabilirsiniz.</p>
-        
-        <div class="highlight-box">
-          <p><strong>İpucu:</strong> Başvuru formunu doldururken tüm bilgileri eksiksiz ve doğru şekilde girdiğinizden emin olun. Eksik bilgiler başvuru sürecinizi uzatabilir.</p>
-        </div>
-        
-        <h2>Adım 2: Belge Yükleme Süreci</h2>
-        
-        <p>Başvuru formunu tamamladıktan sonra, hazırladığınız belgeleri sisteme yüklemeniz gerekecek. Belgelerin net ve okunabilir olmasına dikkat edin.</p>
-        
-        <h3>Belge Yükleme İpuçları:</h3>
-        <ul>
-          <li>Belgeleri PDF formatında yükleyin</li>
-          <li>Dosya boyutlarının 5MB'ı geçmediğinden emin olun</li>
-          <li>Belgelerin güncel olduğunu kontrol edin</li>
-        </ul>
-        
-        <h2>Adım 3: Onay Süreci ve Bekleme</h2>
-        
-        <p>Belgelerinizi yükledikten sonra Trendyol ekibi başvurunuzu inceleyecek. Bu süreç genellikle 3-5 iş günü sürmektedir. Onay sürecinde sabırlı olmanız önemlidir.</p>
-        
-        <h2>Adım 4: Hesap Aktivasyonu</h2>
-        
-        <p>Başvurunuz onaylandıktan sonra, e-posta adresinize hesap aktivasyon linki gönderilecek. Bu linke tıklayarak hesabınızı aktive edebilir ve satış yapmaya başlayabilirsiniz.</p>
-        
-        <div class="cta-box">
-          <h3>Kar Hesaplamanızı Yapmaya Hazır mısınız?</h3>
-          <p>Hesabınızı açtıktan sonra doğru fiyatlandırma yapmak için kar hesaplayıcımızı kullanın.</p>
-          <a href="index.html" class="cta-btn">Kar Hesaplayıcıya Git</a>
-        </div>
-        
-        <div class="back-to-home">
-          <a href="#" class="back-btn" onclick="showBlogList()">← Blog Listesine Dön</a>
-        </div>
-      </article>
+    <div id="blog-articles"></div>
 
-      <!-- Article 2: Kar Hesaplama -->
-      <article id="kar-hesaplama-article" class="blog-article" style="display: none;">
-        <h1>Trendyol Kar Hesaplama: Doğru Fiyatlandırma Stratejileri</h1>
-        
-        <p>E-ticaret dünyasında başarılı olmak için en kritik faktörlerden biri doğru fiyatlandırma yapmaktır. Trendyol'da satış yaparken kar marjınızı koruyarak rekabetçi fiyatlar belirlemenin yollarını keşfedin.</p>
-        
-        <h2>Trendyol Komisyon Yapısını Anlama</h2>
-        
-        <p>Trendyol'da satış yaparken karşılaşacağınız temel maliyetler şunlardır:</p>
-        
-        <ul>
-          <li><strong>Komisyon Oranı:</strong> Kategori bazında değişen komisyon oranları (%8-15 arası)</li>
-          <li><strong>Kargo Maliyeti:</strong> Ürün boyutu ve ağırlığına göre değişen kargo ücretleri</li>
-          <li><strong>İade Maliyeti:</strong> Potansiyel iade durumlarında karşılaşacağınız maliyetler</li>
-          <li><strong>Pazarlama Giderleri:</strong> Reklam ve tanıtım maliyetleri</li>
-        </ul>
-        
-        <h2>Kar Hesaplama Formülü</h2>
-        
-        <p>Temel kar hesaplama formülü şu şekildedir:</p>
-        
-        <div class="highlight-box">
-          <p><strong>Net Kar = Satış Fiyatı - (Ürün Maliyeti + Komisyon + Kargo + Diğer Giderler)</strong></p>
-        </div>
-        
-        <h3>Örnek Hesaplama:</h3>
-        <p>100 TL'lik bir ürün için:</p>
-        <ul>
-          <li>Ürün maliyeti: 60 TL</li>
-          <li>Trendyol komisyonu (%12): 12 TL</li>
-          <li>Kargo maliyeti: 8 TL</li>
-          <li>Diğer giderler: 5 TL</li>
-          <li><strong>Net kar: 100 - (60 + 12 + 8 + 5) = 15 TL</strong></li>
-        </ul>
-        
-        <h2>Rekabetçi Fiyatlandırma Stratejileri</h2>
-        
-        <p>Karlı fiyatlandırma yaparken aşağıdaki stratejileri uygulayabilirsiniz:</p>
-        
-        <h3>1. Pazar Araştırması</h3>
-        <p>Benzer ürünlerin fiyatlarını düzenli olarak takip edin ve fiyat aralığınızı belirleyin.</p>
-        
-        <h3>2. Değer Odaklı Fiyatlandırma</h3>
-        <p>Ürününüzün sunduğu değeri vurgulayarak premium fiyatlandırma yapabilirsiniz.</p>
-        
-        <h3>3. Dinamik Fiyatlandırma</h3>
-        <p>Talep durumuna göre fiyatlarınızı esnek şekilde ayarlayın.</p>
-        
-        <h2>Maliyet Optimizasyonu İpuçları</h2>
-        
-        <ul>
-          <li><strong>Tedarikçi Görüşmeleri:</strong> Daha iyi tedarikçi anlaşmaları yaparak maliyet düşürün</li>
-          <li><strong>Kargo Optimizasyonu:</strong> Ürün paketleme ve boyutlandırma ile kargo maliyetlerini azaltın</li>
-          <li><strong>Stok Yönetimi:</strong> Etkili stok yönetimi ile depolama maliyetlerini kontrol edin</li>
-          <li><strong>İade Oranını Düşürme:</strong> Kaliteli ürün açıklamaları ile iade oranını minimize edin</li>
-        </ul>
-        
-        <div class="cta-box">
-          <h3>Hemen Kar Hesaplamanızı Yapın!</h3>
-          <p>Profesyonel kar hesaplayıcımız ile ürünlerinizin karlılığını anında hesaplayın.</p>
-          <a href="index.html" class="cta-btn">Kar Hesaplayıcıyı Kullan</a>
-        </div>
-        
-        <div class="back-to-home">
-          <a href="#" class="back-btn" onclick="showBlogList()">← Blog Listesine Dön</a>
-        </div>
-      </article>
+    <script src="blog-data.js"></script>
+    <script>
+      const blogListContainer = document.getElementById("blog-list");
+      const blogArticlesContainer = document.getElementById("blog-articles");
 
-      <!-- Article 3: Ürün Listeleme -->
-      <article id="urun-listeleme-article" class="blog-article" style="display: none;">
-        <h1>Ürün Listeleme ve Optimizasyon Teknikleri</h1>
-        
-        <p>Trendyol'da başarılı olmak için ürünlerinizi doğru şekilde listelemek ve optimize etmek kritik önem taşır. Bu rehberde, ürün görünürlüğünüzü artıracak teknikleri öğreneceksiniz.</p>
-        
-        <h2>Etkili Ürün Başlığı Oluşturma</h2>
-        
-        <p>Ürün başlığınız, müşterilerin sizi bulmasında en önemli faktördür. İyi bir başlık şu özelliklere sahip olmalıdır:</p>
-        
-        <ul>
-          <li><strong>Anahtar Kelime Odaklı:</strong> Müşterilerin aradığı kelimeleri 
-(Content truncated due to size limit. Use line ranges to read in chunks)
+      function renderBlogList() {
+        blogListContainer.innerHTML = "";
+        blogArticlesContainer.innerHTML = "";
+        blogArticlesContainer.style.display = "none";
+
+        getBlogPosts().forEach(post => {
+          const blogCard = document.createElement("article");
+          blogCard.className = "blog-card";
+          blogCard.innerHTML = `
+            <div class="blog-card-image">
+              ${post.icon}
+            </div>
+            <div class="blog-card-content">
+              <h2 class="blog-card-title">${post.title}</h2>
+              <div class="blog-card-meta">
+                <span>${post.readTime}</span>
+                <span>${post.category}</span>
+              </div>
+              <p class="blog-card-excerpt">
+                ${post.excerpt}
+              </p>
+              <a href="#${post.id}" class="read-more-btn" onclick="showArticle('${post.id}')">Devamını Oku</a>
+            </div>
+          `;
+          blogListContainer.appendChild(blogCard);
+
+          const articleElement = document.createElement("article");
+          articleElement.id = `${post.id}-article`;
+          articleElement.className = "blog-article";
+          articleElement.style.display = "none";
+          articleElement.innerHTML = `
+            ${post.content}
+            <div class="back-to-home">
+              <a href="#" class="back-btn" onclick="showBlogList()">← Blog Listesine Dön</a>
+            </div>
+          `;
+          blogArticlesContainer.appendChild(articleElement);
+        });
+      }
+
+      function showArticle(id) {
+        blogListContainer.style.display = "none";
+        blogArticlesContainer.style.display = "block";
+        getBlogPosts().forEach(post => {
+          const articleElement = document.getElementById(`${post.id}-article`);
+          if (post.id === id) {
+            articleElement.style.display = "block";
+            window.scrollTo(0, 0); // Scroll to top of the article
+          } else {
+            articleElement.style.display = "none";
+          }
+        });
+      }
+
+      function showBlogList() {
+        blogListContainer.style.display = "grid";
+        blogArticlesContainer.style.display = "none";
+        window.scrollTo(0, 0); // Scroll to top of the list
+      }
+
+      // Initial render
+      renderBlogList();
+
+      // Handle direct article links (e.g., from index.html CTA)
+      window.onload = function() {
+        if (window.location.hash) {
+          const articleId = window.location.hash.substring(1);
+          if (getBlogPostById(articleId)) {
+            showArticle(articleId);
+          }
+        }
+      };
+    </script>
+
+    <!-- AdSense Reklam Birimi Örneği - Blog Sayfası -->
+    <div style="text-align: center; margin: 20px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-9409905856635578"
+           data-ad-slot="YOUR_ADSENSE_AD_SLOT_ID"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+  </body>
+</html>
 
