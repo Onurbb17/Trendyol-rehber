@@ -8,9 +8,160 @@
     <title>Trendyol Kar Hesaplayıcı - Profesyonel Satıcı Aracı</title>
     <script type="module" crossorigin src="/assets/index-DCTaKFmQ.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BehjH3cC.css">
+    <style>
+      .blog-button-container {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 1000;
+      }
+      
+      .blog-button {
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .blog-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+        color: white;
+      }
+      
+      .blog-button-icon {
+        font-size: 1.2rem;
+      }
+      
+      .blog-cta-section {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 3rem 2rem;
+        margin: 3rem 0;
+        border-radius: 1rem;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+      }
+      
+      .blog-cta-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 1rem;
+      }
+      
+      .blog-cta-description {
+        font-size: 1.125rem;
+        color: #6b7280;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+      }
+      
+      .blog-cta-button {
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.125rem;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+      }
+      
+      .blog-cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+        color: white;
+      }
+      
+      @media (max-width: 768px) {
+        .blog-button-container {
+          bottom: 1rem;
+          right: 1rem;
+        }
+        
+        .blog-button {
+          padding: 0.75rem 1.25rem;
+          font-size: 0.875rem;
+        }
+        
+        .blog-cta-section {
+          padding: 2rem 1rem;
+          margin: 2rem 0;
+        }
+        
+        .blog-cta-title {
+          font-size: 1.5rem;
+        }
+        
+        .blog-cta-description {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Blog CTA Section - Will be inserted after the main content loads -->
+    <div id="blog-cta-insertion-point"></div>
+    
+    <!-- Floating Blog Button -->
+    <div class="blog-button-container">
+      <a href="blog.html" class="blog-button">
+        <span class="blog-button-icon">📚</span>
+        <span>E-ticaret Rehberi</span>
+      </a>
+    </div>
+    
+    <script>
+      // Wait for the React app to load, then insert the blog CTA section
+      setTimeout(function() {
+        // Find a suitable place to insert the blog CTA
+        const rootElement = document.getElementById('root');
+        if (rootElement && rootElement.children.length > 0) {
+          // Create the blog CTA section
+          const blogCTASection = document.createElement('div');
+          blogCTASection.className = 'blog-cta-section';
+          blogCTASection.innerHTML = `
+            <h2 class="blog-cta-title">E-ticaret Başarınızı Artırın</h2>
+            <p class="blog-cta-description">
+              Doğru kar hesaplaması yapmak, e-ticaret işinizde sürdürülebilir büyüme için temel gereksinimdir. 
+              Trendyol kar hesaplayıcımızı kullanarak bilinçli fiyatlandırma kararları alın ve rekabet avantajı elde edin.
+            </p>
+            <a href="blog.html" class="blog-cta-button">
+              <span>📖</span>
+              <span>E-ticaret Rehberimizi İnceleyin</span>
+            </a>
+          `;
+          
+          // Try to insert after the main calculator content
+          const mainContent = rootElement.querySelector('main') || rootElement.firstElementChild;
+          if (mainContent && mainContent.parentNode) {
+            mainContent.parentNode.insertBefore(blogCTASection, mainContent.nextSibling);
+          } else {
+            // Fallback: append to root
+            rootElement.appendChild(blogCTASection);
+          }
+        }
+      }, 2000); // Wait 2 seconds for React to load
+    </script>
   </body>
 </html>
 
