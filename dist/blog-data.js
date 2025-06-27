@@ -38,7 +38,7 @@ const blogPosts = [
         <h3>Belge Yükleme İpuçları:</h3>
         <ul>
           <li>Belgeleri PDF formatında yükleyin</li>
-          <li>Dosya boyutlarının 5MB\'ı geçmediğinden emin olun</li>
+          <li>Dosya boyutlarının 5MB\\'ı geçmediğinden emin olun</li>
           <li>Belgelerin güncel olduğunu kontrol edin</li>
         </ul>
         
@@ -267,11 +267,11 @@ const blogPosts = [
     content: `
         <h1>Trendyol SEO Stratejileri: Organik Trafiği Artırma Yolları</h1>
         
-        <p>Trendyol gibi büyük bir e-ticaret platformunda rekabet oldukça yoğundur. Ürünlerinizin ve mağazanızın organik aramalarda üst sıralarda yer alması, satışlarınızı doğrudan etkileyen en önemli faktörlerden biridir. İşte Trendyol'da organik trafiğinizi artırmak için uygulayabileceğiniz etkili SEO stratejileri:</p>
+        <p>Trendyol gibi büyük bir e-ticaret platformunda rekabet oldukça yoğundur. Ürünlerinizin ve mağazanızın organik aramalarda üst sıralarda yer alması, satışlarınızı doğrudan etkileyen en önemli faktörlerden biridir. İşte Trendyol\'da organik trafiğinizi artırmak için uygulayabileceğiniz etkili SEO stratejileri:</p>
         
         <h2>1. Anahtar Kelime Araştırması ve Kullanımı</h2>
         
-        <p>Müşterilerinizin ürünlerinizi ararken kullandığı anahtar kelimeleri doğru bir şekilde belirlemek, SEO'nun temelidir. Trendyol içinde ve dışında (Google, Yandex vb.) anahtar kelime araştırması yaparak potansiyel kelimeleri tespit edin.</p>
+        <p>Müşterilerinizin ürünlerinizi ararken kullandığı anahtar kelimeleri doğru bir şekilde belirlemek, SEO\'nun temelidir. Trendyol içinde ve dışında (Google, Yandex vb.) anahtar kelime araştırması yaparak potansiyel kelimeleri tespit edin.</p>
         
         <h3>Anahtar Kelime Yerleşimi:</h3>
         <ul>
@@ -286,7 +286,7 @@ const blogPosts = [
         <p>Görsel içerikler, hem kullanıcı deneyimi hem de SEO için kritik öneme sahiptir. Yüksek çözünürlüklü, farklı açılardan çekilmiş ve ürününüzü net bir şekilde gösteren görseller kullanın. Mümkünse ürün videoları da ekleyin.</p>
         
         <div class=\"highlight-box\">
-          <p><strong>İpucu:</strong> Görsel dosyalarınızın adlarını anahtar kelimelerle optimize edin (örneğin, <code>kadin-yazlik-elbise-mavi.jpg</code>) ve Trendyol'un izin verdiği ölçüde alt metin (alt text) kullanın.</p>
+          <p><strong>İpucu:</strong> Görsel dosyalarınızın adlarını anahtar kelimelerle optimize edin (örneğin, <code>kadin-yazlik-elbise-mavi.jpg</code>) ve Trendyol\'un izin verdiği ölçüde alt metin (alt text) kullanın.</p>
         </div>
         
         <h2>3. Müşteri Yorumları ve Değerlendirmeleri</h2>
@@ -295,16 +295,28 @@ const blogPosts = [
         
         <h2>4. Mağaza Performansı ve Hız</h2>
         
-        <p>Trendyol, mağaza performansını ve sayfa yükleme hızını da dikkate alır. Ürün görsellerinizin boyutunu optimize edin, gereksiz kodlardan kaçının ve Trendyol'un önerdiği performans iyileştirmelerini uygulayın. Hızlı yüklenen sayfalar, hem kullanıcı deneyimini iyileştirir hem de SEO sıralamanızı olumlu etkiler.</p>
+        <p>Trendyol, mağaza performansını ve sayfa yükleme hızını da dikkate alır. Ürün görsellerinizin boyutunu optimize edin, gereksiz kodlardan kaçının ve Trendyol\'un sunduğu performans iyileştirme araçlarını kullanın. Hızlı yüklenen sayfalar, hem kullanıcı deneyimini artırır hem de arama motoru sıralamalarında olumlu etki yaratır.</p>
         
-        <h2>5. Sosyal Medya ve Dış Bağlantılar</h2>
+        <h2>5. Trendyol İçi Reklam ve Kampanyalar</h2>
         
-        <p>Sosyal medya platformlarında ürünlerinizi ve mağazanızı tanıtarak Trendyol mağazanıza trafik çekin. Dış sitelerden (bloglar, forumlar vb.) Trendyol ürünlerinize veya mağazanıza gelen kaliteli bağlantılar (backlinkler) da SEO değerinizi artırabilir.</p>
+        <p>Organik SEO çalışmaları uzun vadeli sonuçlar verse de, kısa vadede görünürlüğünüzü artırmak için Trendyol\'un kendi reklam ve kampanya seçeneklerini kullanabilirsiniz. Akıllıca yönetilen reklam kampanyaları, ürünlerinizi daha geniş kitlelere ulaştırarak organik görünürlüğünüzü de dolaylı yoldan destekleyebilir.</p>
+        
+        <h2>6. Düzenli İçerik Güncellemesi ve Blog Kullanımı</h2>
+        
+        <p>Sitenizdeki blog bölümü, SEO için çok değerli bir araçtır. Trendyol satıcılarını ilgilendiren konularda düzenli olarak kaliteli ve bilgilendirici blog yazıları yayınlayın. Bu yazılar, sitenize organik trafik çekmenize ve alan adınızın otoritesini artırmanıza yardımcı olur. Blog yazılarınızda anahtar kelimeleri doğal bir şekilde kullanarak arama motorlarının sitenizi daha iyi anlamasını sağlayın.</p>
+        
+        <h2>7. Mobil Uyumluluk</h2>
+        
+        <p>Trendyol platformu mobil uyumlu olsa da, kendi sitenizin (özellikle blog bölümünüzün) mobil cihazlarda sorunsuz çalıştığından emin olun. Google, mobil uyumluluğu önemli bir sıralama faktörü olarak değerlendirir.</p>
+        
+        <h2>8. Sosyal Medya Entegrasyonu</h2>
+        
+        <p>Sosyal medya platformlarında aktif olun ve ürünlerinizi, blog yazılarınızı paylaşın. Sosyal medya sinyalleri doğrudan bir SEO sıralama faktörü olmasa da, sitenize trafik çekerek ve markanızın bilinirliğini artırarak dolaylı yoldan SEO\'ya katkıda bulunur.</p>
         
         <div class=\"cta-box\">
-          <h3>SEO ile Satışlarınızı Katlayın!</h3>
-          <p>Trendyol'da doğru SEO stratejileriyle ürünlerinizin görünürlüğünü artırın ve daha fazla satış yapın.</p>
-          <a href=\"index.html\" class=\"cta-btn\">Kar Hesaplayıcıya Git</a>
+          <h3>Trendyol SEO Stratejilerinizi Uygulayın!</h3>
+          <p>Sitenizin organik trafiğini artırmak için kar hesaplayıcımızı ve blog rehberlerimizi kullanın.</p>
+          <a href=\"index.html\" class=\"cta-btn\">Hemen Başlayın</a>
         </div>
         
         <div class=\"back-to-home\">
@@ -315,56 +327,181 @@ const blogPosts = [
   {
     id: 'trendyol-musteri-hizmetleri',
     title: 'Trendyol Müşteri Hizmetleri: Satıcılar İçin İpuçları ve En İyi Uygulamalar',
-    excerpt: 'Trendyol\'da müşteri memnuniyetini artırmak ve olumlu geri bildirimler almak için etkili müşteri hizmetleri stratejileri.',
+    excerpt: 'Trendyol müşteri hizmetleri ile etkili iletişim kurma ve müşteri memnuniyetini artırma yolları.',
     readTime: '6 dk okuma',
     category: 'Müşteri İlişkileri',
     icon: '📞',
     content: `
         <h1>Trendyol Müşteri Hizmetleri: Satıcılar İçin İpuçları ve En İyi Uygulamalar</h1>
         
-        <p>Trendyol'da başarılı bir satıcı olmanın anahtarlarından biri, mükemmel müşteri hizmeti sunmaktır. Müşteri memnuniyeti, tekrar eden satışları, olumlu yorumları ve genel mağaza itibarınızı doğrudan etkiler. İşte Trendyol'da müşteri hizmetleri kalitenizi artırmak için uygulayabileceğiniz stratejiler:</p>
+        <p>Trendyol\'da başarılı bir satıcı olmanın anahtarlarından biri de etkili müşteri hizmetleri sunmaktır. Müşteri memnuniyeti, hem tekrar eden satışlar hem de olumlu yorumlar için kritik öneme sahiptir. İşte Trendyol müşteri hizmetleri süreçlerinizi optimize etmek için ipuçları ve en iyi uygulamalar:</p>
         
-        <h2>1. Hızlı ve Etkili İletişim</h2>
+        <h2>1. Hızlı ve Etkili Yanıt Süresi</h2>
         
-        <p>Müşteri sorularına ve mesajlarına mümkün olan en kısa sürede yanıt verin. Trendyol'un belirlediği yanıt sürelerine uymak, mağaza puanınızı olumlu etkiler. Otomatik yanıtlar yerine kişiselleştirilmiş ve yardımcı yanıtlar vermeye özen gösterin.</p>
+        <p>Müşteri sorularına ve şikayetlerine mümkün olan en kısa sürede yanıt verin. Trendyol, satıcıların yanıt sürelerini değerlendirir ve bu, mağazanızın performans puanını etkileyebilir. Genellikle 24 saat içinde yanıt vermek iyi bir uygulamadır.</p>
         
-        <h3>İletişim Kanalları:</h3>
-        <ul>
-          <li><strong>Trendyol Satıcı Paneli Mesajlaşma:</strong> Müşterilerinizle doğrudan iletişim kurabileceğiniz ana platform.</li>
-          <li><strong>Telefon Desteği:</strong> Bazı durumlarda telefonla iletişim kurmak, sorunları daha hızlı çözmenizi sağlayabilir.</li>
-        </ul>
+        <h2>2. Net ve Anlaşılır İletişim</h2>
         
-        <h2>2. Şeffaf ve Doğru Bilgi Sağlama</h2>
+        <p>Müşterilerle iletişim kurarken net, anlaşılır ve nazik bir dil kullanın. Karmaşık terimlerden kaçının ve sorunu çözmeye odaklanın. Müşterinin ne istediğini tam olarak anladığınızdan emin olmak için sorular sorun.</p>
         
-        <p>Ürün açıklamalarınızda, görsellerinizde ve fiyatlandırmanızda her zaman şeffaf ve doğru bilgi sağlayın. Yanlış veya yanıltıcı bilgiler, müşteri şikayetlerine ve iadelere yol açabilir.</p>
+        <h2>3. Sıkça Sorulan Sorular (SSS) Bölümü Oluşturun</h2>
+        
+        <p>Mağazanızda veya ürün sayfalarınızda sıkça sorulan soruları içeren bir SSS bölümü oluşturmak, müşteri hizmetleri yükünüzü azaltabilir. Bu bölümde kargo, iade, ürün özellikleri gibi konularda genel bilgileri sağlayın.</p>
+        
+        <h2>4. Proaktif İletişim</h2>
+        
+        <p>Müşterilerinize siparişlerinin durumu, kargo bilgileri veya olası gecikmeler hakkında proaktif olarak bilgi verin. Bu, müşteri beklentilerini yönetmenize ve olumsuz geri bildirimleri önlemenize yardımcı olur.</p>
         
         <div class=\"highlight-box\">
-          <p><strong>İpucu:</strong> Ürününüzün tüm özelliklerini, boyutlarını, renklerini ve varsa kullanım talimatlarını eksiksiz belirtin. Müşterilerin aklındaki tüm soruları önceden yanıtlamaya çalışın.</p>
+          <p><strong>İpucu:</strong> Sipariş takibi için Trendyol\'un sunduğu araçları etkin bir şekilde kullanın ve müşterilerinize doğru takip numaralarını sağlayın.</p>
         </div>
         
-        <h2>3. Sorun Çözme ve Şikayet Yönetimi</h2>
+        <h2>5. İade ve Değişim Süreçlerini Kolaylaştırın</h2>
         
-        <p>Müşteri şikayetlerini ciddiye alın ve yapıcı bir yaklaşımla çözüme odaklanın. Olumsuz bir deneyimi olumluya çevirmek, müşteri sadakatini artırabilir. Sorunları hızlı ve adil bir şekilde çözmek, mağazanızın itibarını güçlendirir.</p>
+        <p>İade ve değişim süreçleri, müşteri memnuniyetini doğrudan etkileyen hassas konulardır. Bu süreçleri mümkün olduğunca basit ve sorunsuz hale getirin. Trendyol\'un iade politikalarına tam uyum sağlayın.</p>
         
-        <h3>Şikayet Yönetimi Adımları:</h3>
-        <ul>
-          <li>Müşteriyi dinleyin ve empati kurun.</li>
-          <li>Sorunu anlayın ve çözüm odaklı yaklaşın.</li>
-          <li>Gerekirse özür dileyin ve telafi yolları sunun.</li>
-          <li>Sorunun tekrarlanmaması için önlemler alın.</li>
-        </ul>
+        <h2>6. Olumsuz Yorumları Yönetme</h2>
         
-        <h2>4. Kargo ve Teslimat Süreçleri</h2>
+        <p>Olumsuz yorumlar kaçınılmazdır. Önemli olan, bu yorumlara nasıl yanıt verdiğinizdir. Profesyonel, yapıcı ve çözüm odaklı yanıtlar vererek durumu lehinize çevirebilirsiniz. Müşterinin sorununu anladığınızı ve çözüm için çaba gösterdiğinizi belirtin.</p>
         
-        <p>Hızlı ve güvenli kargo, müşteri memnuniyetinin önemli bir parçasıdır. Ürünlerinizi zamanında kargolayın ve müşterilerinize kargo takip numaralarını sağlayın. Kargo sürecinde yaşanabilecek aksaklıklar hakkında müşterilerinizi bilgilendirin.</p>
+        <h2>7. Geri Bildirimleri Değerlendirme</h2>
         
-        <h2>5. İade ve Değişim Süreçleri</h2>
+        <p>Müşterilerden gelen geri bildirimleri (hem olumlu hem de olumsuz) dikkatlice değerlendirin. Bu geri bildirimler, ürünlerinizi, hizmetlerinizi ve genel iş süreçlerinizi iyileştirmek için değerli içgörüler sunar.</p>
         
-        <p>Trendyol'un iade ve değişim politikalarına tam uyum sağlayın. Müşteriler için iade süreçlerini kolaylaştırın ve şeffaf olun. Sorunsuz bir iade süreci, müşteri güvenini artırır.</p>
+        <h2>8. Trendyol Satıcı Destek ile İletişim</h2>
+        
+        <p>Çözemediğiniz veya Trendyol platformuyla ilgili sorunlarda Trendyol satıcı destek ekibiyle iletişime geçmekten çekinmeyin. Doğru kanalları kullanarak hızlı ve etkili destek alabilirsiniz.</p>
         
         <div class=\"cta-box\">
-          <h3>Müşteri Memnuniyeti ile Karlılığınızı Artırın!</h3>
-          <p>Mükemmel müşteri hizmeti sunarken, kar marjınızı da hesaplayıcımızla takip edin.</p>
+          <h3>Müşteri Memnuniyetini Artırırken Karlılığınızı Koruyun!</h3>
+          <p>Müşteri hizmetleri süreçlerinizi optimize ederken, ürünlerinizin karlılığını hesaplayıcımızla takip edin.</p>
+          <a href=\"index.html\" class=\"cta-btn\">Kar Hesaplayıcıya Git</a>
+        </div>
+        
+        <div class=\"back-to-home\">
+          <a href=\"#\" class=\"back-btn\" onclick=\"showBlogList()\">← Blog Listesine Dön</a>
+        </div>
+      `
+  },
+  {
+    id: 'trendyol-kargo-surecleri',
+    title: 'Trendyol Kargo Süreçleri: Satıcılar İçin Hızlı ve Sorunsuz Teslimat İpuçları',
+    excerpt: 'Trendyol\'da kargo süreçlerini optimize ederek müşteri memnuniyetini artırma ve maliyetleri düşürme yolları.',
+    readTime: '8 dk okuma',
+    category: 'Operasyon',
+    icon: '🚚',
+    content: `
+        <h1>Trendyol Kargo Süreçleri: Satıcılar İçin Hızlı ve Sorunsuz Teslimat İpuçları</h1>
+        
+        <p>Trendyol\'da başarılı bir e-ticaret deneyimi sunmanın temel taşlarından biri de etkili kargo yönetimidir. Hızlı, güvenilir ve sorunsuz teslimat süreçleri, müşteri memnuniyetini doğrudan etkiler ve mağazanızın itibarını artırır. İşte Trendyol\'da kargo süreçlerinizi optimize etmek için bilmeniz gerekenler:</p>
+        
+        <h2>1. Trendyol Express ve Diğer Kargo Firmaları</h2>
+        
+        <p>Trendyol, kendi kargo ağı olan Trendyol Express\'in yanı sıra, anlaşmalı olduğu diğer kargo firmalarıyla da çalışmaktadır. Siparişlerinizi gönderirken size en uygun ve maliyet etkin kargo seçeneğini belirlemeniz önemlidir.</p>
+        
+        <ul>
+          <li><strong>Trendyol Express:</strong> Genellikle daha hızlı ve entegre bir çözüm sunar.</li>
+          <li><strong>Diğer Kargo Firmaları:</strong> Farklı bölgelere veya özel ürünler için alternatifler sunabilir.</li>
+        </ul>
+        
+        <h2>2. Doğru Paketleme ve Ürün Koruma</h2>
+        
+        <p>Ürünlerinizin müşteriye hasarsız ulaşması için doğru paketleme kritik öneme sahiptir. Ürünün boyutuna, ağırlığına ve hassasiyetine uygun ambalaj malzemeleri kullanın. Kırılabilir ürünler için ekstra koruma sağlayın.</p>
+        
+        <div class=\"highlight-box\">
+          <p><strong>İpucu:</strong> Paketleme sürecinizi standartlaştırarak hem zaman kazanın hem de hata oranını düşürün.</p>
+        </div>
+        
+        <h2>3. Kargo Etiketi Oluşturma ve Yapıştırma</h2>
+        
+        <p>Trendyol satıcı panelinden her sipariş için doğru kargo etiketini oluşturun ve ürün paketine görünür bir şekilde yapıştırın. Etiketin barkodunun okunabilir olduğundan emin olun.</p>
+        
+        <h2>4. Sipariş Hazırlık ve Teslim Süreleri</h2>
+        
+        <p>Trendyol, satıcılardan belirli bir süre içinde siparişleri hazırlayıp kargoya teslim etmelerini bekler. Bu sürelere uymak, mağazanızın performans puanı için önemlidir. Siparişlerinizi mümkün olan en kısa sürede hazırlayın.</p>
+        
+        <h2>5. Kargo Takibi ve Müşteri Bilgilendirme</h2>
+        
+        <p>Müşterilerinize siparişlerinin kargo durumunu takip edebilmeleri için doğru takip numaralarını sağlayın. Trendyol paneli üzerinden kargo durumunu düzenli olarak kontrol edin ve olası gecikmelerde müşterilerinizi bilgilendirin.</p>
+        
+        <h2>6. İade Kargo Süreçleri</h2>
+        
+        <p>İade durumlarında kargo süreçlerini hızlı ve sorunsuz yönetmek, müşteri memnuniyetini artırır. Trendyol\'un iade kargo süreçlerine uygun hareket edin ve iade edilen ürünleri zamanında teslim alın.</p>
+        
+        <h2>7. Kargo Maliyetlerini Optimize Etme</h2>
+        
+        <p>Kargo maliyetleri, kar marjınızı doğrudan etkileyen önemli bir gider kalemidir. Kargo firmalarıyla anlaşmalarınızı gözden geçirin, ürün boyutlarını optimize edin ve toplu gönderim avantajlarından yararlanın.</p>
+        
+        <div class=\"cta-box\">
+          <h3>Kargo Maliyetlerinizi Hesaplayın!</h3>
+          <p>Ürünlerinizin kargo maliyetlerini kar hesaplayıcımızla analiz edin ve karlılığınızı optimize edin.</p>
+          <a href=\"index.html\" class=\"cta-btn\">Kar Hesaplayıcıya Git</a>
+        </div>
+        
+        <div class=\"back-to-home\">
+          <a href=\"#\" class=\"back-btn\" onclick=\"showBlogList()\">← Blog Listesine Dön</a>
+        </div>
+      `
+  },
+  {
+    id: 'trendyol-reklam-stratejileri',
+    title: 'Trendyol Reklam Stratejileri: Satışlarınızı Katlayın',
+    excerpt: 'Trendyol\'da reklam bütçenizi en verimli şekilde kullanarak satışlarınızı nasıl artıracağınızı öğrenin.',
+    readTime: '9 dk okuma',
+    category: 'Pazarlama',
+    icon: '📈',
+    content: `
+        <h1>Trendyol Reklam Stratejileri: Satışlarınızı Katlayın</h1>
+        
+        <p>Trendyol gibi rekabetçi bir platformda ürünlerinizin ve mağazanızın öne çıkması için etkili reklam stratejileri uygulamak hayati önem taşır. Doğru reklam modellerini ve optimizasyon tekniklerini kullanarak satışlarınızı önemli ölçüde artırabilirsiniz. İşte Trendyol\'da reklam stratejilerinizi geliştirmeniz için ipuçları:</p>
+        
+        <h2>1. Trendyol Reklam Modellerini Tanıyın</h2>
+        
+        <p>Trendyol, satıcılara çeşitli reklam modelleri sunar. Her bir modelin kendine özgü avantajları vardır:</p>
+        
+        <ul>
+          <li><strong>Ürün Reklamları:</strong> Belirli ürünlerinizi arama sonuçlarında veya ilgili ürün sayfalarında öne çıkarır. Genellikle yüksek dönüşüm oranına sahiptir.</li>
+          <li><strong>Mağaza Reklamları:</strong> Mağazanızın genel bilinirliğini ve trafiğini artırmayı hedefler. Marka bilinirliği oluşturmak için etkilidir.</li>
+          <li><strong>Kategori Reklamları:</strong> Belirli bir kategori içinde ürünlerinizin görünürlüğünü artırır. Kategori bazında rekabetçi olmak isteyenler için idealdir.</li>
+          <li><strong>Banner Reklamlar:</strong> Trendyol\'un ana sayfasında veya belirli kategorilerde büyük görsel reklamlar yayınlamanızı sağlar. Geniş kitlelere ulaşmak için kullanılır.</li>
+        </ul>
+        
+        <h2>2. Hedef Kitlenizi Doğru Belirleyin</h2>
+        
+        <p>Reklamlarınızın başarısı, doğru hedef kitleye ulaşmanıza bağlıdır. Ürünlerinizin kimlere hitap ettiğini, demografik özelliklerini, ilgi alanlarını ve satın alma alışkanlıklarını analiz edin. Trendyol\'un reklam paneli üzerinden hedefleme seçeneklerini etkin bir şekilde kullanın.</p>
+        
+        <h2>3. Anahtar Kelime Optimizasyonu</h2>
+        
+        <p>Reklamlarınız için doğru anahtar kelimeleri seçmek, reklam bütçenizi verimli kullanmanızı sağlar. Ürünlerinizle ilgili en çok aranan ve dönüşüm getiren anahtar kelimeleri belirleyin. Negatif anahtar kelimeler kullanarak alakasız aramalarda reklamlarınızın görünmesini engelleyin.</p>
+        
+        <div class=\"highlight-box\">
+          <p><strong>İpucu:</strong> Trendyol\'un kendi anahtar kelime araçlarını veya genel SEO araçlarını kullanarak reklamlarınız için potansiyel anahtar kelimeleri keşfedin.</p>
+        </div>
+        
+        <h2>4. Reklam Metinleri ve Görselleri</h2>
+        
+        <p>Çekici ve ikna edici reklam metinleri yazın. Ürününüzün veya mağazanızın en önemli faydalarını ve ayırt edici özelliklerini vurgulayın. Reklam görsellerinizin yüksek kaliteli, dikkat çekici ve ürününüzü en iyi şekilde yansıtan görseller olduğundan emin olun.</p>
+        
+        <h2>5. Bütçe Yönetimi ve Teklif Stratejileri</h2>
+        
+        <p>Reklam bütçenizi dikkatli bir şekilde yönetin. Günlük veya aylık bütçeler belirleyin ve bu bütçeye sadık kalın. Trendyol\'un sunduğu teklif stratejilerini (örneğin, manuel teklif, otomatik teklif) anlayın ve hedeflerinize en uygun olanı seçin.</p>
+        
+        <h2>6. Reklam Performansını Takip ve Optimize Edin</h2>
+        
+        <p>Reklam kampanyalarınızın performansını düzenli olarak takip edin. Trendyol reklam paneli üzerinden tıklama oranları (CTR), dönüşüm oranları, harcama ve gelir gibi metrikleri analiz edin. Performansı düşük olan reklamları durdurun veya optimize edin.</p>
+        
+        <ul>
+          <li><strong>A/B Testleri:</strong> Farklı reklam metinleri, görselleri veya hedeflemeleri test ederek hangisinin daha iyi performans gösterdiğini belirleyin.</li>
+          <li><strong>Dönüşüm Takibi:</strong> Reklamlarınızın satışa dönüşüp dönüşmediğini takip edin ve bu verilere göre optimizasyon yapın.</li>
+        </ul>
+        
+        <h2>7. Kampanyalara Katılım ve Özel Teklifler</h2>
+        
+        <p>Trendyol\'un özel kampanya dönemlerine (Büyük İndirim Günleri, Sezon İndirimleri vb.) katılarak reklamlarınızın etkinliğini artırın. Bu dönemlerde özel indirimler veya kampanyalar sunarak müşterilerin ilgisini çekin.</p>
+        
+        <div class=\"cta-box\">
+          <h3>Reklam Karlılığınızı Hesaplayın!</h3>
+          <p>Reklam harcamalarınızın ürünlerinizin karlılığına etkisini hesaplayıcımızla analiz edin.</p>
           <a href=\"index.html\" class=\"cta-btn\">Kar Hesaplayıcıya Git</a>
         </div>
         
@@ -382,7 +519,5 @@ function getBlogPosts() {
 function getBlogPostById(id) {
   return blogPosts.find(post => post.id === id);
 }
-
-
 
 
