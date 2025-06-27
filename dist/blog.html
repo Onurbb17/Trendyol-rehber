@@ -16,6 +16,16 @@
      crossorigin="anonymous"></script>
     <!-- Google AdSense Bitiş Kodu -->
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0F2HEPCC1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+
+      gtag("config", "G-X0F2HEPCC1");
+    </script>
+
     <link rel="stylesheet" crossorigin href="/assets/index-BehjH3cC.css">
     <style>
       .blog-container {
@@ -260,7 +270,7 @@
               <p class="blog-card-excerpt">
                 ${post.excerpt}
               </p>
-              <a href="#${post.id}" class="read-more-btn" onclick="showArticle('${post.id}')">Devamını Oku</a>
+              <a href="#${post.id}" class="read-more-btn" onclick="showArticle(\'${post.id}\')">Devamını Oku</a>
             </div>
           `;
           blogListContainer.appendChild(blogCard);
@@ -328,4 +338,5 @@
 
   </body>
 </html>
+
 
