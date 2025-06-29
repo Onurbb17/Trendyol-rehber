@@ -225,6 +225,101 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       }
+
+      /* Pagination Styles */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        gap: 0.5rem;
+      }
+
+      .pagination button {
+        background: #f7931e;
+        color: white;
+        border: none;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .pagination button:hover:not(:disabled) {
+        background: #ff6b35;
+      }
+
+      .pagination button:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      .pagination span {
+        font-weight: 600;
+        color: #374151;
+      }
+
+      /* Most Viewed Blogs Styles */
+      .most-viewed-section {
+        margin-top: 4rem;
+        padding: 2rem;
+        background: #f9fafb;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      .most-viewed-section h2 {
+        text-align: center;
+        color: #1f2937;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+
+      .most-viewed-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .most-viewed-card {
+        background: white;
+        border-radius: 0.75rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        padding: 1.5rem;
+        transition: transform 0.2s ease;
+        border: 1px solid #e5e7eb;
+      }
+
+      .most-viewed-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .most-viewed-card h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+      }
+
+      .most-viewed-card p {
+        font-size: 0.9rem;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+
+      .most-viewed-card a {
+        color: #ff6b35;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 0.75rem;
+        display: inline-block;
+      }
+
+      .most-viewed-card a:hover {
+        text-decoration: underline;
+      }
+
     </style>
   </head>
   <body class="bg-gray-50">
@@ -236,6 +331,13 @@
       
       <div class="blog-grid" id="blog-list"></div>
       
+      <div class="pagination" id="pagination-controls"></div>
+
+      <div class="most-viewed-section">
+        <h2>En Çok Görüntülenen Bloglar</h2>
+        <div class="most-viewed-list" id="most-viewed-blogs"></div>
+      </div>
+
       <div class="back-to-home">
         <a href="index.html" class="back-btn">← Ana Sayfaya Dön</a>
       </div>
@@ -248,13 +350,25 @@
     <script>
       const blogListContainer = document.getElementById("blog-list");
       const blogArticlesContainer = document.getElementById("blog-articles");
+      const paginationControls = document.getElementById("pagination-controls");
+      const mostViewedBlogsContainer = document.getElementById("most-viewed-blogs");
 
-      function renderBlogList() {
+      const postsPerPage = 6; // Her sayfada gösterilecek blog yazısı sayısı
+      let currentPage = 1;
+
+      function renderBlogList(page = 1) {
+        currentPage = page;
         blogListContainer.innerHTML = "";
         blogArticlesContainer.innerHTML = "";
         blogArticlesContainer.style.display = "none";
 
-        getBlogPosts().forEach(post => {
+        const allPosts = getBlogPosts();
+        const totalPages = Math.ceil(allPosts.length / postsPerPage);
+        const startIndex = (currentPage - 1) * postsPerPage;
+        const endIndex = startIndex + postsPerPage;
+        const postsToDisplay = allPosts.slice(startIndex, endIndex);
+
+        postsToDisplay.forEach(post => {
           const blogCard = document.createElement("article");
           blogCard.className = "blog-card";
           blogCard.innerHTML = `
@@ -274,23 +388,62 @@
             </div>
           `;
           blogListContainer.appendChild(blogCard);
+        });
 
-          const articleElement = document.createElement("article");
-          articleElement.id = `${post.id}-article`;
-          articleElement.className = "blog-article";
-          articleElement.style.display = "none";
-          articleElement.innerHTML = `
-            ${post.content}
-            <div class="back-to-home">
-              <a href="#" class="back-btn" onclick="showBlogList()">← Blog Listesine Dön</a>
-            </div>
+        renderPagination(totalPages);
+        renderMostViewedBlogs();
+      }
+
+      function renderPagination(totalPages) {
+        paginationControls.innerHTML = "";
+
+        const prevButton = document.createElement("button");
+        prevButton.textContent = "Önceki";
+        prevButton.disabled = currentPage === 1;
+        prevButton.onclick = () => renderBlogList(currentPage - 1);
+        paginationControls.appendChild(prevButton);
+
+        for (let i = 1; i <= totalPages; i++) {
+          const pageButton = document.createElement("button");
+          pageButton.textContent = i;
+          pageButton.disabled = currentPage === i;
+          pageButton.onclick = () => renderBlogList(i);
+          paginationControls.appendChild(pageButton);
+        }
+
+        const nextButton = document.createElement("button");
+        nextButton.textContent = "Sonraki";
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.onclick = () => renderBlogList(currentPage + 1);
+        paginationControls.appendChild(nextButton);
+      }
+
+      function renderMostViewedBlogs() {
+        mostViewedBlogsContainer.innerHTML = "";
+        // Simulate most viewed by picking a few popular ones or random ones
+        const allPosts = getBlogPosts();
+        const popularPosts = [
+          getBlogPostById("kar-hesaplama"),
+          getBlogPostById("trendyol-seo-stratejileri"),
+          getBlogPostById("trendyol-kesinti-hesaplama"),
+        ].filter(Boolean); // Filter out any undefined if ID not found
+
+        popularPosts.forEach(post => {
+          const mvCard = document.createElement("div");
+          mvCard.className = "most-viewed-card";
+          mvCard.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.excerpt}</p>
+            <a href="#${post.id}" onclick="showArticle(\'${post.id}\')">Devamını Oku →</a>
           `;
-          blogArticlesContainer.appendChild(articleElement);
+          mostViewedBlogsContainer.appendChild(mvCard);
         });
       }
 
       function showArticle(id) {
         blogListContainer.style.display = "none";
+        paginationControls.style.display = "none";
+        mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "none";
         blogArticlesContainer.style.display = "block";
         getBlogPosts().forEach(post => {
           const articleElement = document.getElementById(`${post.id}-article`);
@@ -305,8 +458,11 @@
 
       function showBlogList() {
         blogListContainer.style.display = "grid";
+        paginationControls.style.display = "flex";
+        mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "block";
         blogArticlesContainer.style.display = "none";
         window.scrollTo(0, 0); // Scroll to top of the list
+        renderBlogList(currentPage); // Re-render current page to ensure correct state
       }
 
       // Initial render
