@@ -348,135 +348,157 @@
 
     <script src="blog-data.js"></script>
     <script>
-      const blogListContainer = document.getElementById("blog-list");
-      const blogArticlesContainer = document.getElementById("blog-articles");
-      const paginationControls = document.getElementById("pagination-controls");
-      const mostViewedBlogsContainer = document.getElementById("most-viewed-blogs");
-
-      const postsPerPage = 6; // Her sayfada gösterilecek blog yazısı sayısı
-      let currentPage = 1;
-
-      function renderBlogList(page = 1) {
-        currentPage = page;
-        blogListContainer.innerHTML = "";
-        blogArticlesContainer.innerHTML = "";
-        blogArticlesContainer.style.display = "none";
-
-        const allPosts = getBlogPosts();
-        const totalPages = Math.ceil(allPosts.length / postsPerPage);
-        const startIndex = (currentPage - 1) * postsPerPage;
-        const endIndex = startIndex + postsPerPage;
-        const postsToDisplay = allPosts.slice(startIndex, endIndex);
-
-        postsToDisplay.forEach(post => {
-          const blogCard = document.createElement("article");
-          blogCard.className = "blog-card";
-          blogCard.innerHTML = `
-            <div class="blog-card-image">
-              ${post.icon}
-            </div>
-            <div class="blog-card-content">
-              <h2 class="blog-card-title">${post.title}</h2>
-              <div class="blog-card-meta">
-                <span>${post.readTime}</span>
-                <span>${post.category}</span>
-              </div>
-              <p class="blog-card-excerpt">
-                ${post.excerpt}
-              </p>
-              <a href="#${post.id}" class="read-more-btn" onclick="showArticle(\'${post.id}\')">Devamını Oku</a>
-            </div>
-          `;
-          blogListContainer.appendChild(blogCard);
-        });
-
-        renderPagination(totalPages);
-        renderMostViewedBlogs();
-      }
-
-      function renderPagination(totalPages) {
-        paginationControls.innerHTML = "";
-
-        const prevButton = document.createElement("button");
-        prevButton.textContent = "Önceki";
-        prevButton.disabled = currentPage === 1;
-        prevButton.onclick = () => renderBlogList(currentPage - 1);
-        paginationControls.appendChild(prevButton);
-
-        for (let i = 1; i <= totalPages; i++) {
-          const pageButton = document.createElement("button");
-          pageButton.textContent = i;
-          pageButton.disabled = currentPage === i;
-          pageButton.onclick = () => renderBlogList(i);
-          paginationControls.appendChild(pageButton);
+      document.addEventListener("DOMContentLoaded", function() {
+        // Helper function to get all blog posts
+        function getBlogPosts() {
+          return blogPosts; // blogPosts is defined in blog-data.js
         }
 
-        const nextButton = document.createElement("button");
-        nextButton.textContent = "Sonraki";
-        nextButton.disabled = currentPage === totalPages;
-        nextButton.onclick = () => renderBlogList(currentPage + 1);
-        paginationControls.appendChild(nextButton);
-      }
+        // Helper function to get a blog post by ID
+        function getBlogPostById(id) {
+          return blogPosts.find(post => post.id === id); // blogPosts is defined in blog-data.js
+        }
 
-      function renderMostViewedBlogs() {
-        mostViewedBlogsContainer.innerHTML = "";
-        // Simulate most viewed by picking a few popular ones or random ones
-        const allPosts = getBlogPosts();
-        const popularPosts = [
-          getBlogPostById("kar-hesaplama"),
-          getBlogPostById("trendyol-seo-stratejileri"),
-          getBlogPostById("trendyol-kesinti-hesaplama"),
-        ].filter(Boolean); // Filter out any undefined if ID not found
+        const blogListContainer = document.getElementById("blog-list");
+        const blogArticlesContainer = document.getElementById("blog-articles");
+        const paginationControls = document.getElementById("pagination-controls");
+        const mostViewedBlogsContainer = document.getElementById("most-viewed-blogs");
 
-        popularPosts.forEach(post => {
-          const mvCard = document.createElement("div");
-          mvCard.className = "most-viewed-card";
-          mvCard.innerHTML = `
-            <h3>${post.title}</h3>
-            <p>${post.excerpt}</p>
-            <a href="#${post.id}" onclick="showArticle(\'${post.id}\')">Devamını Oku →</a>
-          `;
-          mostViewedBlogsContainer.appendChild(mvCard);
-        });
-      }
+        const postsPerPage = 6; // Her sayfada gösterilecek blog yazısı sayısı
+        let currentPage = 1;
 
-      function showArticle(id) {
-        blogListContainer.style.display = "none";
-        paginationControls.style.display = "none";
-        mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "none";
-        blogArticlesContainer.style.display = "block";
-        getBlogPosts().forEach(post => {
-          const articleElement = document.getElementById(`${post.id}-article`);
-          if (post.id === id) {
-            articleElement.style.display = "block";
-            window.scrollTo(0, 0); // Scroll to top of the article
-          } else {
+        function renderBlogList(page = 1) {
+          currentPage = page;
+          blogListContainer.innerHTML = "";
+          blogArticlesContainer.innerHTML = "";
+          blogArticlesContainer.style.display = "none";
+
+          const allPosts = getBlogPosts();
+          const totalPages = Math.ceil(allPosts.length / postsPerPage);
+          const startIndex = (currentPage - 1) * postsPerPage;
+          const endIndex = startIndex + postsPerPage;
+          const postsToDisplay = allPosts.slice(startIndex, endIndex);
+
+          postsToDisplay.forEach(post => {
+            const blogCard = document.createElement("article");
+            blogCard.className = "blog-card";
+            blogCard.innerHTML = `
+              <div class="blog-card-image">
+                ${post.icon}
+              </div>
+              <div class="blog-card-content">
+                <h2 class="blog-card-title">${post.title}</h2>
+                <div class="blog-card-meta">
+                  <span>${post.readTime}</span>
+                  <span>${post.category}</span>
+                </div>
+                <p class="blog-card-excerpt">
+                  ${post.excerpt}
+                </p>
+                <a href="#${post.id}" class="read-more-btn" onclick="showArticle(\'${post.id}\')">Devamını Oku</a>
+              </div>
+            `;
+            blogListContainer.appendChild(blogCard);
+
+            const articleElement = document.createElement("article");
+            articleElement.id = `${post.id}-article`;
+            articleElement.className = "blog-article";
             articleElement.style.display = "none";
+            articleElement.innerHTML = `
+              ${post.content}
+              <div class="back-to-home">
+                <a href="#" class="back-btn" onclick="showBlogList()">← Blog Listesine Dön</a>
+              </div>
+            `;
+            blogArticlesContainer.appendChild(articleElement);
+          });
+
+          renderPagination(totalPages);
+          renderMostViewedBlogs();
+        }
+
+        function renderPagination(totalPages) {
+          paginationControls.innerHTML = "";
+
+          const prevButton = document.createElement("button");
+          prevButton.textContent = "Önceki";
+          prevButton.disabled = currentPage === 1;
+          prevButton.onclick = () => renderBlogList(currentPage - 1);
+          paginationControls.appendChild(prevButton);
+
+          for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            pageButton.disabled = currentPage === i;
+            pageButton.onclick = () => renderBlogList(i);
+            paginationControls.appendChild(pageButton);
           }
-        });
-      }
 
-      function showBlogList() {
-        blogListContainer.style.display = "grid";
-        paginationControls.style.display = "flex";
-        mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "block";
-        blogArticlesContainer.style.display = "none";
-        window.scrollTo(0, 0); // Scroll to top of the list
-        renderBlogList(currentPage); // Re-render current page to ensure correct state
-      }
+          const nextButton = document.createElement("button");
+          nextButton.textContent = "Sonraki";
+          nextButton.disabled = currentPage === totalPages;
+          nextButton.onclick = () => renderBlogList(currentPage + 1);
+          paginationControls.appendChild(nextButton);
+        }
 
-      // Initial render
-      renderBlogList();
+        function renderMostViewedBlogs() {
+          mostViewedBlogsContainer.innerHTML = "";
+          // Simulate most viewed by picking a few popular ones or random ones
+          const allPosts = getBlogPosts();
+          const popularPosts = [
+            getBlogPostById("trendyol-komisyon-hesaplama"),
+            getBlogPostById("trendyol-kar-hesaplama"),
+            getBlogPostById("trendyol-seo-stratejileri"),
+          ].filter(Boolean); // Filter out any undefined if ID not found
 
-      // Handle direct article links (e.g., from index.html CTA)
-      window.onload = function() {
+          popularPosts.forEach(post => {
+            const mvCard = document.createElement("div");
+            mvCard.className = "most-viewed-card";
+            mvCard.innerHTML = `
+              <h3>${post.title}</h3>
+              <p>${post.excerpt}</p>
+              <a href="#${post.id}" onclick="showArticle(\'${post.id}\')">Devamını Oku →</a>
+            `;
+            mostViewedBlogsContainer.appendChild(mvCard);
+          });
+        }
+
+        window.showArticle = function(id) {
+          blogListContainer.style.display = "none";
+          paginationControls.style.display = "none";
+          mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "none";
+          blogArticlesContainer.style.display = "block";
+          getBlogPosts().forEach(post => {
+            const articleElement = document.getElementById(`${post.id}-article`);
+            if (post.id === id) {
+              articleElement.style.display = "block";
+              window.scrollTo(0, 0); // Scroll to top of the article
+            } else {
+              articleElement.style.display = "none";
+            }
+          });
+        };
+
+        window.showBlogList = function() {
+          blogListContainer.style.display = "grid";
+          paginationControls.style.display = "flex";
+          mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "block";
+          blogArticlesContainer.style.display = "none";
+          window.scrollTo(0, 0); // Scroll to top of the list
+          renderBlogList(currentPage); // Re-render current page to ensure correct state
+        };
+
+        // Initial render
+        renderBlogList();
+
+        // Handle direct article links (e.g., from index.html CTA)
         if (window.location.hash) {
           const articleId = window.location.hash.substring(1);
           if (getBlogPostById(articleId)) {
             showArticle(articleId);
           }
         }
-      };
+      });
     </script>
 
     <!-- AdSense Reklam Birimi Örneği - Blog Sayfası -->
