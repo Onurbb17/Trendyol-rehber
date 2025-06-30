@@ -107,11 +107,7 @@ Herhangi bir sorun yaşarsanız veya ek özellik talepleriniz varsa lütfen ilet
 
 ---
 
-<<<<<<< HEAD
 **Geliştirici**: Manus AI  
-=======
-**Geliştirici**: Onurbb1717  
->>>>>>> d86830a0aa1fd37775c41f4772cf03453c172af2
 **Versiyon**: 1.0  
 **Tarih**: 26 Haziran 2025
 
