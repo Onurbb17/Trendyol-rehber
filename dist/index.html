@@ -240,6 +240,20 @@
         if (rootElement && rootElement.children.length > 0) {
           const mainContent = rootElement.querySelector("main") || rootElement.firstElementChild;
           
+          // Trendyol Rehber banner (SEO - ana sayfa üstünde)
+          const rehberBanner = document.createElement("div");
+          rehberBanner.className = "kargo-section";
+          rehberBanner.style.background = "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)";
+          rehberBanner.style.borderColor = "#93c5fd";
+          rehberBanner.innerHTML = `
+            <h2 class="kargo-section-title" style="color: white;">📖 Trendyol Rehber</h2>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">Satıcılar için kapsamlı rehber: Kar hesaplayıcı, komisyon, kargo fiyatları ve 17+ e-ticaret ipucu.</p>
+            <a href="trendyol-rehber.html" style="display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: #1e40af; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none;">
+              <span>Tüm Rehbere Git</span>
+              <span>→</span>
+            </a>
+          `;
+          
           // Kargo Fiyatları section
           const kargoSection = document.createElement("div");
           kargoSection.className = "kargo-section";
@@ -269,9 +283,11 @@
           `;
           
           if (mainContent && mainContent.parentNode) {
-            mainContent.parentNode.insertBefore(kargoSection, mainContent.nextSibling);
+            mainContent.parentNode.insertBefore(rehberBanner, mainContent.nextSibling);
+            mainContent.parentNode.insertBefore(kargoSection, rehberBanner.nextSibling);
             mainContent.parentNode.insertBefore(blogCTASection, kargoSection.nextSibling);
           } else {
+            rootElement.appendChild(rehberBanner);
             rootElement.appendChild(kargoSection);
             rootElement.appendChild(blogCTASection);
           }
@@ -297,6 +313,7 @@
       <a href="gizlilik-politikasi.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Gizlilik Politikası</a>
       <a href="hakkimizda.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Hakkımızda</a>
       <a href="sss.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">SSS</a>
+      <a href="trendyol-rehber.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Trendyol Rehber</a>
       <a href="kargo-fiyatlari.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Kargo Fiyatları</a>
       <a href="blog.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">E-ticaret Rehberi</a>
     </footer>

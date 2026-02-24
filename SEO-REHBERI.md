@@ -89,13 +89,23 @@ Google sıralamasında backlink çok kritiktir:
 
 ---
 
+## 🎯 1. Sayfa İçin Yapılanlar
+
+- **trendyol-rehber.html:** "Trendyol rehber" için özel pillar sayfa oluşturuldu
+- **Ana sayfa banner:** Kar hesaplayıcı üstünde "Trendyol Rehber" bölümü
+- **İç linkleme:** Tüm sayfalardan trendyol-rehber.html'e bağlantılar
+- **URL:** https://trendyolrehber.com/trendyol-rehber.html (temiz URL)
+
 ## ⏱️ Gerçekçi Beklenti
 
 - **1. ay:** Site indekslenir, ilk sıralamalar başlar
 - **3. ay:** "trendyol rehber" için 2. sayfa veya alt sıralar
-- **6. ay:** Düzenli içerik + backlink ile üst sıralara çıkma potansiyeli
+- **6. ay:** Düzenli içerik + backlink ile 1. sayfa potansiyeli
 
-**Önemli:** Rekabet yüksek (trendyol çok aranan bir kelime). Sabırlı olun ve içerik üretmeye devam edin.
+**1. sayfa için ek stratejiler:**
+- Uzun kuyruklu kelimeler: "trendyol satıcı rehberi 2026", "trendyol kar hesaplayıcı ücretsiz" (daha az rekabet)
+- Sosyal medyada paylaşım (her yeni içerik)
+- Backlink: Forum, blog yorumları, Quora
 
 ---
 
