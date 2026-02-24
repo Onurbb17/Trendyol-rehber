@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Trendyol satıcıları için e-ticaret rehberi. Hesap açma, ürün listeleme, kar hesaplama ve satış artırma ipuçları." />
     <meta name="keywords" content="trendyol, e-ticaret, satıcı rehberi, kar hesaplama, online satış" />
+    <meta property="og:title" content="Trendyol Satıcı Rehberi - E-ticaret Blog" />
+    <meta property="og:description" content="Trendyol satıcıları için e-ticaret rehberi. Hesap açma, ürün listeleme, kar hesaplama ve satış artırma ipuçları." />
+    <meta property="og:type" content="website" />
     <title>Trendyol Satıcı Rehberi - E-ticaret Blog</title>
     
     <!-- Google AdSense Doğrulama Meta Etiketi -->
@@ -320,6 +323,50 @@
         text-decoration: underline;
       }
 
+      /* Blog Search Styles */
+      .blog-search-wrapper {
+        margin-bottom: 2rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .blog-search-input {
+        width: 100%;
+        padding: 1rem 1.25rem 1rem 3rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 0.75rem;
+        font-size: 1rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .blog-search-input:focus {
+        outline: none;
+        border-color: #ff6b35;
+        box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+      }
+      .blog-search-wrapper {
+        position: relative;
+      }
+      .blog-search-wrapper::before {
+        content: "🔍";
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.1rem;
+      }
+      .blog-no-results {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: white;
+        border-radius: 1rem;
+        border: 1px dashed #e5e7eb;
+      }
+      .blog-no-results p {
+        color: #6b7280;
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+      }
+
     </style>
   </head>
   <body class="bg-gray-50">
@@ -327,6 +374,10 @@
       <div class="blog-header">
         <h1 class="text-4xl font-bold mb-4">Trendyol Satıcı Rehberi</h1>
         <p class="text-xl opacity-90">E-ticaret başarınızı artıracak rehber yazıları</p>
+      </div>
+
+      <div class="blog-search-wrapper">
+        <input type="text" id="blog-search" class="blog-search-input" placeholder="Blog ara... (başlık, kategori veya anahtar kelime)" />
       </div>
       
       <div class="blog-grid" id="blog-list"></div>
@@ -362,9 +413,11 @@
       const blogArticlesContainer = document.getElementById("blog-articles");
       const paginationControls = document.getElementById("pagination-controls");
       const mostViewedBlogsContainer = document.getElementById("most-viewed-blogs");
+      const blogSearchInput = document.getElementById("blog-search");
 
       const postsPerPage = 6; // Her sayfada gösterilecek blog yazısı sayısı
       let currentPage = 1;
+      let searchTerm = "";
 
       // Global functions to be called from HTML onclick
       window.showArticle = function(id) {
@@ -393,6 +446,17 @@
       };
 
       document.addEventListener("DOMContentLoaded", function() {
+        // Arama filtresi
+        function filterPosts(posts) {
+          if (!searchTerm.trim()) return posts;
+          const term = searchTerm.toLowerCase().trim();
+          return posts.filter(post =>
+            post.title.toLowerCase().includes(term) ||
+            post.excerpt.toLowerCase().includes(term) ||
+            post.category.toLowerCase().includes(term)
+          );
+        }
+
         function renderBlogList(page = 1) {
           currentPage = page;
           blogListContainer.innerHTML = "";
@@ -400,11 +464,22 @@
           blogArticlesContainer.style.display = "none";
 
           const allPosts = getBlogPosts();
-          const totalPages = Math.ceil(allPosts.length / postsPerPage);
+          const filteredPosts = filterPosts(allPosts);
+          const totalPages = Math.max(1, Math.ceil(filteredPosts.length / postsPerPage));
           const startIndex = (currentPage - 1) * postsPerPage;
           const endIndex = startIndex + postsPerPage;
-          const postsToDisplay = allPosts.slice(startIndex, endIndex);
+          const postsToDisplay = filteredPosts.slice(startIndex, endIndex);
 
+          if (filteredPosts.length === 0) {
+            const searchMsg = searchTerm.trim() ? `"${searchTerm}" için sonuç bulunamadı.` : "Sonuç bulunamadı.";
+            blogListContainer.innerHTML = `
+              <div class="blog-no-results" style="grid-column: 1 / -1;">
+                <p>🔍 ${searchMsg}</p>
+                <p>Arama teriminizi değiştirmeyi veya farklı anahtar kelimeler denemeyi öneririz.</p>
+              </div>
+            `;
+            paginationControls.innerHTML = "";
+          } else {
           postsToDisplay.forEach(post => {
             const blogCard = document.createElement("article");
             blogCard.className = "blog-card";
@@ -441,6 +516,7 @@
 
           renderPagination(totalPages);
           renderMostViewedBlogs();
+          }
         }
 
         function renderPagination(totalPages) {
@@ -472,8 +548,8 @@
           // Simulate most viewed by picking a few popular ones or random ones
           const allPosts = getBlogPosts();
           const popularPosts = [
-            getBlogPostById("trendyol-komisyon-hesaplama"),
-            getBlogPostById("trendyol-kar-hesaplama"),
+            getBlogPostById("kar-hesaplama"),
+            getBlogPostById("trendyol-karlilik-hesaplama"),
             getBlogPostById("trendyol-seo-stratejileri"),
           ].filter(Boolean); // Filter out any undefined if ID not found
 
@@ -491,6 +567,15 @@
 
         // Initial render
         renderBlogList();
+
+        // Arama input event listener
+        if (blogSearchInput) {
+          blogSearchInput.addEventListener("input", function() {
+            searchTerm = this.value;
+            currentPage = 1;
+            renderBlogList(1);
+          });
+        }
 
         // Handle direct article links (e.g., from index.html CTA)
         if (window.location.hash) {

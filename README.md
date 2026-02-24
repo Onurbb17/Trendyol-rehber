@@ -4,8 +4,15 @@ Bu proje, mevcut Trendyol kar hesaplayıcı uygulamasına blog bölümü eklenmi
 
 ## 🚀 Yeni Özellikler
 
+### v1.1 Güncellemeleri (Şubat 2025)
+- **Blog arama özelliği** - Başlık, özet ve kategoriye göre anlık arama
+- **SEO iyileştirmeleri** - sitemap.xml, robots.txt eklendi
+- **404 sayfası** - Özel hata sayfası
+- **Open Graph** meta etiketleri - Sosyal medya paylaşımı için
+- **Vercel yapılandırması** - vercel.json ile deploy optimizasyonu
+
 ### Blog Bölümü
-- **4 adet SEO dostu blog yazısı** içeren kapsamlı rehber sayfası
+- **12 adet SEO dostu blog yazısı** içeren kapsamlı rehber sayfası
 - **Responsive tasarım** - mobil ve masaüstü uyumlu
 - **Tema uyumlu tasarım** - mevcut projenin renk şeması ve stiline uygun
 - **Interaktif navigasyon** - blog yazıları arasında kolay geçiş
@@ -41,7 +48,11 @@ Bu proje, mevcut Trendyol kar hesaplayıcı uygulamasına blog bölümü eklenmi
 ```
 dist/
 ├── index.html              # Ana sayfa (blog butonu eklenmiş)
-├── blog.html               # Blog ana sayfası ve tüm yazılar
+├── blog.html               # Blog ana sayfası (arama özellikli)
+├── blog-data.js            # Blog içerik verisi
+├── 404.html                # Özel 404 sayfası
+├── sitemap.xml             # SEO sitemap
+├── robots.txt              # Arama motoru yönergeleri
 ├── index-original.html     # Orijinal ana sayfa (yedek)
 ├── assets/
 │   ├── index-BehjH3cC.css  # Stil dosyası
@@ -107,7 +118,12 @@ Herhangi bir sorun yaşarsanız veya ek özellik talepleriniz varsa lütfen ilet
 
 ---
 
-**Geliştirici**:  
-**Versiyon**: 1.0  
-**Tarih**: 26 Haziran 2025
+**Versiyon**: 1.1  
+**Tarih**: Şubat 2025
+
+---
+
+## 📤 GitHub Güncelleme
+
+Projeyi GitHub'a güncellemek için `GITHUB-GUNCELLEME.md` dosyasına bakın.
 
