@@ -805,6 +805,248 @@ const blogPosts = [
           <a href=\"#\" class=\"back-btn\" onclick=\"showBlogList()\">← Blog Listesine Dön</a>
         </div>
       `
+  },
+  {
+    id: 'trendyol-stok-yonetimi',
+    title: 'Trendyol Stok Yönetimi: Satış Kaçırmadan Akıllı Stok Kontrolü',
+    excerpt: 'Trendyol\'da stok takibi, stok uyarıları ve stok optimizasyonu ile satışlarınızı kaçırmayın.',
+    readTime: '7 dk okuma',
+    category: 'Operasyon',
+    icon: '📋',
+    content: `
+        <h1>Trendyol Stok Yönetimi: Satış Kaçırmadan Akıllı Stok Kontrolü</h1>
+        
+        <p>E-ticarette stok yönetimi, hem stokta kalmayı hem de satış fırsatlarını kaçırmamayı dengeleyen kritik bir süreçtir. Trendyol\'da stok tükenmesi mağaza performansınızı düşürürken, fazla stok da nakit akışınızı zorlayabilir. İşte akıllı stok yönetimi için ipuçları:</p>
+        
+        <h2>1. Stok Seviyesi Belirleme</h2>
+        
+        <p>Her ürün için minimum ve maksimum stok seviyeleri belirleyin. Satış hızınıza göre bu seviyeleri düzenli olarak gözden geçirin.</p>
+        
+        <ul>
+          <li><strong>Minimum Stok:</strong> Siparişleri karşılayacak en düşük miktar</li>
+          <li><strong>Maksimum Stok:</strong> Depolama maliyetlerini kontrol altında tutacak üst limit</li>
+        </ul>
+        
+        <h2>2. Trendyol Stok Uyarılarını Kullanın</h2>
+        
+        <p>Trendyol Satıcı Paneli\'nde stok uyarıları ayarlayın. Kritik seviyeye indiğinde bildirim alarak hızlı aksiyon alabilirsiniz.</p>
+        
+        <div class=\"highlight-box\">
+          <p><strong>İpucu:</strong> Yoğun satış dönemlerinden (11.11, Sezon indirimleri) önce stoklarınızı artırın. Kampanya dönemlerinde stok tükenmesi mağaza puanınızı olumsuz etkiler.</p>
+        </div>
+        
+        <h2>3. Tedarikçi ile İletişim</h2>
+        
+        <p>Tedarik sürelerini bilin ve siparişlerinizi buna göre planlayın. Acil stok ihtiyacında hızlı teslimat yapabilecek yedek tedarikçiler belirleyin.</p>
+        
+        <h2>4. Stok Maliyetini Kar Hesaplamaya Dahil Edin</h2>
+        
+        <p>Depolama ve elde kalma maliyetlerini ürün karlılık hesaplamalarınıza ekleyin. Düşük dönüşüm hızına sahip ürünlerde kar marjınızı yeniden değerlendirin.</p>
+        
+        <div class=\"cta-box\">
+          <h3>Ürün Karlılığınızı Hesaplayın!</h3>
+          <p>Stok maliyetlerinizi de dahil ederek gerçek kar marjınızı hesaplayıcımızla görün.</p>
+          <a href=\"index.html\" class=\"cta-btn\">Kar Hesaplayıcıya Git</a>
+        </div>
+        
+        <div class=\"back-to-home\">
+          <a href=\"#\" class=\"back-btn\" onclick=\"showBlogList()\">← Blog Listesine Dön</a>
+        </div>
+      `
+  },
+  {
+    id: 'trendyol-urun-fotografi',
+    title: 'Trendyol Ürün Fotoğrafı: Satış Artıran Görsel Stratejileri',
+    excerpt: 'Trendyol\'da dönüşüm oranını artıran profesyonel ürün fotoğrafı çekimi ve görsel optimizasyon ipuçları.',
+    readTime: '6 dk okuma',
+    category: 'SEO & Optimizasyon',
+    icon: '📷',
+    content: `
+        <h1>Trendyol Ürün Fotoğrafı: Satış Artıran Görsel Stratejileri</h1>
+        
+        <p>E-ticarette müşteri ürünü fiziksel olarak göremediği için fotoğraflar satın alma kararının en önemli belirleyicisidir. Kaliteli ürün fotoğrafları, hem dönüşüm oranınızı hem de müşteri memnuniyetini artırır.</p>
+        
+        <h2>1. Temel Fotoğraf Kuralları</h2>
+        
+        <ul>
+          <li><strong>Yüksek Çözünürlük:</strong> Trendyol\'un önerdiği minimum çözünürlüğe uyun</li>
+          <li><strong>Beyaz veya Nötr Arka Plan:</strong> Ürünü öne çıkarın</li>
+          <li><strong>Farklı Açılar:</strong> En az 4-6 farklı açıdan çekim yapın</li>
+          <li><strong>Doğal Işık:</strong> Ürünün gerçek renklerini yansıtın</li>
+        </ul>
+        
+        <h2>2. Detay ve Ölçek Görselleri</h2>
+        
+        <p>Müşteriler ürünün dokusunu, detaylarını ve boyutunu görmek ister. Yakın çekim detay fotoğrafları ve ölçek referansı (örneğin el veya kredi kartı yanında) ekleyin.</p>
+        
+        <h2>3. Video Kullanımı</h2>
+        
+        <p>Trendyol ürün videolarına izin verir. Kısa ürün videoları dönüşüm oranını önemli ölçüde artırabilir.</p>
+        
+        <div class=\"highlight-box\">
+          <p><strong>İpucu:</strong> İade oranını düşürmek için ürünün gerçekte nasıl göründüğünü net bir şekilde gösterin. Aşırı retouch yapılmış fotoğraflar müşteri beklentisi ile uyuşmazsa iade artar.</p>
+        </div>
+        
+        <h2>4. Görsel Dosya İsimlendirme</h2>
+        
+        <p>Dosya adlarını anahtar kelimelerle optimize edin (örn: kadin-yazlik-elbise-mavi.jpg). Bu, Trendyol içi SEO\'ya katkı sağlar.</p>
+        
+        <div class=\"cta-box\">
+          <h3>Görsel Maliyetlerinizi Hesaplayın!</h3>
+          <p>Ürün maliyetlerinize fotoğraf çekim giderlerini ekleyerek gerçek karlılığınızı hesaplayın.</p>
+          <a href=\"index.html\" class=\"cta-btn\">Kar Hesaplayıcıya Git</a>
+        </div>
+        
+        <div class=\"back-to-home\">
+          <a href=\"#\" class=\"back-btn\" onclick=\"showBlogList()\">← Blog Listesine Dön</a>
+        </div>
+      `
+  },
+  {
+    id: 'trendyol-kampanya-donemleri',
+    title: 'Trendyol Kampanya Dönemleri: 11.11 ve Sezon İndirimlerinde Başarı',
+    excerpt: '11.11, Black Friday ve sezon kampanyalarında satışlarınızı nasıl maksimize edeceğinizi öğrenin.',
+    readTime: '8 dk okuma',
+    category: 'Pazarlama',
+    icon: '🎯',
+    content: `
+        <h1>Trendyol Kampanya Dönemleri: 11.11 ve Sezon İndirimlerinde Başarı</h1>
+        
+        <p>Trendyol\'un düzenlediği 11.11, Black Friday, Sezon İndirimleri gibi kampanya dönemleri, satışlarınızı katlayabileceğiniz altın fırsatlardır. Bu dönemlere doğru hazırlanmak, hem satış hacmini hem de mağaza görünürlüğünüzü artırır.</p>
+        
+        <h2>1. Kampanya Takvimi</h2>
+        
+        <p>Yıllık kampanya takvimini önceden takip edin ve planlamanızı buna göre yapın:</p>
+        
+        <ul>
+          <li><strong>11.11 (Tekler Günü):</strong> Kasım ayında, genellikle yılın en büyük kampanyası</li>
+          <li><strong>Black Friday:</strong> Kasım sonu</li>
+          <li><strong>Sezon İndirimleri:</strong> Yaz ve kış sezonu geçişlerinde</li>
+          <li><strong>Özel Günler:</strong> Anneler Günü, Babalar Günü vb.</li>
+        </ul>
+        
+        <h2>2. Stok ve Fiyat Planlaması</h2>
+        
+        <p>Kampanya öncesi stoklarınızı artırın. İndirim oranınızı belirlerken kar marjınızı koruyacak şekilde hesaplama yapın.</p>
+        
+        <div class=\"highlight-box\">
+          <p><strong>İpucu:</strong> Kampanya indirimi uygularken kar hesaplayıcımızı kullanarak indirimli fiyatta bile karlı kalacağınızdan emin olun.</p>
+        </div>
+        
+        <h2>3. Reklam Bütçesi</h2>
+        
+        <p>Kampanya dönemlerinde rekabet artar. Reklam bütçenizi önceden planlayın ve kampanya süresince artırın.</p>
+        
+        <h2>4. Müşteri Hizmetleri Hazırlığı</h2>
+        
+        <p>Yoğun dönemde sipariş ve soru sayısı artar. Ek destek veya hızlı yanıt süreleri planlayın.</p>
+        
+        <div class=\"cta-box\">
+          <h3>Kampanya Karlılığınızı Hesaplayın!</h3>
+          <p>İndirimli fiyatlarda bile kar marjınızı korumak için hesaplayıcımızı kullanın.</p>
+          <a href=\"index.html\" class=\"cta-btn\">Kar Hesaplayıcıya Git</a>
+        </div>
+        
+        <div class=\"back-to-home\">
+          <a href=\"#\" class=\"back-btn\" onclick=\"showBlogList()\">← Blog Listesine Dön</a>
+        </div>
+      `
+  },
+  {
+    id: 'trendyol-magaza-performans',
+    title: 'Trendyol Mağaza Performans Puanı: Sıralamayı Yükselten Faktörler',
+    excerpt: 'Trendyol mağaza performans puanınızı artırarak arama sonuçlarında üst sıralara çıkın.',
+    readTime: '7 dk okuma',
+    category: 'Operasyon',
+    icon: '⭐',
+    content: `
+        <h1>Trendyol Mağaza Performans Puanı: Sıralamayı Yükselten Faktörler</h1>
+        
+        <p>Trendyol mağaza performans puanı, satıcıların arama sonuçlarında ve kategori sayfalarında sıralanmasını etkileyen önemli bir metrikdir. Yüksek performans puanı, daha fazla görünürlük ve dolayısıyla daha fazla satış demektir.</p>
+        
+        <h2>1. Performans Puanını Etkileyen Faktörler</h2>
+        
+        <ul>
+          <li><strong>Yanıt Süresi:</strong> Müşteri sorularına hızlı yanıt (24 saat içinde ideal)</li>
+          <li><strong>Kargo Teslim Süresi:</strong> Siparişleri zamanında kargoya teslim</li>
+          <li><strong>İade Oranı:</strong> Düşük iade oranı performansı artırır</li>
+          <li><strong>Müşteri Puanı:</strong> Olumlu yorumlar ve yüksek puan</li>
+          <li><strong>Stok Durumu:</strong> Stok tükenmesi puanı düşürür</li>
+        </ul>
+        
+        <h2>2. İyileştirme Stratejileri</h2>
+        
+        <p>Performans panelinizi düzenli takip edin. Zayıf olduğunuz alanlara odaklanın. Örneğin yanıt süreniz yüksekse SSS bölümü ekleyerek tekrarlayan soruları azaltın.</p>
+        
+        <div class=\"highlight-box\">
+          <p><strong>İpucu:</strong> Ürün açıklamalarınızı detaylı yaparak müşteri sorularını azaltın. Bu hem yanıt sürenizi iyileştirir hem de iade oranını düşürür.</p>
+        </div>
+        
+        <h2>3. Trendyol Satıcı Destek</h2>
+        
+        <p>Performans ile ilgili sorularınızda Trendyol satıcı destek ekibiyle iletişime geçin. Puanınızı nasıl iyileştirebileceğiniz konusunda rehberlik alabilirsiniz.</p>
+        
+        <h2>4. Karlılık ile Performans Dengesi</h2>
+        
+        <p>Hızlı kargo veya ek hizmetler maliyet artırabilir. Performans iyileştirmelerini kar hesaplamalarınıza dahil ederek sürdürülebilir bir denge kurun.</p>
+        
+        <div class=\"cta-box\">
+          <h3>Maliyetlerinizi Optimize Edin!</h3>
+          <p>Performans iyileştirmelerinin maliyet etkisini kar hesaplayıcımızla analiz edin.</p>
+          <a href=\"index.html\" class=\"cta-btn\">Kar Hesaplayıcıya Git</a>
+        </div>
+        
+        <div class=\"back-to-home\">
+          <a href=\"#\" class=\"back-btn\" onclick=\"showBlogList()\">← Blog Listesine Dön</a>
+        </div>
+      `
+  },
+  {
+    id: 'e-ticarette-ilk-satis',
+    title: 'E-ticarette İlk Satış: Trendyol\'da Sıfırdan Başlayanlar İçin Rehber',
+    excerpt: 'Trendyol\'da ilk satışınızı yapmak için adım adım strateji. Yeni başlayan satıcılar için pratik ipuçları.',
+    readTime: '9 dk okuma',
+    category: 'Başlangıç Rehberi',
+    icon: '🚀',
+    content: `
+        <h1>E-ticarette İlk Satış: Trendyol\'da Sıfırdan Başlayanlar İçin Rehber</h1>
+        
+        <p>Trendyol\'da satıcı hesabınızı açtınız, ürünlerinizi listelediniz ama henüz ilk satışınızı yapmadınız mı? İlk satış, hem motivasyon hem de algoritma açısından önemli bir dönüm noktasıdır. İşte ilk satışınızı hızlandıracak stratejiler:</p>
+        
+        <h2>1. Doğru Ürün Seçimi</h2>
+        
+        <p>İlk satışlar için orta fiyatlı, talep gören ve rekabetin aşırı olmadığı kategorilere odaklanın. Niş ürünler bazen daha hızlı satış getirebilir.</p>
+        
+        <h2>2. Fiyatlandırma</h2>
+        
+        <p>İlk aşamada rakiplerinize göre rekabetçi fiyat belirleyin. Kar marjınızı koruyarak küçük indirimler veya kampanya katılımı düşünün.</p>
+        
+        <div class=\"highlight-box\">
+          <p><strong>İpucu:</strong> Kar hesaplayıcımızla minimum kar marjınızı belirleyin. Bu fiyatın altına düşmeyin.</p>
+        </div>
+        
+        <h2>3. Görsel ve Açıklama Kalitesi</h2>
+        
+        <p>Yeni mağazalarda müşteri güveni kritiktir. Profesyonel fotoğraflar ve detaylı açıklamalar ilk satışı tetikleyebilir.</p>
+        
+        <h2>4. Reklam Desteği</h2>
+        
+        <p>İlk satışları hızlandırmak için sınırlı bütçeyle Trendyol reklamları deneyin. Ürün reklamları genellikle dönüşüm oranı yüksektir.</p>
+        
+        <h2>5. Sabır ve Süreklilik</h2>
+        
+        <p>İlk satış bazen birkaç gün veya hafta sürebilir. Ürünlerinizi güncel tutun, fiyatları gözden geçirin ve pes etmeyin.</p>
+        
+        <div class=\"cta-box\">
+          <h3>İlk Satışınız İçin Kar Hesaplayın!</h3>
+          <p>Ürünlerinizin karlılığını hesaplayarak doğru fiyatlandırma yapın.</p>
+          <a href=\"index.html\" class=\"cta-btn\">Kar Hesaplayıcıya Git</a>
+        </div>
+        
+        <div class=\"back-to-home\">
+          <a href=\"#\" class=\"back-btn\" onclick=\"showBlogList()\">← Blog Listesine Dön</a>
+        </div>
+      `
   }
 ];
 
