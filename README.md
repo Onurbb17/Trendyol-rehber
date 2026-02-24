@@ -107,7 +107,7 @@ Herhangi bir sorun yaşarsanız veya ek özellik talepleriniz varsa lütfen ilet
 
 ---
 
-**Geliştirici**: Manus AI  
+**Geliştirici**:  
 **Versiyon**: 1.0  
 **Tarih**: 26 Haziran 2025
 
