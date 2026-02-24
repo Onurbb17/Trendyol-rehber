@@ -137,6 +137,48 @@
         color: white;
       }
       
+      .kargo-section {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        padding: 2rem 1.5rem;
+        margin: 2rem 0;
+        border-radius: 1rem;
+        text-align: center;
+        border: 1px solid #bfdbfe;
+      }
+      
+      .kargo-section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e40af;
+        margin-bottom: 0.5rem;
+      }
+      
+      .kargo-section-date {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-bottom: 1rem;
+      }
+      
+      .kargo-section-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      
+      .kargo-section-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        color: white;
+      }
+      
       @media (max-width: 768px) {
         .blog-button-container {
           bottom: 1rem;
@@ -160,6 +202,15 @@
         .blog-cta-description {
           font-size: 1rem;
         }
+        
+        .kargo-section {
+          padding: 1.5rem 1rem;
+          margin: 1.5rem 0;
+        }
+        
+        .kargo-section-title {
+          font-size: 1.25rem;
+        }
       }
     </style>
   </head>
@@ -178,12 +229,26 @@
     </div>
     
     <script>
-      // Wait for the React app to load, then insert the blog CTA section
+      // Wait for the React app to load, then insert the kargo and blog CTA sections
       setTimeout(function() {
-        // Find a suitable place to insert the blog CTA
         const rootElement = document.getElementById("root");
         if (rootElement && rootElement.children.length > 0) {
-          // Create the blog CTA section
+          const mainContent = rootElement.querySelector("main") || rootElement.firstElementChild;
+          
+          // Kargo Fiyatları section
+          const kargoSection = document.createElement("div");
+          kargoSection.className = "kargo-section";
+          kargoSection.innerHTML = `
+            <h2 class="kargo-section-title">📄 Güncel Kargo Fiyatları</h2>
+            <p class="kargo-section-date">Son güncelleme: 29 Ocak 2026</p>
+            <p style="color: #374151; margin-bottom: 1rem;">Kar hesaplamalarınızda kullanabileceğiniz güncel kargo ücretleri tablosunu PDF olarak indirin.</p>
+            <a href="kargo-fiyatlari.html" class="kargo-section-btn">
+              <span>⬇</span>
+              <span>Kargo Fiyatlarını İndir</span>
+            </a>
+          `;
+          
+          // Blog CTA section
           const blogCTASection = document.createElement("div");
           blogCTASection.className = "blog-cta-section";
           blogCTASection.innerHTML = `
@@ -198,12 +263,11 @@
             </a>
           `;
           
-          // Try to insert after the main calculator content
-          const mainContent = rootElement.querySelector("main") || rootElement.firstElementChild;
           if (mainContent && mainContent.parentNode) {
-            mainContent.parentNode.insertBefore(blogCTASection, mainContent.nextSibling);
+            mainContent.parentNode.insertBefore(kargoSection, mainContent.nextSibling);
+            mainContent.parentNode.insertBefore(blogCTASection, kargoSection.nextSibling);
           } else {
-            // Fallback: append to root
+            rootElement.appendChild(kargoSection);
             rootElement.appendChild(blogCTASection);
           }
         }
@@ -228,6 +292,7 @@
       <a href="gizlilik-politikasi.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Gizlilik Politikası</a>
       <a href="hakkimizda.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Hakkımızda</a>
       <a href="sss.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">SSS</a>
+      <a href="kargo-fiyatlari.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Kargo Fiyatları</a>
       <a href="blog.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">E-ticaret Rehberi</a>
     </footer>
 
