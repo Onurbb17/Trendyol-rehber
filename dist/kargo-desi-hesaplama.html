@@ -50,34 +50,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Desi nedir?",
+          "name": "Desi ile kilogram aynı mı?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Desi, kargo firmalarının hacimsel ağırlığı ifade etmek için kullandığı bir birimdir. Hacimsel ağırlık, paketin boyutlarına (en x boy x yükseklik) göre hesaplanır ve kargo ücretinin belirlenmesinde kullanılır."
+            "text": "Hayır. Desi hacimsel ağırlık birimidir, kilogram ise fiziksel ağırlık birimidir. Desi paketin boyutlarından (en x boy x yükseklik / 3000) hesaplanır. Kargo firmaları her iki değeri karşılaştırır ve hangisi büyükse ona göre ücretlendirme yapar."
           }
         },
         {
           "@type": "Question",
-          "name": "Desi nasıl hesaplanır?",
+          "name": "1 desi kaç TL?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Desi formülü: (En x Boy x Yükseklik) / 3000. Ölçüler santimetre cinsinden girilir. Örnek: 30x40x50 cm boyutundaki paket için desi = (30×40×50)/3000 = 20 desi."
+            "text": "Desi başına ücret kargo firmasına, güzergaha ve anlaşma türüne göre değişir. Trendyol satıcıları için genellikle desi başına 2-5 TL aralığında ücretler uygulanır. Güncel fiyatlar için kargo firmasının tarifesini veya Kargo Fiyatları sayfamızı kontrol edin."
           }
         },
         {
           "@type": "Question",
-          "name": "Desi mi ağırlık mı kullanılır?",
+          "name": "Hangi kargo nasıl hesaplar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kargo firmaları desi (hacimsel ağırlık) ile fiziksel ağırlığı (kg) karşılaştırır ve hangisi büyükse ona göre ücretlendirme yapar. Hafif ama hacimli paketler desiye göre, ağır ve küçük paketler kg'a göre ücretlendirilir."
+            "text": "Türkiye'deki çoğu kargo firması (Trendyol, Yurtiçi, Aras, MNG, PTT, Sürat) standart desi formülünü kullanır: (En x Boy x Yükseklik) / 3000. Bazı uluslararası firmalar 5000 böleni kullanabilir. Hangi formülün uygulandığını firmadan teyit edin."
           }
         },
         {
           "@type": "Question",
-          "name": "Trendyol desi hesaplama formülü nedir?",
+          "name": "Trendyol hangi desi formülünü kullanır?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trendyol ve çoğu Türk kargo firması standart desi formülünü kullanır: (En x Boy x Yükseklik) / 3000. Ölçüler cm cinsindendir."
+            "text": "Trendyol, anlaşmalı kargo firmaları üzerinden standart Türkiye desi formülünü kullanır: (En x Boy x Yükseklik) / 3000. Ölçüler santimetre cinsindendir. Bu aracımızla hesapladığınız desi değeri Trendyol için geçerlidir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Desi yüksek çıkarsa ne olur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Desi yüksek çıkarsa kargo ücretiniz artar. Kargo firmaları desi ile kilogramı karşılaştırıp büyük olanı baz alır. Yüksek desi, paketinizin hacimli olduğu anlamına gelir; ambalajı küçültmek veya sıkıştırmak maliyeti düşürebilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "En uygun kargo nasıl seçilir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Desi hesapladıktan sonra farklı firmaların tarifelerini karşılaştırın. Trendyol satıcıları için platform anlaşmalı kargolar genelde avantajlıdır. Düzenli gönderim yapıyorsanız toplu anlaşma yapmayı, Kargo Fiyatları sayfamızdan güncel tarifeleri kontrol etmeyi öneririz."
           }
         }
       ]
@@ -139,87 +155,96 @@
       <section class="prose prose-gray max-w-none mb-12">
         <h2 id="desi-nedir" class="text-xl font-bold text-gray-900 mt-12 mb-4">Desi Nedir?</h2>
         <p class="text-gray-600 leading-relaxed mb-4">
-          <strong>Desi</strong>, kargo firmalarının paketlerin hacimsel ağırlığını ifade etmek için kullandığı bir birimdir. Fiziksel ağırlık (kg) yerine veya onunla birlikte kullanılır. Kargo ücretlendirmesinde, paketin kapladığı alan da dikkate alınır; çünkü hafif ama hacimli bir paket (örneğin yastık, battaniye) kargo aracında ağır bir paketten daha fazla yer kaplayabilir.
+          <strong>Desi</strong>, kargo firmalarının paketlerin hacimsel ağırlığını (volumetrik ağırlık) ifade etmek için kullandığı bir birimdir. Fiziksel ağırlık kilogram (kg) ile ölçülürken, desi paketin kapladığı hacme dayalı hesaplanır. Kargo lojistiğinde bu ayrım kritik öneme sahiptir: Bir kamyon veya kargo uçağında 1 kg demir ile 1 kg pamuk aynı ağırlığa sahip olsa da, pamuk çok daha fazla yer kaplar. Bu nedenle kargo firmaları sadece kilograma bakmakla yetinmez; paketin taşıma alanındaki gerçek maliyetini yansıtmak için desi kullanır.
         </p>
-        <p class="text-gray-600 leading-relaxed">
-          Kargo firmaları genellikle <strong>desi (hacimsel ağırlık)</strong> ile <strong>fiziksel ağırlık (kg)</strong> değerlerini karşılaştırır ve hangisi büyükse ona göre ücretlendirme yapar. Bu sayede hem ağır hem de hacimli paketler adil şekilde fiyatlandırılır.
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Kargo firmaları neden desi kullanır? Çünkü lojistik maliyeti büyük ölçüde taşıma kapasitesiyle ilişkilidir. Bir kargo aracı belirli sayıda paket taşıyabilir; hacimli paketler daha az ürün taşınmasına yol açar. Eğer sadece kilogram bazlı ücretlendirme yapılsaydı, hafif ama devasa paketler (yastık, battaniye, oyuncak ayı) neredeyse bedavaya taşınırken, kargo firması aynı alanda çok daha fazla ağır paket taşıyabilirdi. Desi sistemi bu adaletsizliği önler ve her paketin gerçek lojistik maliyetini yansıtır.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Desi fiyatı nasıl etkiler? Kargo firmaları <strong>desi (hacimsel ağırlık)</strong> ile <strong>fiziksel ağırlık (kg)</strong> değerlerini karşılaştırır ve <strong>hangisi büyükse ona göre ücretlendirme</strong> yapar. Örneğin 3 kg ağırlığında 25 desi çıkan bir paket, 25 desi üzerinden fiyatlandırılır. Bu sayede hem ağır demir parçaları hem de hafif ama hacimli tekstil ürünleri adil şekilde ücretlendirilir.
         </p>
 
         <h2 id="desi-nasil-hesaplanir" class="text-xl font-bold text-gray-900 mt-12 mb-4">Kargo Desi Nasıl Hesaplanır?</h2>
         <p class="text-gray-600 leading-relaxed mb-4">
-          Desi hesaplama formülü Türkiye'deki kargo firmaları (Trendyol, Yurtiçi, Aras, MNG, PTT vb.) tarafından standart olarak kullanılır:
+          Türkiye'deki kargo firmaları (Trendyol, Yurtiçi, Aras, MNG, PTT, Sürat vb.) standart bir desi formülü kullanır. Bu formül uluslararası kargo sektöründe yaygın kabul gören hacimsel ağırlık hesaplamasına dayanır:
         </p>
         <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg my-4">
           <p class="font-mono font-bold text-gray-800 text-lg">Desi = (En × Boy × Yükseklik) ÷ 3000</p>
-          <p class="text-sm text-gray-600 mt-2">Ölçüler santimetre (cm) cinsinden girilir.</p>
+          <p class="text-sm text-gray-600 mt-2">Tüm ölçüler santimetre (cm) cinsinden girilir. Paketin dış ölçüleri kullanılır; ambalaj dahildir.</p>
         </div>
-        <p class="text-gray-600 leading-relaxed mb-4"><strong>Örnek hesaplama:</strong></p>
-        <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-          <li>Paket boyutları: 30 cm × 40 cm × 50 cm</li>
-          <li>Hesaplama: (30 × 40 × 50) ÷ 3000 = 60.000 ÷ 3000 = <strong>20 desi</strong></li>
-        </ul>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          <strong>Örnek 1 — Elektronik kutu:</strong> 40 cm × 30 cm × 20 cm boyutunda bir laptop kutusu gönderiyorsunuz. Hesaplama: (40 × 30 × 20) ÷ 3000 = 24.000 ÷ 3000 = <strong>8 desi</strong>. Kutu 2 kg ağırlığında olsa bile, 8 desi 8 kg'dan küçük olduğu için bu paket 8 desi üzerinden ücretlendirilir (veya firma 8 kg ile 8 desiyi karşılaştırıp büyük olanı alır; bu örnekte ikisi de 8).
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          <strong>Örnek 2 — Tekstil paketi:</strong> 60 cm × 50 cm × 40 cm boyutunda bir yorgan paketi. Hesaplama: (60 × 50 × 40) ÷ 3000 = 120.000 ÷ 3000 = <strong>40 desi</strong>. Yorgan fiziksel olarak sadece 5 kg olsa bile, 40 desi çok daha yüksek olduğu için kargo ücreti 40 desi baz alınarak hesaplanır. Bu tür hacimli ürünlerde desi maliyeti belirleyici olur.
+        </p>
         <p class="text-gray-600 leading-relaxed">
-          Bu paket 20 desi olarak ücretlendirilir. Fiziksel ağırlığı 5 kg olsa bile, 20 desi daha büyük olduğu için kargo ücreti desiye göre hesaplanır.
+          Yukarıdaki hesaplama aracımızla paket boyutlarınızı girerek anında desi sonucunu alabilirsiniz. Ölçüleri paketin en geniş noktalarından alın; köşe yuvarlamaları veya çıkıntılar varsa bunları da dahil edin.
         </p>
 
         <h2 id="trendyol-desi" class="text-xl font-bold text-gray-900 mt-12 mb-4">Trendyol Satıcıları İçin Desi Neden Önemli?</h2>
         <p class="text-gray-600 leading-relaxed mb-4">
-          Trendyol'da satış yapan satıcılar için desi hesaplaması, <strong>kargo maliyetini</strong> ve dolayısıyla <strong>kar marjını</strong> doğrudan etkiler. Yanlış desi tahmini:
+          Trendyol'da satış yapan satıcılar için desi hesaplaması, <strong>kargo maliyetini</strong> ve dolayısıyla <strong>kar marjını</strong> doğrudan etkiler. E-ticarette ürün fiyatı belirlerken sadece alış maliyeti ve komisyon değil; kargo bedeli de net kara yansır. Yanlış veya eksik desi tahmini şu sorunlara yol açar:
         </p>
         <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-          <li>Beklenenden yüksek kargo ücreti ödemenize neden olabilir</li>
-          <li>Ürün fiyatlandırmasında hata yapmanıza yol açar</li>
-          <li>Karlılık hesaplamalarınızı bozar</li>
+          <li><strong>Beklenenden yüksek kargo ücreti:</strong> Ürünü 5 desi sanıp 15 desi çıkarsa, aradaki fark satıcı cebinden çıkar.</li>
+          <li><strong>Yanlış fiyatlandırma:</strong> Düşük desi tahminiyle koyduğunuz satış fiyatı, gerçek kargo maliyetini karşılamaz; zarar edersiniz.</li>
+          <li><strong>Karlılık illüzyonu:</strong> Kar hesaplayıcıda düşük kargo girerseniz net kar yüksek görünür; gerçekte ise marjınız erir.</li>
         </ul>
-        <p class="text-gray-600 leading-relaxed">
-          Desi hesaplama aracımızla paket boyutlarınızı önceden hesaplayarak kargo maliyetinizi doğru tahmin edebilir, kar hesaplayıcımızda bu maliyeti kullanarak gerçek kar marjınızı görebilirsiniz.
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Desi hesaplama aracımızla paket boyutlarınızı önceden hesaplayın. Ardından <a href="index.html" class="text-primary font-medium hover:underline">Trendyol Kar Hesaplama</a> sayfamızda bu kargo maliyetini girerek gerçek kar marjınızı görün. Ürün listelemeden önce desi kontrolü yapmak, kampanya ve indirim dönemlerinde bile karlı kalmanızı sağlar.
         </p>
 
-        <h2 id="buyuk-paket" class="text-xl font-bold text-gray-900 mt-12 mb-4">Büyük Paket Sınırları</h2>
+        <h2 id="buyuk-paket" class="text-xl font-bold text-gray-900 mt-12 mb-4">Büyük Paket ve Kargo Limitleri</h2>
         <p class="text-gray-600 leading-relaxed mb-4">
-          Kargo firmaları genellikle belirli boyut ve ağırlık sınırları uygular. Bu sınırlar firmaya göre değişir:
+          Kargo firmaları standart taşıma koşulları için belirli boyut ve ağırlık sınırları uygular. Bu limitleri aşan paketler ek ücrete tabi olabilir veya özel taşıma gerektirebilir. Trendyol ve diğer platformlarda satış yaparken bu sınırları bilmek önemlidir.
         </p>
         <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-          <li><strong>Standart paket:</strong> Çoğu firma tek kenarı 150 cm'yi, toplam (en+boy+yükseklik) 300 cm'yi aşmayan paketleri normal ücretle taşır</li>
-          <li><strong>Büyük paket:</strong> Bu sınırları aşan paketler ek ücret veya özel taşıma gerektirebilir</li>
-          <li><strong>Maksimum ağırlık:</strong> Genellikle 30–50 kg arası limitler vardır</li>
+          <li><strong>Standart paket limitleri:</strong> Çoğu firma tek kenarı 150 cm'yi, toplam boyut (en + boy + yükseklik) 300 cm'yi aşmayan paketleri normal tarife ile taşır. Bu sınırlar içindeki paketler desi veya kg bazlı standart ücretle gönderilir.</li>
+          <li><strong>Büyük paket (oversize) ücreti:</strong> Limitleri aşan paketler (mobilya, spor ekipmanı, büyük elektronik) ek desi veya sabit ek ücret ile taşınır. Bazı firmalar "büyük paket" tanımı için 2 m veya daha fazla tek kenar uzunluğu kullanır.</li>
+          <li><strong>Maksimum ağırlık:</strong> Genellikle 30–50 kg arası tek paket limiti vardır. Daha ağır gönderiler parçalı veya paletli taşıma gerektirir.</li>
+          <li><strong>Minimum ücret:</strong> Bazı firmalar 1 desi veya belirli bir minimum ücret uygular; çok küçük paketlerde bile bu minimum tahsil edilir.</li>
         </ul>
-        <p class="text-gray-600 leading-relaxed">
-          Ürününüzü göndermeden önce kullandığınız kargo firmasının güncel sınırlarını kontrol etmenizi öneririz.
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Güncel limitler ve ek ücretler firmaya göre değişir. <a href="kargo-fiyatlari.html" class="text-primary font-medium hover:underline">Kargo Fiyatları</a> sayfamızdan tarifeleri indirip kontrol edebilirsiniz. Büyük veya ağır ürün satıyorsanız, gönderim öncesi kargo firmasıyla teyit etmeniz faydalı olur.
         </p>
 
         <!-- FAQ -->
         <h2 id="sss" class="text-xl font-bold text-gray-900 mt-12 mb-4">Sıkça Sorulan Sorular</h2>
         <div class="space-y-6">
           <div class="border-b border-gray-200 pb-4">
-            <h3 class="font-semibold text-gray-900 mb-2">Desi nedir?</h3>
-            <p class="text-gray-600 text-sm">Desi, kargo firmalarının hacimsel ağırlığı ifade etmek için kullandığı bir birimdir. Hacimsel ağırlık, paketin boyutlarına (en x boy x yükseklik) göre hesaplanır ve kargo ücretinin belirlenmesinde kullanılır.</p>
+            <h3 class="font-semibold text-gray-900 mb-2">Desi ile kilogram aynı mı?</h3>
+            <p class="text-gray-600 text-sm">Hayır. Desi hacimsel ağırlık birimidir, kilogram ise fiziksel ağırlık birimidir. Desi paketin boyutlarından (en × boy × yükseklik ÷ 3000) hesaplanır. Kargo firmaları her iki değeri karşılaştırır ve hangisi büyükse ona göre ücretlendirme yapar. Hafif ama hacimli paketler desiye göre, ağır ve küçük paketler kilograma göre fiyatlandırılır.</p>
           </div>
           <div class="border-b border-gray-200 pb-4">
-            <h3 class="font-semibold text-gray-900 mb-2">Desi nasıl hesaplanır?</h3>
-            <p class="text-gray-600 text-sm">Desi formülü: (En x Boy x Yükseklik) / 3000. Ölçüler santimetre cinsinden girilir. Örnek: 30x40x50 cm boyutundaki paket için desi = (30×40×50)/3000 = 20 desi.</p>
+            <h3 class="font-semibold text-gray-900 mb-2">1 desi kaç TL?</h3>
+            <p class="text-gray-600 text-sm">Desi başına ücret kargo firmasına, güzergaha, anlaşma türüne ve döneme göre değişir. Trendyol satıcıları için platform anlaşmalı kargolarda genellikle desi başına 2–5 TL aralığında ücretler uygulanır. Bireysel veya toplu anlaşma yapan satıcılar daha düşük birim fiyatlar elde edebilir. Güncel tarifeler için kargo firmasının resmi fiyat listesini veya Kargo Fiyatları sayfamızı kontrol edin.</p>
           </div>
           <div class="border-b border-gray-200 pb-4">
-            <h3 class="font-semibold text-gray-900 mb-2">Desi mi ağırlık mı kullanılır?</h3>
-            <p class="text-gray-600 text-sm">Kargo firmaları desi (hacimsel ağırlık) ile fiziksel ağırlığı (kg) karşılaştırır ve hangisi büyükse ona göre ücretlendirme yapar. Hafif ama hacimli paketler desiye göre, ağır ve küçük paketler kg'a göre ücretlendirilir.</p>
+            <h3 class="font-semibold text-gray-900 mb-2">Hangi kargo nasıl hesaplar?</h3>
+            <p class="text-gray-600 text-sm">Türkiye'deki çoğu kargo firması (Trendyol, Yurtiçi, Aras, MNG, PTT, Sürat) standart desi formülünü kullanır: (En × Boy × Yükseklik) ÷ 3000. Bazı uluslararası firmalar 5000 böleni kullanabilir; bu durumda aynı paket daha düşük desi çıkar. Hangi formülün uygulandığını gönderim öncesi firmadan teyit etmeniz önerilir.</p>
           </div>
           <div class="border-b border-gray-200 pb-4">
-            <h3 class="font-semibold text-gray-900 mb-2">Trendyol desi hesaplama formülü nedir?</h3>
-            <p class="text-gray-600 text-sm">Trendyol ve çoğu Türk kargo firması standart desi formülünü kullanır: (En x Boy x Yükseklik) / 3000. Ölçüler cm cinsindendir.</p>
+            <h3 class="font-semibold text-gray-900 mb-2">Trendyol hangi desi formülünü kullanır?</h3>
+            <p class="text-gray-600 text-sm">Trendyol, anlaşmalı kargo firmaları üzerinden standart Türkiye desi formülünü kullanır: (En × Boy × Yükseklik) ÷ 3000. Ölçüler santimetre cinsindendir ve paketin dış boyutları esas alınır. Bu sayfadaki hesaplama aracı ile elde ettiğiniz desi değeri Trendyol için geçerlidir.</p>
+          </div>
+          <div class="border-b border-gray-200 pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">Desi yüksek çıkarsa ne olur?</h3>
+            <p class="text-gray-600 text-sm">Desi yüksek çıkarsa kargo ücretiniz artar. Kargo firmaları desi ile kilogramı karşılaştırıp büyük olanı baz alır; yüksek desi, paketinizin hacimli olduğu anlamına gelir. Maliyeti düşürmek için ambalajı küçültmeyi, sıkıştırılabilir ürünleri daha kompakt paketlemeyi veya farklı kutu boyutlarını denemeyi değerlendirebilirsiniz.</p>
           </div>
           <div class="pb-4">
-            <h3 class="font-semibold text-gray-900 mb-2">3000 sayısı nereden geliyor?</h3>
-            <p class="text-gray-600 text-sm">3000, kargo sektöründe kabul gören standart bir bölendir. 1 desi yaklaşık 1 dm³ hacme karşılık gelir ve bu oran uluslararası kargo hesaplamalarıyla uyumludur.</p>
+            <h3 class="font-semibold text-gray-900 mb-2">En uygun kargo nasıl seçilir?</h3>
+            <p class="text-gray-600 text-sm">Desi hesapladıktan sonra farklı firmaların tarifelerini karşılaştırın. Trendyol satıcıları için platform anlaşmalı kargolar genelde avantajlıdır. Düzenli gönderim yapıyorsanız toplu anlaşma yapmayı, Kargo Fiyatları sayfamızdan güncel tarifeleri indirip incelemeyi öneririz. Teslimat süresi, güvenilirlik ve müşteri deneyimi de seçimde dikkate alınmalıdır.</p>
           </div>
         </div>
 
         <!-- Internal Links -->
         <div class="mt-12 p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border border-orange-100">
-          <h3 class="font-bold text-gray-900 mb-4">İlgili Araçlar ve Rehberler</h3>
+          <h3 class="font-bold text-gray-900 mb-4">Diğer Trendyol Araçları</h3>
           <ul class="space-y-2">
-            <li><a href="index.html" class="text-primary font-medium hover:underline">Trendyol Kar Hesaplama</a> — Net karınızı hesaplayın</li>
-            <li><a href="index.html" class="text-primary font-medium hover:underline">Trendyol Komisyon Hesaplama</a> — Komisyon ve maliyet analizi</li>
-            <li><a href="trendyol-rehber.html" class="text-primary font-medium hover:underline">Trendyol Satıcı Rehberi</a> — Kapsamlı satıcı kılavuzu</li>
+            <li><a href="index.html" class="text-primary font-medium hover:underline">Kar Hesaplama</a> — Net karınızı komisyon ve kargo dahil hesaplayın</li>
+            <li><a href="index.html" class="text-primary font-medium hover:underline">Komisyon Hesaplama</a> — Kategori bazlı komisyon ve maliyet analizi</li>
+            <li><a href="trendyol-rehber.html" class="text-primary font-medium hover:underline">Trendyol Satıcı Rehberi</a> — Kapsamlı satıcı kılavuzu ve ipuçları</li>
             <li><a href="kargo-fiyatlari.html" class="text-primary font-medium hover:underline">Kargo Fiyatları</a> — Güncel kargo ücretleri tablosu</li>
           </ul>
         </div>

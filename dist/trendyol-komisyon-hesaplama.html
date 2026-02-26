@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ücretsiz Trendyol komisyon hesaplama aracı. Satış fiyatı ve komisyon oranı ile komisyon tutarını, net karı anında hesaplayın. Trendyol satıcıları için." />
+    <meta name="keywords" content="trendyol komisyon hesaplama, trendyol komisyon oranı, trendyol satıcı komisyonu, komisyon hesaplayıcı, e-ticaret kar hesaplama" />
+    <link rel="canonical" href="https://trendyolrehber.com/trendyol-komisyon-hesaplama.html" />
+    <meta property="og:url" content="https://trendyolrehber.com/trendyol-komisyon-hesaplama.html" />
+    <meta property="og:title" content="Trendyol Komisyon Hesaplama (2026) — Ücretsiz Hesaplayıcı" />
+    <meta property="og:description" content="Trendyol satıcıları için ücretsiz komisyon hesaplama. Satış fiyatı, komisyon, maliyet ve kargo ile net kar hesaplayın." />
+    <meta property="og:type" content="website" />
+    <title>Trendyol Komisyon Hesaplama (2026) — Ücretsiz Hesaplayıcı | Trendyol Rehber</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: '#ff6b35', dark: '#e55a2b' },
+            }
+          }
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Trendyol Komisyon Hesaplama Aracı",
+      "description": "Trendyol satıcıları için ücretsiz komisyon ve net kar hesaplama aracı.",
+      "url": "https://trendyolrehber.com/trendyol-komisyon-hesaplama.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Trendyol komisyon oranı nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trendyol komisyon oranları ürün kategorisine göre değişir. Genellikle %5 ile %25 arasında değişen oranlar uygulanır. Elektronik, moda, ev ürünleri gibi kategorilerde oranlar farklıdır. Güncel oranları Trendyol Satıcı Paneli'nden kontrol edin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Komisyon satış fiyatından mı kesilir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Trendyol komisyonu satış fiyatı (KDV dahil veya hariç, platform ayarına göre) üzerinden hesaplanır. Müşteri 100 TL öderse, komisyon %15 ise 15 TL Trendyol'a gider, satıcıya 85 TL kalır (kargo ve diğer kesintiler hariç)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Trendyol komisyonu nasıl hesaplanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Komisyon = Satış Fiyatı × (Komisyon Oranı / 100). Örnek: 200 TL satış, %12 komisyon = 24 TL komisyon. Net = Satış - Komisyon - Kargo - Ürün Maliyeti."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kampanya döneminde komisyon değişir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Özel kampanya ve indirim dönemlerinde ek komisyon veya farklı oranlar uygulanabilir. Katılım öncesi kampanya şartlarını okuyun ve kar hesaplamanızı buna göre yapın."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+      .result-big { font-size: 2rem; font-weight: 700; }
+      @media (max-width: 640px) { .result-big { font-size: 1.5rem; } }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-700 antialiased">
+    <header class="bg-white border-b border-gray-200">
+      <div class="max-w-4xl mx-auto px-4 py-4">
+        <a href="index.html" class="text-primary hover:text-primary-dark font-semibold text-sm">← Ana Sayfa</a>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+      <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 mb-10">
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Trendyol Komisyon Hesaplama Aracı</h1>
+        <p class="text-gray-600 mb-8">Satış fiyatı ve komisyon oranı ile komisyon tutarını, satıcıya kalanı ve net karı anında hesaplayın. Ücretsiz, giriş yok.</p>
+
+        <div class="bg-gray-50 rounded-xl p-6 mb-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div>
+              <label for="fiyat" class="block text-sm font-medium text-gray-700 mb-1">Satış Fiyatı (₺)</label>
+              <input type="number" id="fiyat" min="0" step="0.01" placeholder="199.99"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+            </div>
+            <div>
+              <label for="komisyon" class="block text-sm font-medium text-gray-700 mb-1">Komisyon Oranı (%)</label>
+              <input type="number" id="komisyon" min="0" max="100" step="0.5" placeholder="12"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+            </div>
+            <div>
+              <label for="maliyet" class="block text-sm font-medium text-gray-700 mb-1">Ürün Maliyeti (₺)</label>
+              <input type="number" id="maliyet" min="0" step="0.01" placeholder="80"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+            </div>
+            <div>
+              <label for="kargo" class="block text-sm font-medium text-gray-700 mb-1">Kargo Maliyeti (₺)</label>
+              <input type="number" id="kargo" min="0" step="0.01" placeholder="15"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+            </div>
+          </div>
+
+          <div id="sonuc" class="mt-6 pt-6 border-t border-gray-200 space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-gray-600">Komisyon Tutarı</span>
+              <span id="komisyon-tutar" class="result-big text-primary">—</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-600">Satıcıya Kalan (komisyon sonrası)</span>
+              <span id="kalan" class="result-big text-gray-900">—</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-600">Net Kar</span>
+              <span id="net-kar" class="result-big text-green-600">—</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-600">Kar Marjı (%)</span>
+              <span id="marj" class="result-big text-gray-900">—</span>
+            </div>
+          </div>
+
+          <button id="export-btn" type="button" class="mt-4 px-4 py-2 text-sm font-medium text-primary border border-primary rounded-lg hover:bg-orange-50 transition">
+            Sonucu Kopyala
+          </button>
+        </div>
+      </article>
+
+      <section class="prose prose-gray max-w-none mb-12">
+        <h2 id="komisyon-nedir" class="text-xl font-bold text-gray-900 mt-12 mb-4">Trendyol Komisyon Nedir?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          <strong>Trendyol komisyonu</strong>, platformda yaptığınız her satıştan Trendyol'un aldığı paydır. Bu pay, platform altyapısı, ödeme sistemi, müşteri trafiği ve pazarlama hizmetleri karşılığında tahsil edilir. Komisyon oranı ürün kategorisine göre değişir; elektronikte %8–12, modada %12–18, ev ürünlerinde %10–15 gibi aralıklar yaygındır.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Komisyon satış fiyatı üzerinden hesaplanır. Müşteri 150 TL ödediyse ve komisyon oranınız %12 ise, Trendyol 18 TL alır, sizin elinize 132 TL geçer (kargo ve diğer kesintiler hariç). Bu nedenle fiyat belirlerken komisyonu mutlaka hesaba katmanız gerekir; aksi halde kar marjınız erir veya zarar edersiniz.
+        </p>
+
+        <h2 id="ornekler" class="text-xl font-bold text-gray-900 mt-12 mb-4">Gerçek Hesaplama Örnekleri</h2>
+        <p class="text-gray-600 leading-relaxed mb-4"><strong>Örnek 1 — Tekstil ürünü:</strong></p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+          <li>Satış fiyatı: 299 TL</li>
+          <li>Komisyon (%15): 44,85 TL</li>
+          <li>Ürün maliyeti: 120 TL</li>
+          <li>Kargo: 18 TL</li>
+          <li>Net kar: 299 − 44,85 − 120 − 18 = <strong>116,15 TL</strong></li>
+          <li>Kar marjı: %38,8</li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed mb-4"><strong>Örnek 2 — Elektronik aksesuar:</strong></p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+          <li>Satış fiyatı: 89 TL</li>
+          <li>Komisyon (%10): 8,90 TL</li>
+          <li>Ürün maliyeti: 45 TL</li>
+          <li>Kargo: 12 TL</li>
+          <li>Net kar: 89 − 8,90 − 45 − 12 = <strong>23,10 TL</strong></li>
+          <li>Kar marjı: %26</li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed">
+          Düşük fiyatlı ürünlerde kargo oranı yükselir; 50 TL satışta 15 TL kargo, karı ciddi düşürür. Yüksek fiyatlı ürünlerde komisyon tutarı artar ama yüzde marj korunabilir. Her ürün için <a href="index.html" class="text-primary font-medium hover:underline">Trendyol Kar Hesaplama</a> veya bu komisyon aracı ile önceden hesaplama yapın.
+        </p>
+
+        <h2 id="ipuclari" class="text-xl font-bold text-gray-900 mt-12 mb-4">Trendyol Satıcıları İçin İpuçları</h2>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+          <li><strong>Kategori seçimini optimize edin:</strong> Aynı ürün birden fazla kategoriye uyuyorsa, düşük komisyonlu kategoriyi tercih edin. Trendyol Satıcı Paneli'nden kategori bazlı oranları kontrol edin.</li>
+          <li><strong>Kargo maliyetini doğru hesaplayın:</strong> Paket desinizi <a href="kargo-desi-hesaplama.html" class="text-primary font-medium hover:underline">Kargo Desi Hesaplama</a> aracı ile hesaplayıp kargo bedelini gerçekçi girin. Yanlış tahmin karı bozar.</li>
+          <li><strong>Kampanya öncesi hesaplama:</strong> İndirim dönemlerinde ek komisyon veya farklı oranlar uygulanabilir. Katılmadan önce net karınızı hesaplayın.</li>
+          <li><strong>Minimum kar marjı belirleyin:</strong> Örneğin %20'nin altına düşmeyin. Düşük marjlı satışlar stok ve operasyon maliyetini karşılamayabilir.</li>
+          <li><strong>Toplu alım avantajı:</strong> Ürün maliyetinizi düşürerek komisyon ve kargo yükünü dengeleyebilirsiniz.</li>
+        </ul>
+
+        <h2 id="sss" class="text-xl font-bold text-gray-900 mt-12 mb-4">Sıkça Sorulan Sorular</h2>
+        <div class="space-y-6">
+          <div class="border-b border-gray-200 pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">Trendyol komisyon oranı nedir?</h3>
+            <p class="text-gray-600 text-sm">Trendyol komisyon oranları ürün kategorisine göre değişir. Genellikle %5 ile %25 arasında değişen oranlar uygulanır. Elektronik, moda, ev ürünleri gibi kategorilerde oranlar farklıdır. Güncel oranları Trendyol Satıcı Paneli'nden veya satıcı sözleşmesinden kontrol edin.</p>
+          </div>
+          <div class="border-b border-gray-200 pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">Komisyon satış fiyatından mı kesilir?</h3>
+            <p class="text-gray-600 text-sm">Evet. Trendyol komisyonu satış fiyatı üzerinden hesaplanır. Müşteri 100 TL öderse ve komisyon %15 ise, 15 TL Trendyol'a gider, satıcıya 85 TL kalır (kargo ve diğer kesintiler hariç). KDV dahil mi hariç mi hesaplandığı platform ayarına göre değişebilir.</p>
+          </div>
+          <div class="border-b border-gray-200 pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">Trendyol komisyonu nasıl hesaplanır?</h3>
+            <p class="text-gray-600 text-sm">Formül: Komisyon = Satış Fiyatı × (Komisyon Oranı / 100). Örnek: 200 TL satış, %12 komisyon = 24 TL komisyon. Net kar = Satış − Komisyon − Kargo − Ürün Maliyeti. Bu sayfadaki hesaplayıcı ile tüm değerleri anında görebilirsiniz.</p>
+          </div>
+          <div class="pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">Kampanya döneminde komisyon değişir mi?</h3>
+            <p class="text-gray-600 text-sm">Evet. Özel kampanya ve indirim dönemlerinde (11.11, Black Friday vb.) ek komisyon veya farklı oranlar uygulanabilir. Kampanyaya katılmadan önce şartları okuyun ve kar hesaplamanızı buna göre yapın.</p>
+          </div>
+        </div>
+
+        <div class="mt-12 p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border border-orange-100">
+          <h3 class="font-bold text-gray-900 mb-4">Diğer Trendyol Araçları</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-primary font-medium hover:underline">Trendyol Kar Hesaplama</a> — Net kar, komisyon ve kargo dahil tam hesaplama</li>
+            <li><a href="kargo-desi-hesaplama.html" class="text-primary font-medium hover:underline">Kargo Desi Hesaplama</a> — Paket desi hesaplama aracı</li>
+            <li><a href="trendyol-satis-nasil-yapilir.html" class="text-primary font-medium hover:underline">Trendyol'da Satış Nasıl Yapılır</a> — Satıcı olma rehberi</li>
+            <li><a href="trendyol-rehber.html" class="text-primary font-medium hover:underline">Trendyol Satıcı Rehberi</a> — Kapsamlı rehber</li>
+            <li><a href="kargo-fiyatlari.html" class="text-primary font-medium hover:underline">Kargo Fiyatları</a> — Güncel kargo tarifeleri</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200 mt-12 py-8 text-center text-sm text-gray-500">
+      <div class="flex flex-wrap justify-center gap-4 mb-4">
+        <a href="index.html" class="hover:text-primary">Ana Sayfa</a>
+        <a href="blog.html" class="hover:text-primary">E-ticaret Rehberi</a>
+        <a href="kargo-fiyatlari.html" class="hover:text-primary">Kargo Fiyatları</a>
+        <a href="trendyol-rehber.html" class="hover:text-primary">Trendyol Rehber</a>
+        <a href="gizlilik-politikasi.html" class="hover:text-primary">Gizlilik Politikası</a>
+        <a href="hakkimizda.html" class="hover:text-primary">Hakkımızda</a>
+        <a href="sss.html" class="hover:text-primary">SSS</a>
+      </div>
+      <p>© 2026 Trendyol Rehber</p>
+    </footer>
+
+    <script>
+      (function() {
+        const fiyat = document.getElementById('fiyat');
+        const komisyon = document.getElementById('komisyon');
+        const maliyet = document.getElementById('maliyet');
+        const kargo = document.getElementById('kargo');
+        const komisyonTutar = document.getElementById('komisyon-tutar');
+        const kalan = document.getElementById('kalan');
+        const netKar = document.getElementById('net-kar');
+        const marj = document.getElementById('marj');
+        const exportBtn = document.getElementById('export-btn');
+
+        function formatTL(n) {
+          if (n == null || isNaN(n)) return '—';
+          return new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY', minimumFractionDigits: 2 }).format(n);
+        }
+
+        function formatPct(n) {
+          if (n == null || isNaN(n)) return '—';
+          return n.toFixed(1) + '%';
+        }
+
+        function hesapla() {
+          const s = parseFloat(fiyat.value) || 0;
+          const k = parseFloat(komisyon.value) || 0;
+          const m = parseFloat(maliyet.value) || 0;
+          const kr = parseFloat(kargo.value) || 0;
+
+          if (s <= 0 || k < 0) {
+            komisyonTutar.textContent = '—';
+            kalan.textContent = '—';
+            netKar.textContent = '—';
+            marj.textContent = '—';
+            return;
+          }
+
+          const komTutar = s * (k / 100);
+          const saticiKalan = s - komTutar;
+          const net = saticiKalan - m - kr;
+          const marjPct = s > 0 ? (net / s) * 100 : 0;
+
+          komisyonTutar.textContent = formatTL(komTutar);
+          kalan.textContent = formatTL(saticiKalan);
+          netKar.textContent = formatTL(net);
+          marj.textContent = formatPct(marjPct);
+        }
+
+        [fiyat, komisyon, maliyet, kargo].forEach(function(inp) {
+          inp.addEventListener('input', hesapla);
+          inp.addEventListener('change', hesapla);
+        });
+
+        hesapla();
+
+        exportBtn.addEventListener('click', function() {
+          const txt = 'Trendyol Komisyon Hesaplama Sonucu\n' +
+            'Satış: ' + formatTL(parseFloat(fiyat.value) || 0) + '\n' +
+            'Komisyon: ' + komisyonTutar.textContent + '\n' +
+            'Satıcıya Kalan: ' + kalan.textContent + '\n' +
+            'Net Kar: ' + netKar.textContent + '\n' +
+            'Kar Marjı: ' + marj.textContent;
+          navigator.clipboard.writeText(txt).then(function() {
+            exportBtn.textContent = 'Kopyalandı!';
+            setTimeout(function() { exportBtn.textContent = 'Sonucu Kopyala'; }, 2000);
+          });
+        });
+      })();
+    </script>
+    <script src="cookie-consent.js"></script>
+  </body>
+</html>

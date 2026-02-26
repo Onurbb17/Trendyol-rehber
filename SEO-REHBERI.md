@@ -1,116 +1,26 @@
-# Google'da Üst Sıralara Çıkma Rehberi
+# SEO Booster — Yapılacaklar
 
-Trendyol Rehber sitesinin Google'da "trendyol rehber" ve benzeri aramalarda üst sıralara çıkması için yapmanız gerekenler.
+## ✅ Tamamlanan
+- **Sitemap:** `dist/sitemap.xml` güncel, `robots.txt` referansı mevcut
+- **Internal linking:** Ana sayfa footer'da kategori linkleri, tüm sayfalarda cross-link
+- **Mobile uyum:** Tüm sayfalar `viewport` meta ile responsive
+- **Site mimarisi:** 4 ana kategori (Rehberler, Araçlar, Sorun & Çözümler, Güncellemeler)
 
----
+## 📋 Manuel Yapılacaklar
 
-## ✅ Yapılan Teknik SEO İyileştirmeleri
+### Google Search Console
+1. [search.google.com/search-console](https://search.google.com/search-console) adresine gidin
+2. Sitenizi ekleyin (trendyolrehber.com)
+3. Sitemap URL'sini gönderin: `https://trendyolrehber.com/sitemap.xml`
+4. Doğrulama: DNS veya HTML dosyası ile
 
-- **Title ve Meta:** "Trendyol rehber" odaklı güncellendi
-- **Canonical URL:** Tüm sayfalara eklendi
-- **Open Graph:** Sosyal paylaşım için optimize edildi
-- **Schema.org:** WebSite, Blog, FAQPage yapılandırılmış verileri
-- **Sitemap:** lastmod tarihleri eklendi
-- **Keywords:** Ana sayfa ve blog hedef kelimelerle güncellendi
+### Hız Optimizasyonu
+- Görselleri WebP formatında ve lazy-load kullanın
+- CSS/JS minify (production build)
+- CDN kullanımı (Tailwind CDN zaten kullanılıyor)
+- Gzip/Brotli sıkıştırma (hosting ayarları)
 
----
-
-## 🔴 Sizin Yapmanız Gerekenler (Çok Önemli!)
-
-### 1. Google Search Console'a Kayıt (Öncelikli)
-
-1. [Google Search Console](https://search.google.com/search-console) adresine gidin
-2. **Mülk ekle** → **URL öneki** seçin
-3. `https://trendyolrehber.com` yazın
-4. **Doğrulama:** HTML etiketi veya DNS ile doğrulayın
-5. Doğrulama sonrası **Sitemap gönder:** `https://trendyolrehber.com/sitemap.xml`
-6. **URL denetlemesi** ile ana sayfayı indekslemeye gönderin
-
-**Neden önemli?** Google sitenizi keşfetmeden önce sizin göndermeniz indekslemeyi hızlandırır.
-
----
-
-### 2. Google'da İndeksleme Süreci
-
-- **Yeni siteler** genelde 1-4 hafta içinde indekslenir
-- **Sıralama** ise 2-6 ay sürebilir (rekabete göre)
-- Search Console'da "İndekslenen sayfalar" bölümünü takip edin
-
----
-
-### 3. İçerik Stratejisi (Trafik Artırıcı)
-
-| Hedef Kelime | Öneri |
-|--------------|-------|
-| trendyol rehber | ✅ Title ve meta'da zaten var |
-| trendyol satıcı rehberi | ✅ Blog sayfasında |
-| trendyol kar hesaplayıcı | ✅ Ana sayfa |
-| trendyol komisyon oranları | Yeni blog yazısı eklenebilir |
-| trendyol kargo fiyatları | ✅ Kargo sayfası |
-
-**Öneri:** Ayda 2-4 yeni blog yazısı ekleyin. Uzun, detaylı içerik (1000+ kelime) Google'da daha iyi sıralanır.
-
----
-
-### 4. Backlink (Geri Bağlantı) Stratejisi
-
-Google sıralamasında backlink çok kritiktir:
-
-- **Sosyal medya:** Instagram, Twitter, LinkedIn'de paylaşın
-- **Forumlar:** E-ticaret forumlarında (Webrazzi, Ekşi Sözlük vb.) faydalı yanıtlar verip link bırakın
-- **Quora/Reddit:** İlgili sorularda rehberinizi önerin
-- **Misafir yazı:** Blog sitelerinde misafir yazı yazıp link alın
-
----
-
-### 5. Sosyal Medya Paylaşımı
-
-- Her yeni blog yazısını sosyal medyada paylaşın
-- Paylaşım linkleri: `https://trendyolrehber.com/blog.html#yazi-id`
-- Sosyal sinyaller (paylaşım, beğeni) dolaylı olarak SEO'ya katkı sağlar
-
----
-
-### 6. Düzenli Güncelleme
-
-- **Blog:** En az ayda 1-2 yeni yazı
-- **Kargo fiyatları:** PDF güncellendiğinde sayfadaki tarihi değiştirin
-- **Sitemap:** Yeni sayfa ekledikçe sitemap.xml'e ekleyin
-
----
-
-## 📊 Takip Etmeniz Gerekenler
-
-| Araç | Ne İçin |
-|------|---------|
-| Google Search Console | İndeksleme, sıralama, hatalar |
-| Google Analytics | Ziyaretçi sayısı, hangi sayfalar popüler |
-| [Google Trends](https://trends.google.com) | "trendyol rehber" arama trendi |
-
----
-
-## 🎯 1. Sayfa İçin Yapılanlar
-
-- **trendyol-rehber.html:** "Trendyol rehber" için özel pillar sayfa oluşturuldu
-- **Ana sayfa banner:** Kar hesaplayıcı üstünde "Trendyol Rehber" bölümü
-- **İç linkleme:** Tüm sayfalardan trendyol-rehber.html'e bağlantılar
-- **URL:** https://trendyolrehber.com/trendyol-rehber.html (temiz URL)
-
-## ⏱️ Gerçekçi Beklenti
-
-- **1. ay:** Site indekslenir, ilk sıralamalar başlar
-- **3. ay:** "trendyol rehber" için 2. sayfa veya alt sıralar
-- **6. ay:** Düzenli içerik + backlink ile 1. sayfa potansiyeli
-
-**1. sayfa için ek stratejiler:**
-- Uzun kuyruklu kelimeler: "trendyol satıcı rehberi 2026", "trendyol kar hesaplayıcı ücretsiz" (daha az rekabet)
-- Sosyal medyada paylaşım (her yeni içerik)
-- Backlink: Forum, blog yorumları, Quora
-
----
-
-## 🔗 Faydalı Linkler
-
-- [Google Search Console](https://search.google.com/search-console)
-- [Google Analytics](https://analytics.google.com)
-- [Sitemap Gönder](https://search.google.com/search-console) → Sitemapler → sitemap.xml ekle
+### AdSense & Monetization
+- AdSense hesabı doğrulandı (ca-pub-9409905856635578)
+- `monetization.js` ile AdSense, Affiliate ve Lead form blokları sayfalara ekleniyor
+- Affiliate linkleri: Muhasebe programları, Barkod firmaları, Eğitim platformları (placeholder — gerçek URL'ler eklenecek)
