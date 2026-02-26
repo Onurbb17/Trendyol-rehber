@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ücretsiz kargo desi hesaplama aracı. Trendyol, Yurtiçi, Aras ve tüm kargo firmaları için desi (hacimsel ağırlık) hesaplayın. Anında sonuç, mobil uyumlu." />
+    <meta name="keywords" content="kargo desi hesaplama, desi hesaplama, hacimsel ağırlık, trendyol desi, kargo desi formülü, desi nedir" />
+    <link rel="canonical" href="https://trendyolrehber.com/kargo-desi-hesaplama.html" />
+    <meta property="og:url" content="https://trendyolrehber.com/kargo-desi-hesaplama.html" />
+    <meta property="og:title" content="Kargo Desi Hesaplama (2026) — Trendyol & Tüm Kargolar" />
+    <meta property="og:description" content="Ücretsiz kargo desi hesaplama aracı. Trendyol ve tüm kargo firmaları için hacimsel ağırlık hesaplayın." />
+    <meta property="og:type" content="website" />
+    <title>Kargo Desi Hesaplama (2026) — Trendyol & Tüm Kargolar</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: '#ff6b35', dark: '#e55a2b' },
+              accent: '#f7931e',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Schema.org WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Kargo Desi Hesaplama Aracı",
+      "description": "Trendyol ve tüm kargo firmaları için ücretsiz desi (hacimsel ağırlık) hesaplama aracı.",
+      "url": "https://trendyolrehber.com/kargo-desi-hesaplama.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" }
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Desi nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Desi, kargo firmalarının hacimsel ağırlığı ifade etmek için kullandığı bir birimdir. Hacimsel ağırlık, paketin boyutlarına (en x boy x yükseklik) göre hesaplanır ve kargo ücretinin belirlenmesinde kullanılır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Desi nasıl hesaplanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Desi formülü: (En x Boy x Yükseklik) / 3000. Ölçüler santimetre cinsinden girilir. Örnek: 30x40x50 cm boyutundaki paket için desi = (30×40×50)/3000 = 20 desi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Desi mi ağırlık mı kullanılır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kargo firmaları desi (hacimsel ağırlık) ile fiziksel ağırlığı (kg) karşılaştırır ve hangisi büyükse ona göre ücretlendirme yapar. Hafif ama hacimli paketler desiye göre, ağır ve küçük paketler kg'a göre ücretlendirilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Trendyol desi hesaplama formülü nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trendyol ve çoğu Türk kargo firması standart desi formülünü kullanır: (En x Boy x Yükseklik) / 3000. Ölçüler cm cinsindendir."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+      .result-display { font-size: 2.5rem; font-weight: 700; }
+      @media (max-width: 640px) { .result-display { font-size: 2rem; } }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-700 antialiased">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200">
+      <div class="max-w-4xl mx-auto px-4 py-4">
+        <a href="index.html" class="text-primary hover:text-primary-dark font-semibold text-sm">← Ana Sayfa</a>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+      <!-- Hero & Calculator -->
+      <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 mb-10">
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Kargo Desi Hesaplama Aracı</h1>
+        <p class="text-gray-600 mb-8">Trendyol, Yurtiçi, Aras ve tüm kargo firmaları için desi (hacimsel ağırlık) hesaplayın. Ücretsiz, anında sonuç.</p>
+
+        <!-- Calculator -->
+        <div class="bg-gray-50 rounded-xl p-6 mb-8">
+          <form id="desi-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label for="width" class="block text-sm font-medium text-gray-700 mb-1">En (cm)</label>
+                <input type="number" id="width" name="width" min="1" step="0.1" placeholder="30"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+                  required>
+              </div>
+              <div>
+                <label for="height" class="block text-sm font-medium text-gray-700 mb-1">Boy (cm)</label>
+                <input type="number" id="height" name="height" min="1" step="0.1" placeholder="40"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+                  required>
+              </div>
+              <div>
+                <label for="length" class="block text-sm font-medium text-gray-700 mb-1">Yükseklik (cm)</label>
+                <input type="number" id="length" name="length" min="1" step="0.1" placeholder="50"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+                  required>
+              </div>
+            </div>
+          </form>
+
+          <div id="result-section" class="mt-6 pt-6 border-t border-gray-200">
+            <p class="text-sm text-gray-600 mb-1">Hesaplanan Desi</p>
+            <p id="result" class="result-display text-primary">—</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Content Sections -->
+      <section class="prose prose-gray max-w-none mb-12">
+        <h2 id="desi-nedir" class="text-xl font-bold text-gray-900 mt-12 mb-4">Desi Nedir?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          <strong>Desi</strong>, kargo firmalarının paketlerin hacimsel ağırlığını ifade etmek için kullandığı bir birimdir. Fiziksel ağırlık (kg) yerine veya onunla birlikte kullanılır. Kargo ücretlendirmesinde, paketin kapladığı alan da dikkate alınır; çünkü hafif ama hacimli bir paket (örneğin yastık, battaniye) kargo aracında ağır bir paketten daha fazla yer kaplayabilir.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Kargo firmaları genellikle <strong>desi (hacimsel ağırlık)</strong> ile <strong>fiziksel ağırlık (kg)</strong> değerlerini karşılaştırır ve hangisi büyükse ona göre ücretlendirme yapar. Bu sayede hem ağır hem de hacimli paketler adil şekilde fiyatlandırılır.
+        </p>
+
+        <h2 id="desi-nasil-hesaplanir" class="text-xl font-bold text-gray-900 mt-12 mb-4">Kargo Desi Nasıl Hesaplanır?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Desi hesaplama formülü Türkiye'deki kargo firmaları (Trendyol, Yurtiçi, Aras, MNG, PTT vb.) tarafından standart olarak kullanılır:
+        </p>
+        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg my-4">
+          <p class="font-mono font-bold text-gray-800 text-lg">Desi = (En × Boy × Yükseklik) ÷ 3000</p>
+          <p class="text-sm text-gray-600 mt-2">Ölçüler santimetre (cm) cinsinden girilir.</p>
+        </div>
+        <p class="text-gray-600 leading-relaxed mb-4"><strong>Örnek hesaplama:</strong></p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+          <li>Paket boyutları: 30 cm × 40 cm × 50 cm</li>
+          <li>Hesaplama: (30 × 40 × 50) ÷ 3000 = 60.000 ÷ 3000 = <strong>20 desi</strong></li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed">
+          Bu paket 20 desi olarak ücretlendirilir. Fiziksel ağırlığı 5 kg olsa bile, 20 desi daha büyük olduğu için kargo ücreti desiye göre hesaplanır.
+        </p>
+
+        <h2 id="trendyol-desi" class="text-xl font-bold text-gray-900 mt-12 mb-4">Trendyol Satıcıları İçin Desi Neden Önemli?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Trendyol'da satış yapan satıcılar için desi hesaplaması, <strong>kargo maliyetini</strong> ve dolayısıyla <strong>kar marjını</strong> doğrudan etkiler. Yanlış desi tahmini:
+        </p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+          <li>Beklenenden yüksek kargo ücreti ödemenize neden olabilir</li>
+          <li>Ürün fiyatlandırmasında hata yapmanıza yol açar</li>
+          <li>Karlılık hesaplamalarınızı bozar</li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed">
+          Desi hesaplama aracımızla paket boyutlarınızı önceden hesaplayarak kargo maliyetinizi doğru tahmin edebilir, kar hesaplayıcımızda bu maliyeti kullanarak gerçek kar marjınızı görebilirsiniz.
+        </p>
+
+        <h2 id="buyuk-paket" class="text-xl font-bold text-gray-900 mt-12 mb-4">Büyük Paket Sınırları</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Kargo firmaları genellikle belirli boyut ve ağırlık sınırları uygular. Bu sınırlar firmaya göre değişir:
+        </p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+          <li><strong>Standart paket:</strong> Çoğu firma tek kenarı 150 cm'yi, toplam (en+boy+yükseklik) 300 cm'yi aşmayan paketleri normal ücretle taşır</li>
+          <li><strong>Büyük paket:</strong> Bu sınırları aşan paketler ek ücret veya özel taşıma gerektirebilir</li>
+          <li><strong>Maksimum ağırlık:</strong> Genellikle 30–50 kg arası limitler vardır</li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed">
+          Ürününüzü göndermeden önce kullandığınız kargo firmasının güncel sınırlarını kontrol etmenizi öneririz.
+        </p>
+
+        <!-- FAQ -->
+        <h2 id="sss" class="text-xl font-bold text-gray-900 mt-12 mb-4">Sıkça Sorulan Sorular</h2>
+        <div class="space-y-6">
+          <div class="border-b border-gray-200 pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">Desi nedir?</h3>
+            <p class="text-gray-600 text-sm">Desi, kargo firmalarının hacimsel ağırlığı ifade etmek için kullandığı bir birimdir. Hacimsel ağırlık, paketin boyutlarına (en x boy x yükseklik) göre hesaplanır ve kargo ücretinin belirlenmesinde kullanılır.</p>
+          </div>
+          <div class="border-b border-gray-200 pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">Desi nasıl hesaplanır?</h3>
+            <p class="text-gray-600 text-sm">Desi formülü: (En x Boy x Yükseklik) / 3000. Ölçüler santimetre cinsinden girilir. Örnek: 30x40x50 cm boyutundaki paket için desi = (30×40×50)/3000 = 20 desi.</p>
+          </div>
+          <div class="border-b border-gray-200 pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">Desi mi ağırlık mı kullanılır?</h3>
+            <p class="text-gray-600 text-sm">Kargo firmaları desi (hacimsel ağırlık) ile fiziksel ağırlığı (kg) karşılaştırır ve hangisi büyükse ona göre ücretlendirme yapar. Hafif ama hacimli paketler desiye göre, ağır ve küçük paketler kg'a göre ücretlendirilir.</p>
+          </div>
+          <div class="border-b border-gray-200 pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">Trendyol desi hesaplama formülü nedir?</h3>
+            <p class="text-gray-600 text-sm">Trendyol ve çoğu Türk kargo firması standart desi formülünü kullanır: (En x Boy x Yükseklik) / 3000. Ölçüler cm cinsindendir.</p>
+          </div>
+          <div class="pb-4">
+            <h3 class="font-semibold text-gray-900 mb-2">3000 sayısı nereden geliyor?</h3>
+            <p class="text-gray-600 text-sm">3000, kargo sektöründe kabul gören standart bir bölendir. 1 desi yaklaşık 1 dm³ hacme karşılık gelir ve bu oran uluslararası kargo hesaplamalarıyla uyumludur.</p>
+          </div>
+        </div>
+
+        <!-- Internal Links -->
+        <div class="mt-12 p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border border-orange-100">
+          <h3 class="font-bold text-gray-900 mb-4">İlgili Araçlar ve Rehberler</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-primary font-medium hover:underline">Trendyol Kar Hesaplama</a> — Net karınızı hesaplayın</li>
+            <li><a href="index.html" class="text-primary font-medium hover:underline">Trendyol Komisyon Hesaplama</a> — Komisyon ve maliyet analizi</li>
+            <li><a href="trendyol-rehber.html" class="text-primary font-medium hover:underline">Trendyol Satıcı Rehberi</a> — Kapsamlı satıcı kılavuzu</li>
+            <li><a href="kargo-fiyatlari.html" class="text-primary font-medium hover:underline">Kargo Fiyatları</a> — Güncel kargo ücretleri tablosu</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 mt-12 py-8 text-center text-sm text-gray-500">
+      <div class="flex flex-wrap justify-center gap-4 mb-4">
+        <a href="index.html" class="hover:text-primary">Ana Sayfa</a>
+        <a href="blog.html" class="hover:text-primary">E-ticaret Rehberi</a>
+        <a href="kargo-fiyatlari.html" class="hover:text-primary">Kargo Fiyatları</a>
+        <a href="trendyol-rehber.html" class="hover:text-primary">Trendyol Rehber</a>
+        <a href="gizlilik-politikasi.html" class="hover:text-primary">Gizlilik Politikası</a>
+        <a href="hakkimizda.html" class="hover:text-primary">Hakkımızda</a>
+        <a href="sss.html" class="hover:text-primary">SSS</a>
+      </div>
+      <p>© 2026 Trendyol Rehber — Kargo Desi Hesaplama</p>
+    </footer>
+
+    <script>
+      (function() {
+        const form = document.getElementById('desi-form');
+        const widthInput = document.getElementById('width');
+        const heightInput = document.getElementById('height');
+        const lengthInput = document.getElementById('length');
+        const resultEl = document.getElementById('result');
+
+        function calculateDesi() {
+          const w = parseFloat(widthInput.value) || 0;
+          const h = parseFloat(heightInput.value) || 0;
+          const l = parseFloat(lengthInput.value) || 0;
+          if (w > 0 && h > 0 && l > 0) {
+            const desi = (w * h * l) / 3000;
+            resultEl.textContent = desi.toFixed(2) + ' desi';
+          } else {
+            resultEl.textContent = '—';
+          }
+        }
+
+        [widthInput, heightInput, lengthInput].forEach(function(input) {
+          input.addEventListener('input', calculateDesi);
+          input.addEventListener('change', calculateDesi);
+        });
+      })();
+    </script>
+    <script src="cookie-consent.js"></script>
+  </body>
+</html>
