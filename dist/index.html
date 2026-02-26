@@ -184,42 +184,203 @@
         color: white;
       }
       
+      /* Mega Menu */
+      .site-header {
+        background: white;
+        border-bottom: 1px solid #e5e7eb;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 56px;
+        position: relative;
+      }
+      .header-logo {
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: #ff6b35;
+        text-decoration: none;
+      }
+      .header-logo:hover { color: #e55a2b; }
+      .nav-menu {
+        display: flex;
+        gap: 0;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-item {
+        position: relative;
+      }
+      .nav-link {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: #374151;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+      .nav-link:hover { color: #ff6b35; }
+      .mega-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 280px;
+        background: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+        padding: 1rem 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+        z-index: 50;
+      }
+      .nav-item:hover .mega-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .mega-dropdown a {
+        display: block;
+        padding: 0.5rem 1.25rem;
+        color: #4b5563;
+        text-decoration: none;
+        font-size: 0.875rem;
+      }
+      .mega-dropdown a:hover {
+        background: #fef3c7;
+        color: #ff6b35;
+      }
+      .mega-dropdown .mega-title {
+        padding: 0.5rem 1.25rem;
+        font-weight: 600;
+        color: #1f2937;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .home-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .home-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .home-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      }
+      .home-card-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+      .home-card-title { font-size: 1.1rem; font-weight: 700; color: #1f2937; margin-bottom: 0.5rem; }
+      .home-card-desc { font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem; line-height: 1.5; }
+      .home-card-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+      .home-card-btn:hover { opacity: 0.9; }
+      @media (max-width: 900px) {
+        .home-cards-grid { grid-template-columns: 1fr; }
+      }
+      .mobile-menu-btn {
+        display: none;
+        padding: 0.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
       @media (max-width: 768px) {
-        .blog-button-container {
-          bottom: 1rem;
-          right: 1rem;
-        }
-        
-        .blog-button {
-          padding: 0.75rem 1.25rem;
-          font-size: 0.875rem;
-        }
-        
-        .blog-cta-section {
-          padding: 2rem 1rem;
-          margin: 2rem 0;
-        }
-        
-        .blog-cta-title {
-          font-size: 1.5rem;
-        }
-        
-        .blog-cta-description {
-          font-size: 1rem;
-        }
-        
-        .kargo-section {
-          padding: 1.5rem 1rem;
-          margin: 1.5rem 0;
-        }
-        
-        .kargo-section-title {
-          font-size: 1.25rem;
-        }
+        .blog-button-container { bottom: 1rem; right: 1rem; }
+        .blog-button { padding: 0.75rem 1.25rem; font-size: 0.875rem; }
+        .blog-cta-section { padding: 2rem 1rem; margin: 2rem 0; }
+        .blog-cta-title { font-size: 1.5rem; }
+        .blog-cta-description { font-size: 1rem; }
+        .nav-menu { display: none; }
+        .nav-menu.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; border-bottom: 1px solid #e5e7eb; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .mobile-menu-btn { display: block; }
+        .mega-dropdown { display: none !important; }
+        .nav-item .nav-link { padding: 0.75rem; }
       }
     </style>
   </head>
   <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="header-logo">Trendyol Rehber</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menü">☰</button>
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item">
+            <a href="trendyol-rehber.html" class="nav-link">Rehberler</a>
+            <div class="mega-dropdown">
+              <div class="mega-title">Rehberler</div>
+              <a href="trendyol-satici-rehberi.html">Satıcı Rehberi (Ana Hub)</a>
+              <a href="trendyol-satis-nasil-yapilir.html">Satış Nasıl Yapılır</a>
+              <a href="trendyol-satici-basvurusu.html">Satıcı Başvurusu</a>
+              <a href="trendyol-rehber.html">Tüm Rehberler</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="trendyol-araclari.html" class="nav-link">Araçlar</a>
+            <div class="mega-dropdown">
+              <div class="mega-title">Hesaplama Araçları</div>
+              <a href="index.html">Kar Hesaplama</a>
+              <a href="trendyol-komisyon-hesaplama.html">Komisyon Hesaplama</a>
+              <a href="kargo-desi-hesaplama.html">Kargo Desi Hesaplama</a>
+              <a href="kargo-fiyatlari.html">Kargo Fiyatları</a>
+              <a href="trendyol-araclari.html">Tüm Araçlar</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="trendyol-sorunlar.html" class="nav-link">Sorun & Çözümler</a>
+            <div class="mega-dropdown">
+              <div class="mega-title">Problem Çözümleri</div>
+              <a href="trendyol-hata-cozumleri.html">Hata & Çözümleri</a>
+              <a href="trendyol-urun-reddi.html">Ürün Reddi</a>
+              <a href="trendyol-ceza-puani.html">Ceza Puanı</a>
+              <a href="trendyol-hesap-kapanir-mi.html">Hesap Kapanması</a>
+              <a href="trendyol-sorunlar.html">Tümü</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="trendyol-haberler.html" class="nav-link">Güncellemeler</a>
+            <div class="mega-dropdown">
+              <div class="mega-title">Haberler</div>
+              <a href="trendyol-haberler.html">Tüm Güncellemeler</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
     <div id="root"></div>
     
     <!-- Blog CTA Section - Will be inserted after the main content loads -->
@@ -234,57 +395,47 @@
     </div>
     
     <script>
-      // Wait for the React app to load, then insert the kargo and blog CTA sections
+      // Wait for the React app to load, then insert the card grid
       setTimeout(function() {
         const rootElement = document.getElementById("root");
         if (rootElement && rootElement.children.length > 0) {
           const mainContent = rootElement.querySelector("main") || rootElement.firstElementChild;
           
-          // Trendyol Rehber banner (SEO - ana sayfa üstünde)
-          const rehberBanner = document.createElement("div");
-          rehberBanner.className = "kargo-section";
-          rehberBanner.style.background = "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)";
-          rehberBanner.style.borderColor = "#93c5fd";
-          rehberBanner.innerHTML = `
-            <h2 class="kargo-section-title" style="color: white;">📖 Trendyol Rehber</h2>
-            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">Satıcılar için kapsamlı rehber: Kar hesaplayıcı, komisyon, kargo fiyatları ve 17+ e-ticaret ipucu.</p>
-            <a href="trendyol-rehber.html" style="display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: #1e40af; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none;">
-              <span>Tüm Rehbere Git</span>
-              <span>→</span>
-            </a>
-          `;
-          
-          // Kargo Fiyatları section
-          const kargoSection = document.createElement("div");
-          kargoSection.className = "kargo-section";
-          kargoSection.innerHTML = `
-            <h2 class="kargo-section-title">📄 Güncel Kargo Fiyatları</h2>
-            <p class="kargo-section-date">Son güncelleme: 29 Ocak 2026</p>
-            <p style="color: #374151; margin-bottom: 1rem;">Kar hesaplamalarınızda kullanabileceğiniz güncel kargo ücretleri tablosunu PDF olarak indirin. Paket desinizi hesaplamak için ücretsiz aracımızı kullanın.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; align-items: center;">
-              <a href="kargo-fiyatlari.html" class="kargo-section-btn">
-                <span>⬇</span>
-                <span>Kargo Fiyatlarını İndir</span>
-              </a>
-              <a href="kargo-desi-hesaplama.html" class="kargo-section-btn" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);">
-                <span>📦</span>
-                <span>Desi Hesapla</span>
-              </a>
-              <a href="trendyol-komisyon-hesaplama.html" class="kargo-section-btn" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
-                <span>💰</span>
-                <span>Komisyon Hesapla</span>
-              </a>
+          // Card grid - yan yana kartlar
+          const cardsWrapper = document.createElement("div");
+          cardsWrapper.style.cssText = "padding: 2rem 0; background: #f9fafb;";
+          cardsWrapper.innerHTML = `
+            <div class="home-cards-grid">
+              <div class="home-card">
+                <div class="home-card-icon">📖</div>
+                <h3 class="home-card-title">Satıcı Rehberi</h3>
+                <p class="home-card-desc">Başlangıçtan profesyonelliğe kapsamlı rehber. Mağaza açma, ürün yükleme, kargo, komisyon ve satış stratejileri.</p>
+                <a href="trendyol-satici-rehberi.html" class="home-card-btn" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white;">Rehberi Oku →</a>
+              </div>
+              <div class="home-card">
+                <div class="home-card-icon">📄</div>
+                <h3 class="home-card-title">Kargo Fiyatları</h3>
+                <p class="home-card-desc">Güncel kargo ücretleri tablosunu PDF indirin. Desi hesaplama ve komisyon hesaplama araçları.</p>
+                <a href="kargo-fiyatlari.html" class="home-card-btn" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white;">PDF İndir</a>
+                <a href="kargo-desi-hesaplama.html" class="home-card-btn" style="background: #f3f4f6; color: #374151; margin-left: 0.5rem;">Desi Hesapla</a>
+              </div>
+              <div class="home-card">
+                <div class="home-card-icon">📚</div>
+                <h3 class="home-card-title">E-ticaret Rehberi</h3>
+                <p class="home-card-desc">17+ detaylı blog yazısı: SEO, pazarlama, satış stratejileri. Bilinçli fiyatlandırma ile rekabet avantajı.</p>
+                <a href="blog.html" class="home-card-btn" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); color: white;">Rehberleri İncele →</a>
+              </div>
             </div>
           `;
           
-          // Blog CTA section
           const blogCTASection = document.createElement("div");
           blogCTASection.className = "blog-cta-section";
+          blogCTASection.style.marginTop = "0";
           blogCTASection.innerHTML = `
-            <h1 class="blog-cta-title">E-ticaret Başarınızı Artırın</h1>
+            <h2 class="blog-cta-title">E-ticaret Başarınızı Artırın</h2>
             <p class="blog-cta-description">
               Doğru kar hesaplaması yapmak, e-ticaret işinizde sürdürülebilir büyüme için temel gereksinimdir. 
-              Trendyol kar hesaplayıcımızı kullanarak bilinçli fiyatlandırma kararları alın ve rekabet avantajı elde edin.
+              Trendyol kar hesaplayıcımızı kullanarak bilinçli fiyatlandırma kararları alın.
             </p>
             <a href="blog.html" class="blog-cta-button">
               <span>📖</span>
@@ -293,16 +444,14 @@
           `;
           
           if (mainContent && mainContent.parentNode) {
-            mainContent.parentNode.insertBefore(rehberBanner, mainContent.nextSibling);
-            mainContent.parentNode.insertBefore(kargoSection, rehberBanner.nextSibling);
-            mainContent.parentNode.insertBefore(blogCTASection, kargoSection.nextSibling);
+            mainContent.parentNode.insertBefore(cardsWrapper, mainContent.nextSibling);
+            mainContent.parentNode.insertBefore(blogCTASection, cardsWrapper.nextSibling);
           } else {
-            rootElement.appendChild(rehberBanner);
-            rootElement.appendChild(kargoSection);
+            rootElement.appendChild(cardsWrapper);
             rootElement.appendChild(blogCTASection);
           }
         }
-      }, 2000); // Wait 2 seconds for React to load
+      }, 2000);
     </script>
 
     <!-- AdSense Reklam Birimi Örneği - Ana Sayfa -->
@@ -324,6 +473,7 @@
       <a href="trendyol-araclari.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Araçlar</a>
       <a href="trendyol-sorunlar.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Sorun & Çözümler</a>
       <a href="trendyol-haberler.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Güncellemeler</a>
+      <a href="trendyol-satici-rehberi.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Satıcı Rehberi</a>
       <a href="gizlilik-politikasi.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Gizlilik Politikası</a>
       <a href="hakkimizda.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Hakkımızda</a>
       <a href="sss.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">SSS</a>
@@ -334,6 +484,11 @@
       <a href="blog.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">E-ticaret Rehberi</a>
     </footer>
 
+    <script>
+      document.getElementById("mobile-menu-btn")?.addEventListener("click", function() {
+        document.getElementById("nav-menu")?.classList.toggle("open");
+      });
+    </script>
     <script src="cookie-consent.js"></script>
   </body>
 </html>
