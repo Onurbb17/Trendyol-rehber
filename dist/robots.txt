@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /index-original.html
+Disallow: /dizine-ekle.html
 
 Sitemap: https://trendyolrehber.com/sitemap.xml

@@ -1,6 +1,13 @@
 (function() {
   var COOKIE_CONSENT_KEY = 'trendyolrehber_cookie_consent';
   var CONSENT_EXPIRY_DAYS = 365;
+  var TRUST_LINKS = [
+    { href: 'iletisim.html', text: 'İletişim' },
+    { href: 'gizlilik-politikasi.html', text: 'Gizlilik Politikası' },
+    { href: 'cerez-politikasi.html', text: 'Çerez Politikası' },
+    { href: 'kullanim-kosullari.html', text: 'Kullanım Koşulları' }
+  ];
+  var BRAND_URL = 'https://e-ciro.com';
 
   function getConsent() {
     try {
@@ -41,7 +48,8 @@
     banner.innerHTML = 
       '<div class="cookie-consent-content">' +
         '<p class="cookie-consent-text">Bu site deneyiminizi iyileştirmek ve reklamları kişiselleştirmek için çerezler kullanır. ' +
-        '<a href="gizlilik-politikasi.html">Gizlilik Politikası</a></p>' +
+        '<a href="gizlilik-politikasi.html">Gizlilik Politikası</a> ve ' +
+        '<a href="cerez-politikasi.html">Çerez Politikası</a></p>' +
         '<div class="cookie-consent-buttons">' +
           '<button id="cookie-accept" class="cookie-btn cookie-btn-accept">Kabul Et</button>' +
           '<button id="cookie-decline" class="cookie-btn cookie-btn-decline">Reddet</button>' +
@@ -79,11 +87,77 @@
     };
   }
 
-  function init() {
-    if (getConsent() !== null) {
-      return;
+  function hasLink(container, href) {
+    return !!container.querySelector('a[href="' + href + '"]');
+  }
+
+  function cloneAnchorStyle(sourceAnchor, targetAnchor) {
+    if (!sourceAnchor) return;
+    if (sourceAnchor.className) targetAnchor.className = sourceAnchor.className;
+    var style = sourceAnchor.getAttribute('style');
+    if (style) targetAnchor.setAttribute('style', style);
+  }
+
+  function injectTrustLinksInto(container) {
+    if (!container) return;
+    var sampleLink = container.querySelector('a');
+    TRUST_LINKS.forEach(function(item) {
+      if (hasLink(container, item.href)) return;
+      var link = document.createElement('a');
+      link.href = item.href;
+      link.textContent = item.text;
+      cloneAnchorStyle(sampleLink, link);
+      container.appendChild(link);
+    });
+  }
+
+  function ensureTrustLinks() {
+    var candidates = document.querySelectorAll('footer .flex, footer .footer-links, footer');
+    var seen = new Set();
+    for (var i = 0; i < candidates.length; i++) {
+      var container = candidates[i];
+      if (seen.has(container)) continue;
+      seen.add(container);
+      if (!container.querySelector('a')) continue;
+      injectTrustLinksInto(container);
     }
-    createBanner();
+  }
+
+  function ensureBrandAttribution() {
+    var footers = document.querySelectorAll('footer');
+    for (var i = 0; i < footers.length; i++) {
+      var footer = footers[i];
+      if (footer.querySelector('[data-brand-attribution="true"]')) continue;
+
+      var line = document.createElement('p');
+      line.setAttribute('data-brand-attribution', 'true');
+      line.style.margin = '0.75rem 0 0';
+      line.style.fontSize = '0.82rem';
+      line.style.color = '#6b7280';
+
+      var textStart = document.createTextNode('Bu proje, ');
+      var brandLink = document.createElement('a');
+      brandLink.href = BRAND_URL;
+      brandLink.target = '_blank';
+      brandLink.rel = 'noopener noreferrer';
+      brandLink.textContent = 'e-ciro.com';
+      brandLink.style.color = '#ff6b35';
+      brandLink.style.textDecoration = 'none';
+      var textEnd = document.createTextNode(' ürünüdür ve topluluğa yardımcı olmak amacıyla hazırlanmıştır.');
+
+      line.appendChild(textStart);
+      line.appendChild(brandLink);
+      line.appendChild(textEnd);
+      footer.appendChild(line);
+    }
+  }
+
+  function init() {
+    ensureTrustLinks();
+    ensureBrandAttribution();
+    if (getConsent() === null) {
+      createBanner();
+    }
   }
 
   if (document.readyState === 'loading') {
