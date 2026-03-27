@@ -41,6 +41,42 @@ function cleanContent(html) {
   return h.trim();
 }
 
+/** In-article AdSense: makalenin başında, ilk iki paragraftan sonra (2. </p>); kenar çubuğu değil */
+function injectInArticleAd(html) {
+  const pushTag =
+    '<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>';
+  const adBlock =
+    '<div class="blog-in-article-ad" aria-label="Reklam">' +
+    '<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-9409905856635578" data-ad-slot="2171871029"></ins>' +
+    '</div>' +
+    pushTag;
+  const re = /<\/p>/gi;
+  let m;
+  let n = 0;
+  let cut = -1;
+  while ((m = re.exec(html)) !== null) {
+    n += 1;
+    if (n === 2) {
+      cut = m.index + m[0].length;
+      break;
+    }
+  }
+  if (cut >= 0) {
+    return html.slice(0, cut) + '\n' + adBlock + '\n' + html.slice(cut);
+  }
+  const one = /<\/p>/i.exec(html);
+  if (one) {
+    const idx = one.index + one[0].length;
+    return html.slice(0, idx) + '\n' + adBlock + '\n' + html.slice(idx);
+  }
+  const h1 = /<\/h1>/i.exec(html);
+  if (h1) {
+    const idx = h1.index + h1[0].length;
+    return html.slice(0, idx) + '\n' + adBlock + '\n' + html.slice(idx);
+  }
+  return adBlock + '\n' + html;
+}
+
 function getRelated(current, all, n) {
   const others = all.filter((p) => p.id !== current.id);
   const same = others.filter((p) => p.category === current.category);
@@ -52,7 +88,7 @@ function buildPage(post, allPosts) {
   const related = getRelated(post, allPosts, 3);
   const desc = truncateForMeta(post.excerpt, 155);
   const canonical = `${BASE}/blog/${post.id}.html`;
-  const content = cleanContent(post.content);
+  const content = injectInArticleAd(cleanContent(post.content));
 
   const relatedHtml =
     related.length > 0
@@ -141,6 +177,18 @@ ${content}
     </article>
 ${relatedHtml}
 ${guidesHtml}
+    <div class="blog-display-ad" aria-label="Reklam">
+      <!-- görüntülü -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-9409905856635578"
+           data-ad-slot="2255764955"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     <footer class="blog-static-footer trh-modern-footer">
       <a href="../trendyol-rehber.html">Trendyol Rehber</a>
       <a href="../gizlilik-politikasi.html">Gizlilik Politikası</a>

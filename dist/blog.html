@@ -172,6 +172,30 @@
         min-height: 100px;
       }
 
+      /* Görüntülü (display) birim — feed dışı, içerik kolonu genişliğinde */
+      .blog-display-ad {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding: 0 1rem;
+        text-align: center;
+      }
+
+      .blog-display-ad .adsbygoogle {
+        display: block;
+        min-height: 90px;
+      }
+
+      .blog-in-article-ad {
+        margin: 1.75rem auto;
+        max-width: 100%;
+        clear: both;
+      }
+
+      .blog-in-article-ad .adsbygoogle {
+        display: block;
+        text-align: center;
+      }
+
       .blog-card {
         position: relative;
         background: linear-gradient(165deg, rgba(26, 43, 78, 0.95) 0%, rgba(22, 38, 70, 0.98) 100%);
@@ -605,6 +629,19 @@
         <a href="index.html" class="back-btn">← Ana Sayfaya Dön</a>
       </div>
 
+      <div class="blog-display-ad" aria-label="Reklam">
+        <!-- görüntülü -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9409905856635578"
+             data-ad-slot="2255764955"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
       <!-- Makale içeriği footer'dan önce: detayda footer sayfanın en altında kalsın -->
       <div id="blog-articles" style="display: none;"></div>
 
@@ -630,6 +667,39 @@
       // Helper function to get a blog post by ID
       function getBlogPostById(id) {
         return blogPosts.find(post => post.id === id); // blogPosts is defined in blog-data.js
+      }
+
+      /** In-article reklam: ilk iki paragraftan sonra; kenar çubuğu yok (push ayrı — innerHTML script çalıştırmaz) */
+      function injectInArticleAdOnly(html) {
+        var adOnly =
+          '<div class="blog-in-article-ad" aria-label="Reklam">' +
+          '<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-9409905856635578" data-ad-slot="2171871029"></ins>' +
+          '</div>';
+        var re = /<\/p>/gi;
+        var match;
+        var count = 0;
+        var cut = -1;
+        while ((match = re.exec(html)) !== null) {
+          count++;
+          if (count === 2) {
+            cut = match.index + match[0].length;
+            break;
+          }
+        }
+        if (cut >= 0) {
+          return html.slice(0, cut) + "\n" + adOnly + "\n" + html.slice(cut);
+        }
+        var one = /<\/p>/i.exec(html);
+        if (one) {
+          var idx = one.index + one[0].length;
+          return html.slice(0, idx) + "\n" + adOnly + "\n" + html.slice(idx);
+        }
+        var h1m = /<\/h1>/i.exec(html);
+        if (h1m) {
+          var idx2 = h1m.index + h1m[0].length;
+          return html.slice(0, idx2) + "\n" + adOnly + "\n" + html.slice(idx2);
+        }
+        return adOnly + "\n" + html;
       }
 
       const blogListContainer = document.getElementById("blog-list");
@@ -833,13 +903,17 @@
             articleElement.id = `${post.id}-article`;
             articleElement.className = "blog-article";
             articleElement.style.display = "none";
-            articleElement.innerHTML = `
-              ${post.content}
+            articleElement.innerHTML =
+              injectInArticleAdOnly(post.content) +
+              `
               <div class="back-to-home">
                 <a href="#" class="back-btn" onclick="showBlogList()">← Blog Listesine Dön</a>
               </div>
             `;
             blogArticlesContainer.appendChild(articleElement);
+            try {
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e1) {}
           });
 
           /* Feed sonu: kısa sayfalarda da arada reklam olsun diye 4 veya daha az kartta sonda birim */
