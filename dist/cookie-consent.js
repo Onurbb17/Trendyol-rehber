@@ -8,6 +8,13 @@
     { href: 'kullanim-kosullari.html', text: 'Kullanım Koşulları' }
   ];
   var BRAND_URL = 'https://e-ciro.com';
+  var HEADER_LINKS = [
+    { href: 'index.html', text: 'Ana Sayfa' },
+    { href: 'trendyol-rehber.html', text: 'Rehberler' },
+    { href: 'trendyol-araclari.html', text: 'Araçlar' },
+    { href: 'trendyol-haberler.html', text: 'Güncellemeler' },
+    { href: 'blog.html', text: 'Blog' }
+  ];
 
   function getConsent() {
     try {
@@ -87,6 +94,114 @@
     };
   }
 
+  function ensureGlobalUiStyles() {
+    if (document.getElementById('trh-global-ui-style')) return;
+    var style = document.createElement('style');
+    style.id = 'trh-global-ui-style';
+    style.textContent =
+      '.trh-universal-header{' +
+        'position:sticky;top:0;z-index:1200;' +
+        'background:rgba(255,255,255,0.92);' +
+        'backdrop-filter:blur(8px);' +
+        '-webkit-backdrop-filter:blur(8px);' +
+        'border-bottom:1px solid #e5e7eb;' +
+        'box-shadow:0 6px 18px rgba(17,24,39,0.06);' +
+      '}' +
+      '.trh-universal-header .trh-top-accent{' +
+        'height:3px;background:linear-gradient(135deg,#ff6b35,#f7931e);' +
+      '}' +
+      '.trh-header-shell{' +
+        'max-width:1200px;margin:0 auto;padding:0.7rem 1rem;' +
+        'display:flex;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap;' +
+      '}' +
+      '.trh-brand{' +
+        'color:#ff6b35;text-decoration:none;font-weight:700;font-size:1.05rem;letter-spacing:0.01em;' +
+      '}' +
+      '.trh-brand:hover{color:#e55a2b;}' +
+      '.trh-nav{display:flex;align-items:center;gap:0.35rem 0.5rem;flex-wrap:wrap;}' +
+      '.trh-nav a,.trh-nav-link{' +
+        'display:inline-flex;align-items:center;padding:0.42rem 0.72rem;border-radius:999px;' +
+        'font-size:0.86rem;text-decoration:none;color:#4b5563;font-weight:600;transition:all .2s;' +
+      '}' +
+      '.trh-nav a:hover,.trh-nav-link:hover{background:#fff4ed;color:#ff6b35;}' +
+      '@media (max-width:760px){' +
+        '.trh-header-shell{padding:0.62rem 0.8rem;}' +
+        '.trh-brand{font-size:0.98rem;}' +
+        '.trh-nav a,.trh-nav-link{font-size:0.8rem;padding:0.38rem 0.62rem;}' +
+      '}';
+    document.head.appendChild(style);
+  }
+
+  function createFallbackHeader() {
+    var header = document.createElement('header');
+    header.className = 'trh-universal-header trh-injected-header';
+    header.innerHTML =
+      '<div class="trh-top-accent"></div>' +
+      '<div class="trh-header-shell">' +
+        '<a class="trh-brand" href="index.html">Trendyol Rehber</a>' +
+        '<nav class="trh-nav" aria-label="Site Navigasyonu"></nav>' +
+      '</div>';
+    var nav = header.querySelector('.trh-nav');
+    for (var i = 0; i < HEADER_LINKS.length; i++) {
+      var link = document.createElement('a');
+      link.href = HEADER_LINKS[i].href;
+      link.textContent = HEADER_LINKS[i].text;
+      nav.appendChild(link);
+    }
+    document.body.insertBefore(header, document.body.firstChild);
+    return header;
+  }
+
+  function normalizeExistingHeader(header) {
+    if (!header) return;
+    header.classList.add('trh-universal-header');
+
+    var accent = header.querySelector('.trh-top-accent');
+    if (!accent) {
+      accent = document.createElement('div');
+      accent.className = 'trh-top-accent';
+      header.insertBefore(accent, header.firstChild);
+    }
+
+    var shell = header.querySelector('.trh-header-shell');
+    if (!shell) {
+      shell = document.createElement('div');
+      shell.className = 'trh-header-shell';
+      var children = Array.prototype.slice.call(header.children);
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        if (child === accent || child === shell) continue;
+        shell.appendChild(child);
+      }
+      header.appendChild(shell);
+    }
+
+    var nav = header.querySelector('nav') || header.querySelector('.nav-menu') || header.querySelector('ul');
+    if (nav && !nav.classList.contains('trh-nav')) {
+      nav.classList.add('trh-nav');
+    }
+
+    if (nav && nav.querySelectorAll('a').length < 3) {
+      for (var i = 0; i < HEADER_LINKS.length; i++) {
+        if (hasLink(nav, HEADER_LINKS[i].href)) continue;
+        var nLink = document.createElement('a');
+        nLink.href = HEADER_LINKS[i].href;
+        nLink.textContent = HEADER_LINKS[i].text;
+        nav.appendChild(nLink);
+      }
+    }
+  }
+
+  function ensureUnifiedHeader() {
+    ensureGlobalUiStyles();
+    var header = document.querySelector('body > header');
+    if (!header) {
+      createFallbackHeader();
+      return;
+    }
+    normalizeExistingHeader(header);
+  }
+
   function hasLink(container, href) {
     return !!container.querySelector('a[href="' + href + '"]');
   }
@@ -153,6 +268,7 @@
   }
 
   function init() {
+    ensureUnifiedHeader();
     ensureTrustLinks();
     ensureBrandAttribution();
     if (getConsent() === null) {

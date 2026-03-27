@@ -453,6 +453,145 @@
         }
       }, 2000);
     </script>
+    <script>
+      (function() {
+        function toNumber(v) {
+          if (v == null) return 0;
+          if (typeof v === "number") return isNaN(v) ? 0 : v;
+          const cleaned = String(v).replace(/[^0-9,.-]/g, "").replace(/\./g, "").replace(",", ".");
+          const n = parseFloat(cleaned);
+          return isNaN(n) ? 0 : n;
+        }
+
+        function formatTL(n) {
+          return new Intl.NumberFormat("tr-TR", {
+            style: "currency",
+            currency: "TRY",
+            minimumFractionDigits: 2
+          }).format(n || 0);
+        }
+
+        function findInputByHints(hints) {
+          const allInputs = Array.from(document.querySelectorAll("#root input[type='number'], #root input"));
+          const loweredHints = hints.map(h => h.toLowerCase());
+          for (const input of allInputs) {
+            const ctx = [
+              input.id || "",
+              input.name || "",
+              input.placeholder || "",
+              input.getAttribute("aria-label") || "",
+              (input.closest("label") ? input.closest("label").textContent : "") || "",
+              (input.parentElement ? input.parentElement.textContent : "") || ""
+            ].join(" ").toLowerCase();
+            if (loweredHints.some(h => ctx.includes(h))) return input;
+          }
+          return null;
+        }
+
+        function createAddon() {
+          if (document.getElementById("advanced-cost-addon")) return;
+
+          const rootElement = document.getElementById("root");
+          if (!rootElement || rootElement.children.length === 0) return;
+          const mainContent = rootElement.querySelector("main") || rootElement.firstElementChild;
+          if (!mainContent) return;
+
+          const box = document.createElement("section");
+          box.id = "advanced-cost-addon";
+          box.style.cssText = "max-width:1100px;margin:1rem auto 2rem;background:#ffffff;border:1px solid #e5e7eb;border-radius:1rem;padding:1rem 1rem 1.2rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);";
+          box.innerHTML = `
+            <h2 style="margin:0 0 0.25rem;font-size:1.05rem;color:#1f2937;">Gelişmiş Maliyet Eklentisi</h2>
+            <p id="addon-status" style="margin:0 0 0.75rem;font-size:0.85rem;color:#6b7280;">
+              Ana sayfadaki hesaplayıcıdan temel değerler otomatik okunur. Ek maliyetleri girerek düzeltilmiş net karı görün.
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem;">
+              <div><label style="display:block;font-size:0.8rem;color:#6b7280;margin-bottom:0.25rem;">İade Kargo (₺)</label><input id="addon-iade" type="number" min="0" step="0.01" placeholder="6" style="width:100%;padding:0.55rem 0.7rem;border:1px solid #d1d5db;border-radius:0.5rem;"></div>
+              <div><label style="display:block;font-size:0.8rem;color:#6b7280;margin-bottom:0.25rem;">Paketleme/Koli (₺)</label><input id="addon-paket" type="number" min="0" step="0.01" placeholder="4" style="width:100%;padding:0.55rem 0.7rem;border:1px solid #d1d5db;border-radius:0.5rem;"></div>
+              <div><label style="display:block;font-size:0.8rem;color:#6b7280;margin-bottom:0.25rem;">E-Arşiv/Fatura (₺)</label><input id="addon-fatura" type="number" min="0" step="0.01" placeholder="0.5" style="width:100%;padding:0.55rem 0.7rem;border:1px solid #d1d5db;border-radius:0.5rem;"></div>
+              <div><label style="display:block;font-size:0.8rem;color:#6b7280;margin-bottom:0.25rem;">Reklam Payı (₺)</label><input id="addon-reklam" type="number" min="0" step="0.01" placeholder="8" style="width:100%;padding:0.55rem 0.7rem;border:1px solid #d1d5db;border-radius:0.5rem;"></div>
+              <div><label style="display:block;font-size:0.8rem;color:#6b7280;margin-bottom:0.25rem;">Ceza/Tazmin (₺)</label><input id="addon-ceza" type="number" min="0" step="0.01" placeholder="2" style="width:100%;padding:0.55rem 0.7rem;border:1px solid #d1d5db;border-radius:0.5rem;"></div>
+              <div><label style="display:block;font-size:0.8rem;color:#6b7280;margin-bottom:0.25rem;">Genel Gider Payı (₺)</label><input id="addon-genel" type="number" min="0" step="0.01" placeholder="5" style="width:100%;padding:0.55rem 0.7rem;border:1px solid #d1d5db;border-radius:0.5rem;"></div>
+            </div>
+            <div style="margin-top:0.9rem;padding-top:0.8rem;border-top:1px solid #e5e7eb;display:flex;flex-wrap:wrap;gap:0.9rem 1.5rem;font-size:0.9rem;">
+              <div><span style="color:#6b7280;">Toplam Ek Maliyet:</span> <strong id="addon-toplam">₺0,00</strong></div>
+              <div><span style="color:#6b7280;">Düzeltilmiş Net Kar:</span> <strong id="addon-net" style="color:#059669;">₺0,00</strong></div>
+            </div>
+          `;
+
+          mainContent.parentNode.insertBefore(box, mainContent.nextSibling);
+
+          const iade = document.getElementById("addon-iade");
+          const paket = document.getElementById("addon-paket");
+          const fatura = document.getElementById("addon-fatura");
+          const reklam = document.getElementById("addon-reklam");
+          const ceza = document.getElementById("addon-ceza");
+          const genel = document.getElementById("addon-genel");
+          const toplamEl = document.getElementById("addon-toplam");
+          const netEl = document.getElementById("addon-net");
+          const statusEl = document.getElementById("addon-status");
+
+          const base = {
+            price: findInputByHints(["satış fiyat", "fiyat"]),
+            commission: findInputByHints(["komisyon"]),
+            cost: findInputByHints(["ürün maliyet", "maliyet"]),
+            shipping: findInputByHints(["kargo"])
+          };
+
+          const linked = base.price && base.commission && base.cost && base.shipping;
+          if (!linked) {
+            statusEl.textContent = "Ana hesaplayıcı alanları otomatik eşleşemedi. Gelişmiş modelin tam sürümü için Komisyon Hesaplama sayfasını kullanın.";
+            statusEl.style.color = "#b45309";
+          }
+
+          function calculate() {
+            const ekToplam =
+              toNumber(iade.value) +
+              toNumber(paket.value) +
+              toNumber(fatura.value) +
+              toNumber(reklam.value) +
+              toNumber(ceza.value) +
+              toNumber(genel.value);
+
+            let net = 0;
+            if (linked) {
+              const s = toNumber(base.price.value);
+              const k = toNumber(base.commission.value);
+              const m = toNumber(base.cost.value);
+              const kr = toNumber(base.shipping.value);
+              const kom = s * (k / 100);
+              net = s - kom - m - kr - ekToplam;
+            }
+
+            toplamEl.textContent = formatTL(ekToplam);
+            netEl.textContent = formatTL(net);
+            netEl.style.color = net < 0 ? "#dc2626" : "#059669";
+          }
+
+          [iade, paket, fatura, reklam, ceza, genel].forEach(inp => {
+            inp.addEventListener("input", calculate);
+            inp.addEventListener("change", calculate);
+          });
+
+          if (linked) {
+            [base.price, base.commission, base.cost, base.shipping].forEach(inp => {
+              inp.addEventListener("input", calculate);
+              inp.addEventListener("change", calculate);
+            });
+          }
+
+          calculate();
+        }
+
+        let tries = 0;
+        const timer = setInterval(function() {
+          tries += 1;
+          createAddon();
+          if (document.getElementById("advanced-cost-addon") || tries > 20) {
+            clearInterval(timer);
+          }
+        }, 1000);
+      })();
+    </script>
 
     <!-- Footer -->
     <footer style="text-align: center; padding: 2rem 1rem; color: #6b7280; font-size: 0.875rem; border-top: 1px solid #e5e7eb; margin-top: 2rem;">

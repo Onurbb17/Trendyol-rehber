@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Trendyol komisyon hesaplama excel şablonu nasıl hazırlanır? Formül örnekleri, kolon yapısı ve gerçek maliyet kalemleriyle adım adım anlatım."
+    />
+    <meta
+      name="keywords"
+      content="trendyol komisyon hesaplama excel, trendyol excel şablonu, karlılık excel, e ticaret maliyet tablosu, komisyon hesaplama trendyol"
+    />
+    <link rel="canonical" href="https://trendyolrehber.com/trendyol-komisyon-hesaplama-excel-sablonu.html" />
+    <meta property="og:url" content="https://trendyolrehber.com/trendyol-komisyon-hesaplama-excel-sablonu.html" />
+    <meta property="og:title" content="Trendyol Komisyon Hesaplama Excel Şablonu (Adım Adım)" />
+    <meta
+      property="og:description"
+      content="Excel'de trendyol komisyon, kargo, iade, reklam ve net kar hesaplamak için örnek kolonlar ve formüller."
+    />
+    <meta property="og:type" content="article" />
+    <title>Trendyol Komisyon Hesaplama Excel Şablonu (2026)</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Trendyol Komisyon Hesaplama Excel Şablonu Hazırlama",
+      "description": "Excel üzerinde komisyon ve gerçek maliyet bazlı net kar tablosu kurma adımları.",
+      "step": [
+        { "@type": "HowToStep", "name": "Kolonları oluştur", "text": "Satış, komisyon, maliyet, kargo, iade, reklam ve net kar kolonlarını aç." },
+        { "@type": "HowToStep", "name": "Formülleri gir", "text": "Komisyon ve net kar formüllerini satır bazlı uygula." },
+        { "@type": "HowToStep", "name": "Pivot analiz yap", "text": "Kategori ve SKU bazında en karlı ürünleri çıkar." }
+      ]
+    }
+    </script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.8;
+        color: #374151;
+        background: #f9fafb;
+      }
+      .hero {
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        color: #fff;
+        text-align: center;
+        padding: 2.8rem 1.25rem;
+      }
+      .hero h1 { font-size: 2rem; margin-bottom: 0.55rem; }
+      .hero p { max-width: 900px; margin: 0 auto; }
+      .container {
+        max-width: 940px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      .meta { color: #6b7280; font-size: 0.95rem; margin-bottom: 1.2rem; }
+      h2 { color: #1f2937; margin: 2rem 0 0.8rem; font-size: 1.5rem; }
+      h3 { color: #374151; margin: 1rem 0 0.5rem; font-size: 1.12rem; }
+      p { margin-bottom: 1rem; }
+      ul, ol { margin-bottom: 1rem; padding-left: 1.4rem; }
+      li { margin-bottom: 0.5rem; }
+      .box {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.95rem;
+        padding: 1rem 1.1rem;
+        margin-bottom: 1rem;
+      }
+      .formula {
+        background: #111827;
+        color: #f3f4f6;
+        border-radius: 0.7rem;
+        padding: 0.8rem 1rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.9rem;
+        margin: 0.6rem 0 1rem;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem 1.2rem;
+        margin-top: 2rem;
+      }
+      .links a {
+        color: #6b7280;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      .links a:hover { color: #ff6b35; }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Trendyol Komisyon Hesaplama Excel Şablonu</h1>
+      <p>Komisyon + gerçek maliyet mantığıyla çalışan, sipariş bazlı net kar üreten bir excel tablosunu 20 dakikada kurabilirsiniz.</p>
+    </header>
+
+    <main class="container">
+      <p class="meta">Yayın tarihi: 24 Mart 2026 • Okuma süresi: 8 dakika</p>
+
+      <p>
+        "trendyol komisyon hesaplama excel" aramalarında genelde sadece komisyon formülü paylaşılıyor.
+        Oysa gerçek net kar için iade, paketleme, reklam ve genel gider payı da tabloya dahil edilmelidir.
+      </p>
+
+      <h2>1) Excel Kolon Yapısı</h2>
+      <div class="box">
+        <ul>
+          <li>Sipariş No</li>
+          <li>SKU / Ürün Adı</li>
+          <li>Satış Fiyatı</li>
+          <li>Komisyon Oranı (%)</li>
+          <li>Komisyon Tutarı</li>
+          <li>Ürün Maliyeti</li>
+          <li>Kargo</li>
+          <li>İade Kargo</li>
+          <li>Paketleme</li>
+          <li>Reklam Payı</li>
+          <li>Hizmet Bedeli / Diğer Kesintiler</li>
+          <li>Net Kar</li>
+          <li>Kar Marjı (%)</li>
+        </ul>
+      </div>
+
+      <h2>2) Temel Formüller</h2>
+      <p>Excel'de satır 2'den başladığınızı varsayarsak:</p>
+      <div class="formula">Komisyon Tutarı (E2) = C2 * (D2/100)</div>
+      <div class="formula">Net Kar (L2) = C2-(E2+F2+G2+H2+I2+J2+K2)</div>
+      <div class="formula">Kar Marjı (M2) = IF(C2=0,0,L2/C2)</div>
+      <p>
+        Satırlarda aşağı doğru çoğaltarak tüm siparişlere uygula.
+      </p>
+
+      <h2>3) Analiz Katmanı (Pivot)</h2>
+      <div class="box">
+        <h3>Kategori ve SKU bazlı pivotlar</h3>
+        <ul>
+          <li>En çok ciro yapan ürünler</li>
+          <li>En yüksek net kar üreten ürünler</li>
+          <li>Negatif marj üreten ürünler</li>
+          <li>Yüksek iade kaynaklı zarar oluşturan ürünler</li>
+        </ul>
+      </div>
+
+      <h2>4) Sık Hata: Aylık Toplam Gideri Eşit Bölmek</h2>
+      <p>
+        Genel gideri tüm siparişlere eşit dağıtmak gerçek resmi bozabilir. Ürün grubu veya kanal bazlı paylaştırma modeli daha doğru sonuç verir.
+      </p>
+
+      <h2>5) Excel mi, Hesaplayıcı mı?</h2>
+      <p>
+        Günlük hızlı karar için <a href="trendyol-komisyon-hesaplama.html">Komisyon ve Gelişmiş Maliyet Hesaplayıcı</a> daha pratiktir.
+        Detaylı dönem analizi için excel tablosu daha güçlüdür. İkisini birlikte kullanmak en iyi yöntemdir.
+      </p>
+
+      <div class="links">
+        <a href="trendyol-haberler.html">← Güncellemeler</a>
+        <a href="trendyol-komisyon-hesaplama.html">Komisyon ve Maliyet Hesaplama</a>
+        <a href="trendyol-satis-analizi-nasil-yapilir.html">Satış Analizi Rehberi</a>
+        <a href="trendyol-karlilik-hesaplama-gercek-maliyet-rehberi.html">Gerçek Karlılık Rehberi</a>
+      </div>
+    </main>
+
+    <script src="cookie-consent.js"></script>
+  </body>
+</html>
