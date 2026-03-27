@@ -1,6 +1,7 @@
 /**
  * Statik blog makale sayfaları üretir: dist/blog/{id}.html
  * Çalıştır: node scripts/generate-blog-pages.js
+ * Ardından sitemap: npm run generate:sitemap veya npm run generate
  */
 const fs = require('fs');
 const path = require('path');
@@ -8,6 +9,7 @@ const { blogPosts } = require('../dist/blog-data.js');
 
 const OUT_DIR = path.join(__dirname, '../dist/blog');
 const BASE = 'https://trendyolrehber.com';
+const LOGO_PNG = `${BASE}/assets/logo-K4BhMvNr.png`;
 
 function truncateForMeta(text, max) {
   if (!text) return '';
@@ -132,7 +134,7 @@ ${related
       '@type': 'Organization',
       name: 'Trendyol Rehber',
       url: BASE,
-      logo: { '@type': 'ImageObject', url: `${BASE}/favicon.ico` }
+      logo: { '@type': 'ImageObject', url: LOGO_PNG }
     },
     author: { '@type': 'Organization', name: 'Trendyol Rehber' },
     articleSection: post.category,

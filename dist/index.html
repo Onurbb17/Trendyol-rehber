@@ -21,11 +21,29 @@
       "alternateName": "trendyolrehber.com",
       "url": "https://trendyolrehber.com",
       "description": "Trendyol rehber: Satıcılar için kar hesaplayıcı, komisyon ve kargo maliyeti hesaplama. E-ticaret rehberi ve ipuçları.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Trendyol Rehber",
+        "url": "https://trendyolrehber.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://trendyolrehber.com/assets/logo-K4BhMvNr.png"
+        }
+      },
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://trendyolrehber.com/blog.html?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Trendyol Rehber",
+      "url": "https://trendyolrehber.com",
+      "logo": "https://trendyolrehber.com/assets/logo-K4BhMvNr.png"
     }
     </script>
     <script type="application/ld+json">
@@ -204,12 +222,17 @@
         position: relative;
       }
       .header-logo {
-        font-weight: 700;
-        font-size: 1.25rem;
-        color: #ff6b35;
+        display: inline-flex;
+        align-items: center;
         text-decoration: none;
+        line-height: 0;
       }
-      .header-logo:hover { color: #e55a2b; }
+      .header-logo img {
+        height: 38px;
+        width: auto;
+        display: block;
+      }
+      .header-logo:hover img { opacity: 0.92; }
       .nav-menu {
         display: flex;
         gap: 0;
@@ -332,7 +355,9 @@
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <a href="index.html" class="header-logo">Trendyol Rehber</a>
+        <a href="index.html" class="header-logo" aria-label="Trendyol Rehber — ana sayfa">
+          <img src="/assets/logo-K4BhMvNr.png" alt="Trendyol Rehber" width="200" height="38" decoding="async" />
+        </a>
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menü">☰</button>
         <ul class="nav-menu" id="nav-menu">
           <li class="nav-item">

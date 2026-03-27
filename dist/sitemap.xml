@@ -4,51 +4,33 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://trendyolrehber.com/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-satici-rehberi.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-hata-cozumleri.html</loc>
-    <lastmod>2026-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-rehber.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-araclari.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-sorunlar.html</loc>
-    <lastmod>2026-02-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-haberler.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://trendyolrehber.com/blog.html</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/2026-sosyal-medya-trendleri-ve-satici-aksiyon-plani.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/bahar-temizlik-ev-yenileme-rehberi.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/blog/e-ticarette-ilk-satis.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
   </url>
   <url>
     <loc>https://trendyolrehber.com/blog/hesap-acma.html</loc>
@@ -63,43 +45,25 @@
     <priority>0.82</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/blog/urun-listeleme.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-  <url>
     <loc>https://trendyolrehber.com/blog/satis-artirma.html</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/blog/trendyol-seo-stratejileri.html</loc>
+    <loc>https://trendyolrehber.com/blog/trendyol-hizmet-bedeli.html</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/blog/trendyol-musteri-hizmetleri.html</loc>
+    <loc>https://trendyolrehber.com/blog/trendyol-kampanya-donemleri.html</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
   </url>
   <url>
     <loc>https://trendyolrehber.com/blog/trendyol-kargo-surecleri.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/blog/trendyol-reklam-stratejileri.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/blog/trendyol-hizmet-bedeli.html</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
@@ -117,7 +81,31 @@
     <priority>0.82</priority>
   </url>
   <url>
+    <loc>https://trendyolrehber.com/blog/trendyol-magaza-performans.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
     <loc>https://trendyolrehber.com/blog/trendyol-maliyet-hesaplama.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/blog/trendyol-musteri-hizmetleri.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/blog/trendyol-reklam-stratejileri.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/blog/trendyol-seo-stratejileri.html</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
@@ -135,60 +123,32 @@
     <priority>0.82</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/blog/trendyol-kampanya-donemleri.html</loc>
+    <loc>https://trendyolrehber.com/blog/urun-listeleme.html</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/blog/trendyol-magaza-performans.html</loc>
+    <loc>https://trendyolrehber.com/cerez-politikasi.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/e-ticarette-7-kritik-hata-ve-cozumleri.html</loc>
     <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/blog/e-ticarette-ilk-satis.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-satis-nasil-yapilir.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-komisyon-hesaplama.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/kargo-desi-hesaplama.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/kargo-fiyatlari.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-urun-reddi.html</loc>
-    <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://trendyolrehber.com/gizlilik-politikasi.html</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://trendyolrehber.com/hakkimizda.html</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -199,43 +159,14 @@
     <priority>0.55</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/cerez-politikasi.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/kullanim-kosullari.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/sss.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-satici-basvurusu.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://trendyolrehber.com/kargo-desi-hesaplama.html</loc>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/trendyol-7-adimda-baslangic.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/tesettur-ilkbahar-yaz-kampanya-rehberi.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/bahar-temizlik-ev-yenileme-rehberi.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://trendyolrehber.com/kargo-fiyatlari.html</loc>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -246,46 +177,40 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/2026-sosyal-medya-trendleri-ve-satici-aksiyon-plani.html</loc>
+    <loc>https://trendyolrehber.com/kullanim-kosullari.html</loc>
     <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/trendyol-karlilik-hesaplama-gercek-maliyet-rehberi.html</loc>
+    <loc>https://trendyolrehber.com/sss.html</loc>
     <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.86</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/trendyol-vergi-ve-hizmet-bedeli-hesaplama.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.84</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-satis-analizi-nasil-yapilir.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.83</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/trendyol-komisyon-hesaplama-excel-sablonu.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-  </url>
-  <url>
-    <loc>https://trendyolrehber.com/e-ticarette-7-kritik-hata-ve-cozumleri.html</loc>
+    <loc>https://trendyolrehber.com/tesettur-ilkbahar-yaz-kampanya-rehberi.html</loc>
     <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/trendyol-ceza-puani.html</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://trendyolrehber.com/trendyol-2026-trendleri.html</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-7-adimda-baslangic.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-araclari.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://trendyolrehber.com/trendyol-ceza-puani-dusurme.html</loc>
@@ -294,15 +219,111 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://trendyolrehber.com/trendyol-urun-askiya-alindi.html</loc>
+    <loc>https://trendyolrehber.com/trendyol-ceza-puani.html</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-haberler.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-hata-cozumleri.html</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://trendyolrehber.com/trendyol-hesap-kapanir-mi.html</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-kargo-guncellemeleri.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-karlilik-hesaplama-gercek-maliyet-rehberi.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-komisyon-degisiklikleri.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-komisyon-hesaplama-excel-sablonu.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-komisyon-hesaplama.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-rehber.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-satici-basvurusu.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-satici-rehberi.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-satis-analizi-nasil-yapilir.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-satis-nasil-yapilir.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-sorunlar.html</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-urun-askiya-alindi.html</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-urun-reddi.html</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendyolrehber.com/trendyol-vergi-ve-hizmet-bedeli-hesaplama.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
