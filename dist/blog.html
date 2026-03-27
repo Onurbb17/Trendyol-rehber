@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Trendyol Rehber: Satıcılar için e-ticaret rehberi. Hesap açma, kar hesaplama, ürün listeleme, SEO ve satış artırma ipuçları. 17+ detaylı rehber yazısı." />
-    <meta name="keywords" content="trendyol rehber, trendyol satıcı rehberi, trendyol e-ticaret, trendyol kar hesaplama, trendyol ipuçları, e-ticaret rehberi" />
-    <link rel="canonical" href="https://trendyolrehber.com/blog.html" />
-    <meta property="og:url" content="https://trendyolrehber.com/blog.html" />
-    <meta property="og:title" content="Trendyol Rehber - E-ticaret ve Satıcı Rehberi" />
-    <meta property="og:description" content="Trendyol satıcıları için kapsamlı e-ticaret rehberi. Hesap açma, kar hesaplama, ürün listeleme ve satış stratejileri." />
-    <meta property="og:type" content="website" />
-    <title>Trendyol Rehber - E-ticaret ve Satıcı Rehberi | Blog</title>
+    <meta id="seo-meta-description" name="description" content="Trendyol satıcıları için güncel e-ticaret blogu: kar hesaplama, komisyon, kargo, ürün listeleme, SEO ve satış artırma stratejileri. Uygulanabilir adım adım rehberler." />
+    <meta name="keywords" content="trendyol blog, trendyol satıcı rehberi, trendyol kar hesaplama, trendyol komisyon, trendyol kargo, e-ticaret seo, satış artırma stratejileri" />
+    <link id="seo-canonical" rel="canonical" href="https://trendyolrehber.com/blog.html" />
+    <meta id="seo-og-url" property="og:url" content="https://trendyolrehber.com/blog.html" />
+    <meta id="seo-og-title" property="og:title" content="Trendyol Blog Rehberi | Kar, Komisyon, SEO ve Satış Stratejileri" />
+    <meta id="seo-og-description" property="og:description" content="Trendyol satıcıları için pratik blog rehberleri: kar hesaplama, komisyon analizi, kargo süreçleri, SEO ve büyüme odaklı satış planları." />
+    <meta id="seo-og-type" property="og:type" content="website" />
+    <meta property="og:image" content="https://trendyolrehber.com/blog-hero-trendyolrehber.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <title>Trendyol Blog Rehberi | Kar Hesaplama, Komisyon ve Satış Stratejileri</title>
     
     <!-- Schema.org Yapılandırılmış Veri -->
     <script type="application/ld+json">
@@ -47,8 +50,22 @@
       gtag("config", "G-X0F2HEPCC1");
     </script>
 
-    <link rel="stylesheet" crossorigin href="/assets/index-BehjH3cC.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-BehjH3cC.css" />
+    <link rel="stylesheet" href="css/blog-article.css" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <style>
+      :root {
+        --blog-bg: #0f1b33;
+        --blog-surface: #162646;
+        --blog-card: #1a2b4e;
+        --blog-border: #2f4673;
+        --blog-ink: #edf3ff;
+        --blog-muted: #c2d2f3;
+        --blog-accent: #ff9a4b;
+        --blog-accent-2: #ffd29c;
+      }
+
       .blog-container {
         max-width: 1200px;
         margin: 0 auto;
@@ -56,87 +73,189 @@
       }
       
       .blog-header {
-        text-align: center;
+        text-align: left;
         margin-bottom: 3rem;
-        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-        color: white;
-        padding: 3rem 2rem;
+        background: linear-gradient(145deg, var(--blog-bg) 0%, var(--blog-surface) 100%);
+        color: var(--blog-ink);
+        padding: 2rem 2rem;
         border-radius: 1rem;
+        border: 1px solid var(--blog-border);
+        box-shadow: 0 20px 40px rgba(7, 16, 35, 0.35);
+        display: grid;
+        grid-template-columns: 1fr minmax(200px, 42%);
+        gap: 1.75rem;
+        align-items: center;
+      }
+
+      .blog-header-visual {
+        margin: 0;
+        border-radius: 0.85rem;
+        overflow: hidden;
+        border: 1px solid rgba(255, 154, 75, 0.25);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+        aspect-ratio: 16 / 9;
+        background: #0f1b33;
+      }
+
+      .blog-header-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      @media (max-width: 900px) {
+        .blog-header {
+          grid-template-columns: 1fr;
+        }
+        .blog-header-visual {
+          order: -1;
+          max-height: 220px;
+        }
+      }
+
+      .blog-header h1 {
+        font-size: 2.1rem;
+        line-height: 1.2;
+        margin: 0 0 0.75rem;
+      }
+
+      .blog-header p {
+        margin: 0;
+        color: var(--blog-muted);
+      }
+
+      .blog-header a {
+        color: var(--blog-accent-2) !important;
+      }
+
+      .blog-quick-links {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .blog-quick-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.45rem 0.7rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #fff3e5;
+        background: rgba(255, 154, 75, 0.12);
+        border: 1px solid rgba(255, 154, 75, 0.35);
       }
       
       .blog-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+        gap: 1.25rem;
         margin-bottom: 3rem;
       }
-      
+
       .blog-card {
-        background: white;
-        border-radius: 1rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        position: relative;
+        background: linear-gradient(165deg, rgba(26, 43, 78, 0.95) 0%, rgba(22, 38, 70, 0.98) 100%);
+        border-radius: 14px;
+        border: 1px solid rgba(47, 70, 115, 0.85);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 8px 24px rgba(5, 12, 28, 0.45);
         overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid #e5e7eb;
+        transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
       }
-      
+
+      .blog-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, var(--blog-accent) 0%, #e07a3a 50%, rgba(255, 154, 75, 0.35) 100%);
+        border-radius: 14px 0 0 14px;
+      }
+
       .blog-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+        border-color: rgba(255, 154, 75, 0.35);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 14px 36px rgba(5, 12, 28, 0.55);
       }
-      
-      .blog-card-image {
-        width: 100%;
-        height: 200px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+      .blog-card-inner {
+        padding: 1.35rem 1.35rem 1.35rem 1.6rem;
+      }
+
+      .blog-card-meta-row {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 3rem;
+        gap: 0.5rem 0.75rem;
+        margin-bottom: 0.65rem;
       }
-      
-      .blog-card-content {
-        padding: 1.5rem;
-      }
-      
-      .blog-card-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 0.75rem;
-        line-height: 1.4;
-      }
-      
-      .blog-card-excerpt {
-        color: #6b7280;
-        line-height: 1.6;
-        margin-bottom: 1rem;
-      }
-      
-      .blog-card-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.875rem;
-        color: #9ca3af;
-        margin-bottom: 1rem;
-      }
-      
-      .read-more-btn {
-        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
+
+      .blog-card-cat {
         display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #ffd4a8;
+        background: rgba(255, 154, 75, 0.12);
+        border: 1px solid rgba(255, 154, 75, 0.28);
+        padding: 0.25rem 0.55rem;
+        border-radius: 6px;
       }
-      
-      .read-more-btn:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+
+      .blog-card-time {
+        font-size: 0.8rem;
+        color: #8fa8d4;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .blog-card-title {
+        font-size: 1.08rem;
+        font-weight: 600;
+        color: var(--blog-ink);
+        margin: 0 0 0.65rem;
+        line-height: 1.38;
+        letter-spacing: -0.02em;
+      }
+
+      .blog-card-excerpt {
+        color: var(--blog-muted);
+        font-size: 0.92rem;
+        line-height: 1.58;
+        margin: 0 0 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .blog-card-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #ffc078;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
+      }
+
+      .blog-card-cta:hover {
+        color: #ffe4c4;
+        border-bottom-color: rgba(255, 192, 120, 0.55);
+        gap: 0.5rem;
+      }
+
+      .blog-card-cta svg {
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
       }
       
       .back-to-home {
@@ -145,7 +264,7 @@
       }
       
       .back-btn {
-        background: #374151;
+        background: #1f3863;
         color: white;
         padding: 1rem 2rem;
         border-radius: 0.5rem;
@@ -156,7 +275,7 @@
       }
       
       .back-btn:hover {
-        background: #1f2937;
+        background: #152846;
         transform: translateY(-1px);
       }
       
@@ -164,7 +283,7 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 2rem;
-        background: white;
+        background: #ffffff;
         border-radius: 1rem;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         line-height: 1.8;
@@ -257,7 +376,7 @@
       }
 
       .pagination button {
-        background: #f7931e;
+        background: #274c86;
         color: white;
         border: none;
         padding: 0.75rem 1rem;
@@ -267,31 +386,32 @@
       }
 
       .pagination button:hover:not(:disabled) {
-        background: #ff6b35;
+        background: #3561a7;
       }
 
       .pagination button:disabled {
-        background: #ccc;
+        background: #607aa8;
         cursor: not-allowed;
       }
 
       .pagination span {
         font-weight: 600;
-        color: #374151;
+        color: #1f2937;
       }
 
       /* Most Viewed Blogs Styles */
       .most-viewed-section {
         margin-top: 4rem;
         padding: 2rem;
-        background: #f9fafb;
+        background: linear-gradient(145deg, #122141 0%, #1a2b4e 100%);
         border-radius: 1rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 24px rgba(6, 15, 31, 0.35);
+        border: 1px solid var(--blog-border);
       }
 
       .most-viewed-section h2 {
         text-align: center;
-        color: #1f2937;
+        color: var(--blog-ink);
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 2rem;
@@ -299,46 +419,74 @@
 
       .most-viewed-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+        gap: 1.25rem;
       }
 
       .most-viewed-card {
-        background: white;
-        border-radius: 0.75rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        padding: 1.5rem;
-        transition: transform 0.2s ease;
-        border: 1px solid #e5e7eb;
+        position: relative;
+        background: linear-gradient(165deg, rgba(26, 43, 78, 0.95) 0%, rgba(22, 38, 70, 0.98) 100%);
+        border-radius: 14px;
+        border: 1px solid rgba(47, 70, 115, 0.85);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 8px 24px rgba(5, 12, 28, 0.45);
+        padding: 1.35rem 1.35rem 1.35rem 1.6rem;
+        transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+        overflow: hidden;
+      }
+
+      .most-viewed-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, var(--blog-accent) 0%, #e07a3a 55%, rgba(255, 154, 75, 0.35) 100%);
+        border-radius: 14px 0 0 14px;
       }
 
       .most-viewed-card:hover {
         transform: translateY(-2px);
+        border-color: rgba(255, 154, 75, 0.3);
+        box-shadow: 0 14px 36px rgba(5, 12, 28, 0.5);
       }
 
       .most-viewed-card h3 {
-        font-size: 1.125rem;
+        font-size: 1.02rem;
         font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+        color: var(--blog-ink);
+        margin: 0 0 0.5rem;
+        line-height: 1.35;
       }
 
       .most-viewed-card p {
-        font-size: 0.9rem;
-        color: #6b7280;
-        line-height: 1.5;
+        font-size: 0.88rem;
+        color: var(--blog-muted);
+        line-height: 1.55;
+        margin: 0 0 0.85rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       .most-viewed-card a {
-        color: #ff6b35;
+        color: #ffc078;
         text-decoration: none;
-        font-weight: 500;
-        margin-top: 0.75rem;
-        display: inline-block;
+        font-weight: 600;
+        font-size: 0.88rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        border-bottom: 1px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
       }
 
       .most-viewed-card a:hover {
-        text-decoration: underline;
+        color: #ffe4c4;
+        border-bottom-color: rgba(255, 192, 120, 0.5);
+        gap: 0.45rem;
       }
 
       /* Blog Search Styles */
@@ -351,15 +499,17 @@
       .blog-search-input {
         width: 100%;
         padding: 1rem 1.25rem 1rem 3rem;
-        border: 2px solid #e5e7eb;
+        border: 1px solid #2f4673;
+        background: #162646;
+        color: #edf3ff;
         border-radius: 0.75rem;
         font-size: 1rem;
         transition: border-color 0.2s, box-shadow 0.2s;
       }
       .blog-search-input:focus {
         outline: none;
-        border-color: #ff6b35;
-        box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+        border-color: #ff9a4b;
+        box-shadow: 0 0 0 3px rgba(255, 154, 75, 0.15);
       }
       .blog-search-wrapper {
         position: relative;
@@ -375,14 +525,21 @@
       .blog-no-results {
         text-align: center;
         padding: 3rem 2rem;
-        background: white;
+        background: #162646;
         border-radius: 1rem;
-        border: 1px dashed #e5e7eb;
+        border: 1px dashed #3f5b90;
       }
       .blog-no-results p {
-        color: #6b7280;
+        color: #d5e3ff;
         font-size: 1.125rem;
         margin-bottom: 1rem;
+      }
+
+      /* Blog detay: tek H1 için liste hero + arama gizlenir */
+      body.blog-article-open .blog-header,
+      body.blog-article-open .blog-search-wrapper,
+      body.blog-article-open .blog-back-home-list {
+        display: none !important;
       }
 
     </style>
@@ -390,13 +547,34 @@
   <body class="bg-gray-50">
     <div class="blog-container">
       <div class="blog-header">
-        <h1 class="text-4xl font-bold mb-4">Trendyol Rehber - E-ticaret Yazıları</h1>
-        <p class="text-xl opacity-90">Satıcılar için 17+ detaylı rehber. <a href="trendyol-rehber.html" style="color: white; text-decoration: underline;">Tüm Trendyol Rehberi →</a></p>
+        <div class="blog-header-copy">
+          <h1>Trendyol Blog Rehberi: Kar, Komisyon ve Satış Stratejileri</h1>
+          <p>Trendyol satıcıları için güncel ve uygulanabilir içerikler: kar hesaplama, ürün listeleme, SEO, kargo ve büyüme odaklı satış planları. <a href="trendyol-rehber.html" style="text-decoration: underline;">Tüm Trendyol Rehberi →</a></p>
+          <div class="blog-quick-links">
+            <a class="blog-quick-link" href="index.html">Kar Hesaplama Aracı</a>
+            <a class="blog-quick-link" href="trendyol-komisyon-hesaplama.html">Komisyon Rehberi</a>
+            <a class="blog-quick-link" href="kargo-desi-hesaplama.html">Kargo Desi Hesaplama</a>
+            <a class="blog-quick-link" href="trendyol-satici-rehberi.html">Satıcı Başlangıç Rehberi</a>
+          </div>
+        </div>
+        <figure class="blog-header-visual" aria-hidden="false">
+          <img src="blog-hero-trendyolrehber.png" width="800" height="450" alt="Trendyol satıcıları için e-ticaret rehberi: kar analizi, komisyon ve kargo temalı görsel" loading="eager" decoding="async" fetchpriority="high" />
+        </figure>
       </div>
 
       <div class="blog-search-wrapper">
         <input type="text" id="blog-search" class="blog-search-input" placeholder="Blog ara... (başlık, kategori veya anahtar kelime)" />
       </div>
+
+      <section class="blog-more-guides" aria-labelledby="blog-guides-h" style="margin-bottom:2rem;">
+        <h2 id="blog-guides-h">Rehber ve araçlar</h2>
+        <ul>
+          <li><a href="trendyol-rehber.html">Trendyol rehber merkezi</a> — tüm rehberler</li>
+          <li><a href="trendyol-araclari.html">Kar, komisyon ve desi hesaplayıcılar</a></li>
+          <li><a href="trendyol-komisyon-hesaplama.html">Komisyon hesaplama rehberi</a></li>
+          <li><a href="index.html">Trendyol kar hesaplama aracı</a></li>
+        </ul>
+      </section>
       
       <div class="blog-grid" id="blog-list"></div>
       
@@ -407,9 +585,12 @@
         <div class="most-viewed-list" id="most-viewed-blogs"></div>
       </div>
 
-      <div class="back-to-home">
+      <div class="back-to-home blog-back-home-list">
         <a href="index.html" class="back-btn">← Ana Sayfaya Dön</a>
       </div>
+
+      <!-- Makale içeriği footer'dan önce: detayda footer sayfanın en altında kalsın -->
+      <div id="blog-articles" style="display: none;"></div>
 
       <footer style="text-align: center; padding: 2rem 1rem; color: #6b7280; font-size: 0.875rem; border-top: 1px solid #e5e7eb; margin-top: 2rem;">
         <a href="trendyol-rehber.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Trendyol Rehber</a>
@@ -422,9 +603,6 @@
         <a href="kargo-fiyatlari.html" style="color: #6b7280; text-decoration: none; margin: 0 0.75rem;">Kargo Fiyatları</a>
       </footer>
     </div>
-
-    <!-- Blog Articles (Hidden by default) -->
-    <div id="blog-articles"></div>
 
     <script src="blog-data.js"></script>
     <script>
@@ -448,33 +626,114 @@
       let currentPage = 1;
       let searchTerm = "";
 
-      // Global functions to be called from HTML onclick
-      window.showArticle = function(id) {
-        blogListContainer.style.display = "none";
-        paginationControls.style.display = "none";
-        mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "none";
-        blogArticlesContainer.style.display = "block";
-        getBlogPosts().forEach(post => {
-          const articleElement = document.getElementById(`${post.id}-article`);
-          if (post.id === id) {
-            articleElement.style.display = "block";
-            window.scrollTo(0, 0); // Scroll to top of the article
-          } else {
-            articleElement.style.display = "none";
-          }
-        });
-      };
-
-      window.showBlogList = function() {
-        blogListContainer.style.display = "grid";
-        paginationControls.style.display = "flex";
-        mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "block";
-        blogArticlesContainer.style.display = "none";
-        window.scrollTo(0, 0); // Scroll to top of the list
-        renderBlogList(currentPage); // Re-render current page to ensure correct state
-      };
-
       document.addEventListener("DOMContentLoaded", function() {
+        var DEFAULT_SEO = {
+          title: document.title,
+          description: document.getElementById("seo-meta-description").getAttribute("content"),
+          ogTitle: document.getElementById("seo-og-title").getAttribute("content"),
+          ogDesc: document.getElementById("seo-og-description").getAttribute("content"),
+          ogUrl: document.getElementById("seo-og-url").getAttribute("content"),
+          ogType: document.getElementById("seo-og-type").getAttribute("content")
+        };
+
+        function truncateForMeta(text, max) {
+          if (!text) return "";
+          var t = String(text).trim();
+          if (t.length <= max) return t;
+          return t.slice(0, max - 1).trim() + "…";
+        }
+
+        function setMetaContent(id, value) {
+          var el = document.getElementById(id);
+          if (el) el.setAttribute("content", value);
+        }
+
+        function removeArticleJsonLd() {
+          var s = document.getElementById("blog-article-jsonld");
+          if (s && s.parentNode) s.parentNode.removeChild(s);
+        }
+
+        function applyArticleSeo(post) {
+          var base = "https://trendyolrehber.com/blog.html";
+          var hashUrl = base + "#" + post.id;
+          var desc = truncateForMeta(post.excerpt, 155);
+          document.title = post.title + " | Trendyol Blog Rehberi";
+          setMetaContent("seo-meta-description", desc);
+          setMetaContent("seo-og-title", post.title + " | Trendyol Blog");
+          setMetaContent("seo-og-description", desc);
+          setMetaContent("seo-og-url", hashUrl);
+          setMetaContent("seo-og-type", "article");
+          removeArticleJsonLd();
+          var script = document.createElement("script");
+          script.id = "blog-article-jsonld";
+          script.type = "application/ld+json";
+          script.textContent = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: desc,
+            url: hashUrl,
+            mainEntityOfPage: { "@type": "WebPage", "@id": hashUrl },
+            isPartOf: {
+              "@type": "Blog",
+              name: "Trendyol Satıcı Rehberi - E-ticaret Blog",
+              url: base
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Trendyol Rehber",
+              url: "https://trendyolrehber.com",
+              logo: { "@type": "ImageObject", url: "https://trendyolrehber.com/favicon.ico" }
+            },
+            author: { "@type": "Organization", name: "Trendyol Rehber" },
+            articleSection: post.category,
+            inLanguage: "tr-TR"
+          });
+          document.head.appendChild(script);
+        }
+
+        function resetBlogListSeo() {
+          document.title = DEFAULT_SEO.title;
+          setMetaContent("seo-meta-description", DEFAULT_SEO.description);
+          setMetaContent("seo-og-title", DEFAULT_SEO.ogTitle);
+          setMetaContent("seo-og-description", DEFAULT_SEO.ogDesc);
+          setMetaContent("seo-og-url", DEFAULT_SEO.ogUrl);
+          setMetaContent("seo-og-type", DEFAULT_SEO.ogType);
+          removeArticleJsonLd();
+        }
+
+        window.showArticle = function(id) {
+          var post = getBlogPostById(id);
+          if (!post) return;
+          document.body.classList.add("blog-article-open");
+          applyArticleSeo(post);
+          blogListContainer.style.display = "none";
+          paginationControls.style.display = "none";
+          mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "none";
+          blogArticlesContainer.style.display = "block";
+          getBlogPosts().forEach(function(p) {
+            var articleElement = document.getElementById(p.id + "-article");
+            if (!articleElement) return;
+            if (p.id === id) {
+              articleElement.style.display = "block";
+              window.scrollTo(0, 0);
+            } else {
+              articleElement.style.display = "none";
+            }
+          });
+        };
+
+        window.showBlogList = function() {
+          document.body.classList.remove("blog-article-open");
+          resetBlogListSeo();
+          blogListContainer.style.display = "grid";
+          paginationControls.style.display = "flex";
+          mostViewedBlogsContainer.closest(".most-viewed-section").style.display = "block";
+          blogArticlesContainer.style.display = "none";
+          window.scrollTo(0, 0);
+          renderBlogList(currentPage);
+        };
+
         // Arama filtresi
         function filterPosts(posts) {
           if (!searchTerm.trim()) return posts;
@@ -513,19 +772,17 @@
             const blogCard = document.createElement("article");
             blogCard.className = "blog-card";
             blogCard.innerHTML = `
-              <div class="blog-card-image">
-                ${post.icon}
-              </div>
-              <div class="blog-card-content">
-                <h2 class="blog-card-title">${post.title}</h2>
-                <div class="blog-card-meta">
-                  <span>${post.readTime}</span>
-                  <span>${post.category}</span>
+              <div class="blog-card-inner">
+                <div class="blog-card-meta-row">
+                  <span class="blog-card-cat">${post.category}</span>
+                  <span class="blog-card-time">${post.readTime}</span>
                 </div>
-                <p class="blog-card-excerpt">
-                  ${post.excerpt}
-                </p>
-                <a href="#${post.id}" class="read-more-btn" onclick="showArticle(\'${post.id}\')">Devamını Oku</a>
+                <h3 class="blog-card-title">${post.title}</h3>
+                <p class="blog-card-excerpt">${post.excerpt}</p>
+                <a href="blog/${post.id}.html" class="blog-card-cta" aria-label="${post.title} yazısının devamını oku">
+                  Devamını oku
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
               </div>
             `;
             blogListContainer.appendChild(blogCard);
@@ -588,7 +845,7 @@
             mvCard.innerHTML = `
               <h3>${post.title}</h3>
               <p>${post.excerpt}</p>
-              <a href="#${post.id}" onclick="showArticle(\'${post.id}\')">Devamını Oku →</a>
+              <a href="blog/${post.id}.html">Devamını Oku →</a>
             `;
             mostViewedBlogsContainer.appendChild(mvCard);
           });
@@ -606,10 +863,20 @@
           });
         }
 
-        // Handle direct article links (e.g., from index.html CTA)
+        // Doğrudan #yazi-id linki: yazı başka sayfadaysa önce o sayfayı yükle
         if (window.location.hash) {
-          const articleId = window.location.hash.substring(1);
-          if (getBlogPostById(articleId)) {
+          var articleId = window.location.hash.substring(1);
+          var post = getBlogPostById(articleId);
+          if (post) {
+            var allPosts = getBlogPosts();
+            var idx = allPosts.findIndex(function(p) { return p.id === articleId; });
+            if (idx >= 0) {
+              var pageNeeded = Math.floor(idx / postsPerPage) + 1;
+              if (pageNeeded !== currentPage) {
+                currentPage = pageNeeded;
+                renderBlogList(pageNeeded);
+              }
+            }
             showArticle(articleId);
           }
         }

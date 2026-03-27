@@ -403,28 +403,75 @@
           
           // Card grid - yan yana kartlar
           const cardsWrapper = document.createElement("div");
-          cardsWrapper.style.cssText = "padding: 2rem 0; background: #f9fafb;";
+          cardsWrapper.style.cssText = "padding: 2rem 0; background: transparent;";
           cardsWrapper.innerHTML = `
+            <style>
+              .home-cards-theme{
+                background: linear-gradient(145deg, #0f1b33 0%, #162646 100%);
+                border: 1px solid #2a3d63;
+                border-radius: 18px;
+                padding: 1.15rem;
+                box-shadow: 0 14px 36px rgba(8, 18, 38, 0.35);
+              }
+              .home-cards-theme .home-cards-grid{
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+                gap:0.9rem;
+              }
+              .home-cards-theme .home-card{
+                background: #1a2b4e;
+                border: 1px solid #314b7f;
+                border-radius: 14px;
+                padding: 1rem;
+              }
+              .home-cards-theme .home-card-title{color:#eef4ff;margin:0.65rem 0 0.45rem;}
+              .home-cards-theme .home-card-desc{color:#c7d7ff;font-size:0.9rem;line-height:1.45;}
+              .home-cards-theme .home-card-btn{
+                display:inline-flex;align-items:center;justify-content:center;
+                margin-top:0.75rem;padding:0.5rem 0.72rem;border-radius:9px;
+                font-size:0.84rem;font-weight:700;text-decoration:none;
+              }
+              .home-cards-theme .home-card-btn-alt{
+                background:#1f3863;color:#e7efff !important;border:1px solid #355181;
+                margin-left:0.45rem;
+              }
+              .home-cards-theme .home-card-btn-main{
+                background:linear-gradient(135deg,#ff8f42,#ffc078);color:#17213a !important;
+              }
+              .home-card-icon-badge{
+                width:40px;height:40px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;
+                background:linear-gradient(135deg,#223b69,#2f4f88);border:1px solid #3a5b93;color:#ffd6a8;
+              }
+              .home-card-icon-badge svg{width:20px;height:20px;display:block;}
+            </style>
+            <div class="home-cards-theme">
             <div class="home-cards-grid">
               <div class="home-card">
-                <div class="home-card-icon">📖</div>
+                <div class="home-card-icon-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="14" height="15" rx="2.3" stroke="currentColor" stroke-width="1.8"/><path d="M8 9H14M8 12H14M8 15H12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
                 <h3 class="home-card-title">Satıcı Rehberi</h3>
                 <p class="home-card-desc">Başlangıçtan profesyonelliğe kapsamlı rehber. Mağaza açma, ürün yükleme, kargo, komisyon ve satış stratejileri.</p>
-                <a href="trendyol-satici-rehberi.html" class="home-card-btn" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white;">Rehberi Oku →</a>
+                <a href="trendyol-satici-rehberi.html" class="home-card-btn home-card-btn-main">Rehberi Oku →</a>
               </div>
               <div class="home-card">
-                <div class="home-card-icon">📄</div>
+                <div class="home-card-icon-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M7 3.8H14L18.2 8V20.2H7V3.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3.8V8H18.2M9.2 11.2H15.8M9.2 14.2H15.8M9.2 17.2H13.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
                 <h3 class="home-card-title">Kargo Fiyatları</h3>
                 <p class="home-card-desc">Güncel kargo ücretleri tablosunu PDF indirin. Desi hesaplama ve komisyon hesaplama araçları.</p>
-                <a href="kargo-fiyatlari.html" class="home-card-btn" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white;">PDF İndir</a>
-                <a href="kargo-desi-hesaplama.html" class="home-card-btn" style="background: #f3f4f6; color: #374151; margin-left: 0.5rem;">Desi Hesapla</a>
+                <a href="kargo-fiyatlari.html" class="home-card-btn home-card-btn-main">PDF İndir</a>
+                <a href="kargo-desi-hesaplama.html" class="home-card-btn home-card-btn-alt">Desi Hesapla</a>
               </div>
               <div class="home-card">
-                <div class="home-card-icon">📚</div>
+                <div class="home-card-icon-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M5 5.2H13.8C15.9 5.2 17.6 6.9 17.6 9V18.8H8.9C6.8 18.8 5 17 5 14.9V5.2Z" stroke="currentColor" stroke-width="1.8"/><path d="M8.1 10.2H14M8.1 13.2H12.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
                 <h3 class="home-card-title">E-ticaret Rehberi</h3>
                 <p class="home-card-desc">17+ detaylı blog yazısı: SEO, pazarlama, satış stratejileri. Bilinçli fiyatlandırma ile rekabet avantajı.</p>
-                <a href="blog.html" class="home-card-btn" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); color: white;">Rehberleri İncele →</a>
+                <a href="blog.html" class="home-card-btn home-card-btn-main">Rehberleri İncele →</a>
               </div>
+            </div>
             </div>
           `;
           
@@ -489,6 +536,7 @@
         }
 
         function createAddon() {
+          return;
           if (document.getElementById("advanced-cost-addon")) return;
 
           const rootElement = document.getElementById("root");
@@ -544,16 +592,40 @@
             shipping: findInputByHints(["kargo"])
           };
 
+          const findSharedInputGroup = function(inputs) {
+            const validInputs = inputs.filter(Boolean);
+            if (validInputs.length < 2) return null;
+            let node = validInputs[0].parentElement;
+            while (node && node !== rootElement) {
+              const containsAll = validInputs.every(function(inp) { return node.contains(inp); });
+              if (containsAll) {
+                return node;
+              }
+              node = node.parentElement;
+            }
+            return null;
+          };
+
           let targetCard = findProductCard();
           if (!targetCard && base.cost) targetCard = base.cost.closest("section,article,div");
           if (!targetCard && base.price) targetCard = base.price.closest("section,article,div");
           if (!targetCard) return;
 
-          const parentScope = targetCard.parentElement || targetCard;
-          const duplicate = parentScope.querySelector("#advanced-cost-addon");
+          const rootCard =
+            targetCard.closest("div[class*='bg-card'], div[class*='rounded-xl'][class*='border'], section, article") ||
+            targetCard;
+          const parentScope = rootCard.parentElement || rootCard;
+          const duplicate = rootCard.querySelector("#advanced-cost-addon");
           if (duplicate) return;
 
-          targetCard.appendChild(box);
+          const sharedInputGroup = findSharedInputGroup([base.price, base.commission, base.cost, base.shipping]);
+          if (sharedInputGroup && sharedInputGroup !== rootCard && sharedInputGroup.parentElement) {
+            sharedInputGroup.insertAdjacentElement("afterend", box);
+          } else if (targetCard !== rootCard && targetCard.parentElement) {
+            targetCard.insertAdjacentElement("afterend", box);
+          } else {
+            rootCard.appendChild(box);
+          }
 
           const linked = base.price && base.commission && base.cost && base.shipping;
           if (!linked) {

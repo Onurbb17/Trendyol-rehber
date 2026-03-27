@@ -1058,4 +1058,6 @@ function getBlogPostById(id) {
   return blogPosts.find(post => post.id === id);
 }
 
-
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { blogPosts, getBlogPosts, getBlogPostById };
+}
