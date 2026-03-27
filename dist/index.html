@@ -493,16 +493,25 @@
 
           const rootElement = document.getElementById("root");
           if (!rootElement || rootElement.children.length === 0) return;
-          const mainContent = rootElement.querySelector("main") || rootElement.firstElementChild;
-          if (!mainContent) return;
+          const findProductCard = function() {
+            const headingCandidates = Array.from(rootElement.querySelectorAll("h1,h2,h3,h4,p,span,label"));
+            for (const node of headingCandidates) {
+              const txt = (node.textContent || "").toLowerCase();
+              if (txt.includes("ürün bilgileri") || txt.includes("urun bilgileri")) {
+                const card = node.closest("section,article,div");
+                if (card) return card;
+              }
+            }
+            return null;
+          };
 
           const box = document.createElement("section");
           box.id = "advanced-cost-addon";
-          box.style.cssText = "max-width:1100px;margin:1rem auto 2rem;background:#ffffff;border:1px solid #e5e7eb;border-radius:1rem;padding:1rem 1rem 1.2rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);";
+          box.style.cssText = "margin-top:1rem;background:#ffffff;border:1px solid #e5e7eb;border-radius:0.9rem;padding:0.9rem 0.9rem 1rem;";
           box.innerHTML = `
-            <h2 style="margin:0 0 0.25rem;font-size:1.05rem;color:#1f2937;">Gelişmiş Maliyet Eklentisi</h2>
+            <h3 style="margin:0 0 0.25rem;font-size:0.98rem;color:#1f2937;">Gelişmiş Maliyetler</h3>
             <p id="addon-status" style="margin:0 0 0.75rem;font-size:0.85rem;color:#6b7280;">
-              Ana sayfadaki hesaplayıcıdan temel değerler otomatik okunur. Ek maliyetleri girerek düzeltilmiş net karı görün.
+              Bu kutular "Ürün Bilgileri" kartına ek maliyet katmanı sağlar. Temel alanlar otomatik okunur.
             </p>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem;">
               <div><label style="display:block;font-size:0.8rem;color:#6b7280;margin-bottom:0.25rem;">İade Kargo (₺)</label><input id="addon-iade" type="number" min="0" step="0.01" placeholder="6" style="width:100%;padding:0.55rem 0.7rem;border:1px solid #d1d5db;border-radius:0.5rem;"></div>
@@ -518,17 +527,15 @@
             </div>
           `;
 
-          mainContent.parentNode.insertBefore(box, mainContent.nextSibling);
-
-          const iade = document.getElementById("addon-iade");
-          const paket = document.getElementById("addon-paket");
-          const fatura = document.getElementById("addon-fatura");
-          const reklam = document.getElementById("addon-reklam");
-          const ceza = document.getElementById("addon-ceza");
-          const genel = document.getElementById("addon-genel");
-          const toplamEl = document.getElementById("addon-toplam");
-          const netEl = document.getElementById("addon-net");
-          const statusEl = document.getElementById("addon-status");
+          const iade = box.querySelector("#addon-iade");
+          const paket = box.querySelector("#addon-paket");
+          const fatura = box.querySelector("#addon-fatura");
+          const reklam = box.querySelector("#addon-reklam");
+          const ceza = box.querySelector("#addon-ceza");
+          const genel = box.querySelector("#addon-genel");
+          const toplamEl = box.querySelector("#addon-toplam");
+          const netEl = box.querySelector("#addon-net");
+          const statusEl = box.querySelector("#addon-status");
 
           const base = {
             price: findInputByHints(["satış fiyat", "fiyat"]),
@@ -536,6 +543,17 @@
             cost: findInputByHints(["ürün maliyet", "maliyet"]),
             shipping: findInputByHints(["kargo"])
           };
+
+          let targetCard = findProductCard();
+          if (!targetCard && base.cost) targetCard = base.cost.closest("section,article,div");
+          if (!targetCard && base.price) targetCard = base.price.closest("section,article,div");
+          if (!targetCard) return;
+
+          const parentScope = targetCard.parentElement || targetCard;
+          const duplicate = parentScope.querySelector("#advanced-cost-addon");
+          if (duplicate) return;
+
+          targetCard.appendChild(box);
 
           const linked = base.price && base.commission && base.cost && base.shipping;
           if (!linked) {
