@@ -156,6 +156,22 @@
         margin-bottom: 3rem;
       }
 
+      /* In-feed AdSense: tam satır, kenar çubuğu değil — grid içinde kartlarla aynı akış */
+      .blog-feed-ad {
+        grid-column: 1 / -1;
+        margin: 0;
+        padding: 0.75rem 0;
+        border-radius: 14px;
+        border: 1px solid rgba(47, 70, 115, 0.45);
+        background: rgba(15, 27, 51, 0.35);
+        overflow: hidden;
+      }
+
+      .blog-feed-ad .adsbygoogle {
+        display: block;
+        min-height: 100px;
+      }
+
       .blog-card {
         position: relative;
         background: linear-gradient(165deg, rgba(26, 43, 78, 0.95) 0%, rgba(22, 38, 70, 0.98) 100%);
@@ -745,6 +761,24 @@
           );
         }
 
+        function appendBlogInFeedAd() {
+          var wrap = document.createElement("div");
+          wrap.className = "blog-feed-ad";
+          wrap.setAttribute("aria-label", "Reklam");
+          var ins = document.createElement("ins");
+          ins.className = "adsbygoogle";
+          ins.style.display = "block";
+          ins.setAttribute("data-ad-format", "fluid");
+          ins.setAttribute("data-ad-layout-key", "-49+cw+z-md+z1");
+          ins.setAttribute("data-ad-client", "ca-pub-9409905856635578");
+          ins.setAttribute("data-ad-slot", "7967256634");
+          wrap.appendChild(ins);
+          blogListContainer.appendChild(wrap);
+          try {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          } catch (e) {}
+        }
+
         function renderBlogList(page = 1) {
           currentPage = page;
           blogListContainer.innerHTML = "";
@@ -768,7 +802,10 @@
             `;
             paginationControls.innerHTML = "";
           } else {
-          postsToDisplay.forEach(post => {
+          /* In-feed reklam: listenin başı (kenar çubuğunda değil) */
+          appendBlogInFeedAd();
+
+          postsToDisplay.forEach(function(post, index) {
             const blogCard = document.createElement("article");
             blogCard.className = "blog-card";
             blogCard.innerHTML = `
@@ -787,6 +824,11 @@
             `;
             blogListContainer.appendChild(blogCard);
 
+            /* Aynı feed içinde kartlar arası (3. karttan sonra ikinci birim) */
+            if (index === 2 && postsToDisplay.length > 3) {
+              appendBlogInFeedAd();
+            }
+
             const articleElement = document.createElement("article");
             articleElement.id = `${post.id}-article`;
             articleElement.className = "blog-article";
@@ -799,6 +841,11 @@
             `;
             blogArticlesContainer.appendChild(articleElement);
           });
+
+          /* Feed sonu: kısa sayfalarda da arada reklam olsun diye 4 veya daha az kartta sonda birim */
+          if (postsToDisplay.length > 0 && postsToDisplay.length <= 3) {
+            appendBlogInFeedAd();
+          }
 
           renderPagination(totalPages);
           renderMostViewedBlogs();
