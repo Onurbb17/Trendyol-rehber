@@ -268,10 +268,12 @@
         transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
         z-index: 50;
       }
-      .nav-item:hover .mega-dropdown {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+      @media (min-width: 769px) {
+        .nav-item:hover .mega-dropdown {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
       }
       .mega-dropdown a {
         display: block;
@@ -332,11 +334,38 @@
       }
       .mobile-menu-btn {
         display: none;
-        padding: 0.5rem;
+        padding: 0.5rem 0.65rem;
+        margin-left: auto;
         background: none;
         border: none;
         cursor: pointer;
         font-size: 1.5rem;
+        line-height: 1;
+        border-radius: 0.5rem;
+        color: #374151;
+      }
+      .mobile-menu-btn:hover {
+        background: #f3f4f6;
+        color: #ff6b35;
+      }
+      .mobile-menu-btn[aria-expanded="true"] {
+        background: #fff7ed;
+        color: #ff6b35;
+      }
+      .nav-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.4);
+        z-index: 99;
+      }
+      .nav-backdrop.open {
+        display: block;
+      }
+      @media (min-width: 769px) {
+        .nav-backdrop {
+          display: none !important;
+        }
       }
       @media (max-width: 768px) {
         .blog-button-container { bottom: 1rem; right: 1rem; }
@@ -344,22 +373,81 @@
         .blog-cta-section { padding: 2rem 1rem; margin: 2rem 0; }
         .blog-cta-title { font-size: 1.5rem; }
         .blog-cta-description { font-size: 1rem; }
-        .nav-menu { display: none; }
-        .nav-menu.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; border-bottom: 1px solid #e5e7eb; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .mobile-menu-btn { display: block; }
-        .mega-dropdown { display: none !important; }
-        .nav-item .nav-link { padding: 0.75rem; }
+        .site-header {
+          z-index: 100;
+        }
+        .nav-menu {
+          display: none;
+        }
+        .nav-menu.open {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          border-bottom: 1px solid #e5e7eb;
+          padding: 0.75rem 1rem 1rem;
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+          z-index: 110;
+          max-height: min(78vh, 560px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .mobile-menu-btn {
+          display: block;
+        }
+        /* Mobilde mega içerik: dokunmatikte hover yok; panel açıkken alt linkler görünsün */
+        .mega-dropdown {
+          display: block !important;
+          position: static;
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: none !important;
+          box-shadow: none;
+          min-width: auto;
+          padding: 0.35rem 0 0.85rem 0.65rem;
+          margin: 0 0 0.35rem 0.25rem;
+          border-left: 3px solid #fed7aa;
+          border-radius: 0 0 0 0.35rem;
+          background: #fffbeb;
+        }
+        .mega-dropdown .mega-title {
+          padding: 0.35rem 0.75rem 0.25rem;
+          font-size: 0.68rem;
+        }
+        .mega-dropdown a {
+          padding: 0.45rem 0.75rem;
+        }
+        .nav-item .nav-link {
+          padding: 0.65rem 0.5rem;
+          font-weight: 600;
+        }
+        body.nav-drawer-open {
+          overflow: hidden;
+        }
       }
     </style>
   </head>
   <body>
     <header class="site-header">
+      <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true" hidden></div>
       <div class="header-inner">
         <a href="index.html" class="header-logo" aria-label="Trendyol Rehber — ana sayfa">
           <img src="/assets/logo-K4BhMvNr.png" alt="Trendyol Rehber" width="200" height="38" decoding="async" />
         </a>
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menü">☰</button>
-        <ul class="nav-menu" id="nav-menu">
+        <button
+          type="button"
+          class="mobile-menu-btn"
+          id="mobile-menu-btn"
+          aria-label="Menüyü aç veya kapat"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          ☰
+        </button>
+        <ul class="nav-menu" id="nav-menu" role="navigation" aria-label="Ana menü">
           <li class="nav-item">
             <a href="trendyol-rehber.html" class="nav-link">Rehberler</a>
             <div class="mega-dropdown">
@@ -742,9 +830,57 @@
     </footer>
 
     <script>
-      document.getElementById("mobile-menu-btn")?.addEventListener("click", function() {
-        document.getElementById("nav-menu")?.classList.toggle("open");
-      });
+      (function () {
+        var btn = document.getElementById("mobile-menu-btn");
+        var menu = document.getElementById("nav-menu");
+        var backdrop = document.getElementById("nav-backdrop");
+        if (!btn || !menu) return;
+
+        function isMobileNav() {
+          return window.matchMedia("(max-width: 768px)").matches;
+        }
+
+        function setOpen(open) {
+          menu.classList.toggle("open", open);
+          btn.setAttribute("aria-expanded", open ? "true" : "false");
+          btn.setAttribute("aria-label", open ? "Menüyü kapat" : "Menüyü aç");
+          document.body.classList.toggle("nav-drawer-open", open);
+          if (backdrop) {
+            backdrop.classList.toggle("open", open);
+            backdrop.hidden = !open;
+            backdrop.setAttribute("aria-hidden", open ? "false" : "true");
+          }
+        }
+
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          setOpen(!menu.classList.contains("open"));
+        });
+
+        if (backdrop) {
+          backdrop.addEventListener("click", function () {
+            setOpen(false);
+          });
+        }
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && menu.classList.contains("open")) {
+            setOpen(false);
+          }
+        });
+
+        menu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            if (isMobileNav()) setOpen(false);
+          });
+        });
+
+        window.addEventListener("resize", function () {
+          if (!isMobileNav() && menu.classList.contains("open")) {
+            setOpen(false);
+          }
+        });
+      })();
     </script>
     <script src="cookie-consent.js"></script>
   </body>
