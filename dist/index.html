@@ -268,7 +268,7 @@
         transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
         z-index: 50;
       }
-      @media (min-width: 769px) {
+      @media (min-width: 1024px) {
         .nav-item:hover .mega-dropdown {
           opacity: 1;
           visibility: visible;
@@ -362,12 +362,13 @@
       .nav-backdrop.open {
         display: block;
       }
-      @media (min-width: 769px) {
+      @media (min-width: 1024px) {
         .nav-backdrop {
           display: none !important;
         }
       }
-      @media (max-width: 768px) {
+      /* Hamburger: telefon + tablet; kapalıyken kesinlikle gizli (!important ile çakışmaları ezer) */
+      @media (max-width: 1023px) {
         .blog-button-container { bottom: 1rem; right: 1rem; }
         .blog-button { padding: 0.75rem 1.25rem; font-size: 0.875rem; }
         .blog-cta-section { padding: 2rem 1rem; margin: 2rem 0; }
@@ -376,12 +377,16 @@
         .site-header {
           z-index: 100;
         }
-        .nav-menu {
-          display: none;
+        #nav-menu:not(.open) {
+          display: none !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
         }
-        .nav-menu.open {
-          display: flex;
+        #nav-menu.open {
+          display: flex !important;
           flex-direction: column;
+          visibility: visible !important;
+          pointer-events: auto !important;
           position: absolute;
           top: 100%;
           left: 0;
@@ -398,8 +403,8 @@
         .mobile-menu-btn {
           display: block;
         }
-        /* Mobilde mega içerik: dokunmatikte hover yok; panel açıkken alt linkler görünsün */
-        .mega-dropdown {
+        /* Panel açıkken mega alt linkleri */
+        #nav-menu.open .mega-dropdown {
           display: block !important;
           position: static;
           opacity: 1 !important;
@@ -413,11 +418,11 @@
           border-radius: 0 0 0 0.35rem;
           background: #fffbeb;
         }
-        .mega-dropdown .mega-title {
+        #nav-menu.open .mega-dropdown .mega-title {
           padding: 0.35rem 0.75rem 0.25rem;
           font-size: 0.68rem;
         }
-        .mega-dropdown a {
+        #nav-menu.open .mega-dropdown a {
           padding: 0.45rem 0.75rem;
         }
         .nav-item .nav-link {
@@ -837,7 +842,7 @@
         if (!btn || !menu) return;
 
         function isMobileNav() {
-          return window.matchMedia("(max-width: 768px)").matches;
+          return window.matchMedia("(max-width: 1023px)").matches;
         }
 
         function setOpen(open) {
@@ -880,6 +885,9 @@
             setOpen(false);
           }
         });
+
+        /* İlk yüklemede kapalı olduğundan emin ol (önbellek / üçüncü taraf CSS) */
+        setOpen(false);
       })();
     </script>
     <script src="cookie-consent.js"></script>
