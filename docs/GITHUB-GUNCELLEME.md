@@ -1,6 +1,8 @@
 # GitHub'a Güncelleme Rehberi
 
-Bu rehber, Trendyol Rehber projenizi GitHub'a nasıl güncelleyeceğinizi adım adım açıklar.
+Bu rehber, Trendyol Rehber projenizi GitHub'a nasıl güncelleyeceğinizi adım adım açıklar. (Dosya konumu: `docs/` klasörü.)
+
+> Aşağıdaki `cd` satırında kendi proje kökü yolunuzu kullanın (`dist` ve `docs` klasörlerinin bulunduğu dizin).
 
 ---
 

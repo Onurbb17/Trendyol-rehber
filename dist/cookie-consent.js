@@ -207,7 +207,7 @@
       '}' +
       '.trh-brand::before,.header-logo::before{' +
         'content:"";width:26px;height:26px;flex:0 0 26px;border-radius:8px;' +
-        'background:url("/favicon.ico") center/contain no-repeat;' +
+        'background:url("/assets/logo-icon-64.png") center/contain no-repeat;' +
         'box-shadow:0 2px 8px rgba(17,24,39,0.12);' +
       '}' +
       '.trh-brand:hover,.header-logo:hover{color:#ffb884;}' +
@@ -635,7 +635,7 @@
       var logos = document.querySelectorAll('#root footer img[alt="Logo"], #root footer img[src*="logo-"]');
       if (!logos.length) return false;
       for (var i = 0; i < logos.length; i++) {
-        logos[i].src = '/favicon.ico';
+        logos[i].src = '/assets/logo-icon-64.png';
         logos[i].alt = 'Trendyol Rehber Logosu';
         logos[i].style.objectFit = 'contain';
         logos[i].style.borderRadius = '6px';

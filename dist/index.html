@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
+    <link rel="preload" href="/assets/logo-header.webp" as="image" type="image/webp" fetchpriority="high" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Trendyol Rehber: Satıcılar için kar hesaplayıcı, komisyon ve kargo maliyeti hesaplama. Trendyol satıcı rehberi, e-ticaret ipuçları ve ücretsiz araçlar." />
+    <meta name="description" content="Trendyol kar hesaplama aracı (ücretsiz): komisyon, kargo ve maliyetle net kâr. Satıcı rehberi, komisyon tablosu ve blog — trendyolrehber.com." />
     <meta name="keywords" content="trendyol rehber, trendyol satıcı rehberi, trendyol kar hesaplayıcı, trendyol komisyon, trendyol kargo fiyatları, e-ticaret rehberi" />
     <link rel="canonical" href="https://trendyolrehber.com/" />
     <meta property="og:url" content="https://trendyolrehber.com/" />
-    <meta property="og:title" content="Trendyol Rehber - Kar Hesaplayıcı ve Satıcı Rehberi" />
-    <meta property="og:description" content="Trendyol satıcıları için ücretsiz kar hesaplayıcı, komisyon tablosu ve e-ticaret rehberi." />
-    <title>Trendyol Rehber | Kar Hesaplayıcı ve Satıcı Rehberi - trendyolrehber.com</title>
+    <meta property="og:title" content="Trendyol Kar Hesaplama | Ücretsiz Rehber ve Komisyon Hesabı" />
+    <meta property="og:description" content="Komisyon ve kargo ile net kârı anında hesaplayın. Trendyol satıcı rehberi, araçlar ve 17+ blog yazısı." />
+    <title>Trendyol Kar Hesaplama | Ücretsiz Rehber ve Komisyon Hesabı</title>
     
     <!-- Schema.org Yapılandırılmış Veri -->
     <script type="application/ld+json">
@@ -20,14 +24,14 @@
       "name": "Trendyol Rehber",
       "alternateName": "trendyolrehber.com",
       "url": "https://trendyolrehber.com",
-      "description": "Trendyol rehber: Satıcılar için kar hesaplayıcı, komisyon ve kargo maliyeti hesaplama. E-ticaret rehberi ve ipuçları.",
+      "description": "Trendyol kar hesaplama aracı ve satıcı rehberi: komisyon, kargo, ücretsiz araçlar ve e-ticaret blogu.",
       "publisher": {
         "@type": "Organization",
         "name": "Trendyol Rehber",
         "url": "https://trendyolrehber.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://trendyolrehber.com/assets/logo-K4BhMvNr.png"
+          "url": "https://trendyolrehber.com/assets/logo-header-400.png"
         }
       },
       "potentialAction": {
@@ -43,7 +47,7 @@
       "@type": "Organization",
       "name": "Trendyol Rehber",
       "url": "https://trendyolrehber.com",
-      "logo": "https://trendyolrehber.com/assets/logo-K4BhMvNr.png"
+      "logo": "https://trendyolrehber.com/assets/logo-header-400.png"
     }
     </script>
     <script type="application/ld+json">
@@ -76,8 +80,8 @@
       gtag("config", "G-X0F2HEPCC1");
     </script>
 
-    <script type="module" crossorigin src="/assets/index-DCTaKFmQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BehjH3cC.css">
+    <link rel="preload" href="/assets/index-BehjH3cC.css" as="style" crossorigin onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" crossorigin href="/assets/index-BehjH3cC.css" /></noscript>
     <style>
       .blog-button-container {
         position: fixed;
@@ -158,6 +162,33 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
         color: white;
+      }
+
+      .blog-cta-post-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem 1rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.75rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #cbd5e1;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .blog-cta-post-links a {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #c2410c;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+
+      .blog-cta-post-links a:hover {
+        color: #ea580c;
+        border-bottom-color: rgba(234, 88, 12, 0.45);
       }
       
       .kargo-section {
@@ -439,8 +470,11 @@
     <header class="site-header">
       <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true" hidden></div>
       <div class="header-inner">
-        <a href="index.html" class="header-logo" aria-label="Trendyol Rehber — ana sayfa">
-          <img src="/assets/logo-K4BhMvNr.png" alt="Trendyol Rehber" width="200" height="38" decoding="async" />
+        <a href="/" class="header-logo" aria-label="Trendyol Rehber — ana sayfa">
+          <picture>
+            <source type="image/webp" srcset="/assets/logo-header.webp" />
+            <img src="/assets/logo-header-400.png" alt="Trendyol Rehber" width="400" height="400" decoding="async" fetchpriority="high" />
+          </picture>
         </a>
         <button
           type="button"
@@ -467,7 +501,7 @@
             <a href="trendyol-araclari.html" class="nav-link">Araçlar</a>
             <div class="mega-dropdown">
               <div class="mega-title">Hesaplama Araçları</div>
-              <a href="index.html">Kar Hesaplama</a>
+              <a href="/">Kar Hesaplama</a>
               <a href="trendyol-komisyon-hesaplama.html">Komisyon Hesaplama</a>
               <a href="kargo-desi-hesaplama.html">Kargo Desi Hesaplama</a>
               <a href="kargo-fiyatlari.html">Kargo Fiyatları</a>
@@ -606,6 +640,12 @@
               <span>📖</span>
               <span>E-ticaret Rehberimizi İnceleyin</span>
             </a>
+            <nav class="blog-cta-post-links" aria-label="Popüler blog yazıları">
+              <a href="blog/kar-hesaplama.html">Kar hesaplama</a>
+              <a href="blog/trendyol-kargo-surecleri.html">Kargo süreçleri</a>
+              <a href="blog/trendyol-seo-stratejileri.html">Mağaza SEO</a>
+              <a href="blog/trendyol-karlilik-hesaplama.html">Kârlılık analizi</a>
+            </nav>
           `;
           
           if (mainContent && mainContent.parentNode) {
@@ -890,7 +930,8 @@
         setOpen(false);
       })();
     </script>
-    <script src="cookie-consent.js"></script>
+    <script type="module" crossorigin src="/assets/index-DCTaKFmQ.js"></script>
+    <script src="cookie-consent.js" defer></script>
   </body>
 </html>
 

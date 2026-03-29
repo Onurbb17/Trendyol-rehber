@@ -1,6 +1,7 @@
 # SEO Booster — Yapılacaklar
 
 ## ✅ Tamamlanan
+- **Ana sayfa URL birliği:** `vercel.json` içinde `/index.html` → `/` kalıcı yönlendirme (GSC’de çift URL ayrımını azaltır)
 - **Sitemap:** `dist/sitemap.xml` güncel, `robots.txt` referansı mevcut
 - **Internal linking:** Ana sayfa footer'da kategori linkleri, tüm sayfalarda cross-link
 - **Mobile uyum:** Tüm sayfalar `viewport` meta ile responsive
