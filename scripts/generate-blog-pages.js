@@ -37,9 +37,11 @@ function cleanContent(html) {
   let h = html;
   h = h.replace(/<div class="back-to-home">[\s\S]*?<\/div>/gi, '');
   h = h.replace(
-    /href="(?!https?:\/\/|\/\/|mailto:|#|tel:|\.\.\/)([a-zA-Z0-9\-]+\.html)"/g,
-    'href="../$1"'
+    /href="(?!https?:\/\/|\/\/|mailto:|#|tel:|\.\.\/)([a-zA-Z0-9\-]+)\.html(#?[^"]*)"/g,
+    'href="/$1$2"'
   );
+  // Remove "index.html" entirely and point to "/"
+  h = h.replace(/href="index\.html"/g, 'href="/"');
   return h.trim();
 }
 
@@ -89,7 +91,7 @@ function getRelated(current, all, n) {
 function buildPage(post, allPosts) {
   const related = getRelated(post, allPosts, 3);
   const desc = truncateForMeta(post.excerpt, 155);
-  const canonical = `${BASE}/blog/${post.id}.html`;
+  const canonical = `${BASE}/blog/${post.id}`;
   const content = injectInArticleAd(cleanContent(post.content));
 
   const relatedHtml =
@@ -100,7 +102,7 @@ function buildPage(post, allPosts) {
 ${related
   .map(
     (p) =>
-      `    <li><a href="${p.id}.html">${escapeHtml(p.title)}</a> <span style="color:#8fa8d4;font-size:0.8rem;">(${escapeHtml(p.category)})</span></li>`
+      `    <li><a href="${p.id}">${escapeHtml(p.title)}</a> <span style="color:#8fa8d4;font-size:0.8rem;">(${escapeHtml(p.category)})</span></li>`
   )
   .join('\n')}
   </ul>
@@ -110,11 +112,11 @@ ${related
   const guidesHtml = `<section class="blog-more-guides" aria-labelledby="guides-h">
   <h2 id="guides-h">Rehber ve araçlar</h2>
   <ul>
-    <li><a href="../trendyol-rehber.html">Trendyol rehber merkezi</a> — tüm rehberler</li>
-    <li><a href="../trendyol-araclari.html">Kar, komisyon ve desi hesaplayıcılar</a></li>
-    <li><a href="../trendyol-komisyon-hesaplama.html">Komisyon hesaplama rehberi</a></li>
-    <li><a href="../index.html">Trendyol kar hesaplama aracı</a></li>
-    <li><a href="../blog.html">Blog ana sayfa</a> — tüm yazılar</li>
+    <li><a href="/trendyol-rehber">Trendyol rehber merkezi</a> — tüm rehberler</li>
+    <li><a href="/trendyol-araclari">Kar, komisyon ve desi hesaplayıcılar</a></li>
+    <li><a href="/trendyol-komisyon-hesaplama">Komisyon hesaplama rehberi</a></li>
+    <li><a href="/">Trendyol kar hesaplama aracı</a></li>
+    <li><a href="/blog">Blog ana sayfa</a> — tüm yazılar</li>
   </ul>
 </section>`;
 
@@ -171,18 +173,18 @@ ${related
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0F2HEPCC1"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-X0F2HEPCC1");</script>
   <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
-  <link rel="stylesheet" crossorigin href="../assets/index-BehjH3cC.css" />
-  <link rel="stylesheet" href="../css/blog-article.css" />
+  <link rel="stylesheet" crossorigin href="/assets/index-BehjH3cC.css" />
+  <link rel="stylesheet" href="/css/blog-article.css" />
 </head>
 <body class="bg-gray-50">
   <div class="blog-static-wrap">
     <nav class="blog-static-breadcrumb" aria-label="Gezinti">
-      <a href="../index.html">Ana sayfa</a> › <a href="../blog.html">Blog</a> › <span>${escapeHtml(post.title)}</span>
+      <a href="/">Ana sayfa</a> › <a href="/blog">Blog</a> › <span>${escapeHtml(post.title)}</span>
     </nav>
     <article class="blog-article">
 ${content}
       <div class="back-to-home">
-        <a href="../blog.html" class="back-btn">← Blog listesine dön</a>
+        <a href="/blog" class="back-btn">← Blog listesine dön</a>
       </div>
     </article>
 ${relatedHtml}
@@ -200,14 +202,14 @@ ${guidesHtml}
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     <footer class="blog-static-footer trh-modern-footer">
-      <a href="../trendyol-rehber.html">Trendyol Rehber</a>
-      <a href="../gizlilik-politikasi.html">Gizlilik Politikası</a>
-      <a href="../cerez-politikasi.html">Çerez Politikası</a>
-      <a href="../kullanim-kosullari.html">Kullanım Koşulları</a>
-      <a href="../iletisim.html">İletişim</a>
+      <a href="/trendyol-rehber">Trendyol Rehber</a>
+      <a href="/gizlilik-politikasi">Gizlilik Politikası</a>
+      <a href="/cerez-politikasi">Çerez Politikası</a>
+      <a href="/kullanim-kosullari">Kullanım Koşulları</a>
+      <a href="/iletisim">İletişim</a>
     </footer>
   </div>
-  <script src="../cookie-consent.js"></script>
+  <script src="/cookie-consent.js"></script>
 </body>
 </html>`;
 }
