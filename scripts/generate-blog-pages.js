@@ -159,7 +159,15 @@ ${related
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <meta name="google-adsense-account" content="ca-pub-9409905856635578" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9409905856635578" crossorigin="anonymous"></script>
+  <script>
+  window.addEventListener('load', function() {
+    var script = document.createElement('script');
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9409905856635578";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    document.head.appendChild(script);
+  });
+</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0F2HEPCC1"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-X0F2HEPCC1");</script>
   <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>

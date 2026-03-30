@@ -1,5 +1,43 @@
 const blogPosts = [
   {
+    id: '2026-trendyol-kargo-ucretleri',
+    title: '2026 Trendyol Kargo Ücretleri: En Ucuz Gönderim Rehberi',
+    excerpt: '2026 yılı güncel Trendyol kargo ücretleri ve desi hesaplama tablosu ile kargo maliyetlerinizi düşürün.',
+    readTime: '5 dk okuma',
+    category: 'Operasyon',
+    icon: '📦',
+    content: `
+        <h1>2026 Trendyol Kargo Ücretleri: En Ucuz Gönderim Rehberi</h1>
+        
+        <p>E-ticaret maliyetleri arasında en çok dikkat edilmesi gereken kalemlerin başında kargo ücretleri gelir. Karlılığınızı koruyabilmek için <strong>2026 Trendyol kargo ücretlerini</strong> doğru analiz etmeli ve stratejinizi buna göre kurmalısınız.</p>
+        
+        <h2>Trendyol'da kargo ücreti nasıl hesaplanır?</h2>
+        
+        <p>Trendyol kargo ücreti, ürünün <strong>desi (hacim)</strong> değerine veya gerçek ağırlığına göre hesaplanır. Kargo firmaları, paketin desisini ve ağırlığını karşılaştırır, yüksek olanı baz alarak fiyatlandırma yapar. Trendyol anlaşmalı kargo fiyatları sayesinde, bireysel gönderimlere kıyasla daha uygun oranlardan faydalanabilirsiniz.</p>
+        
+        <p>Siparişlerinizi fiyatlandırırken sadece kargo değil, Trendyol komisyon oranlarını da mutlaka hesaba katmalısınız. Hata yapmamak ve net kazancınızı görmek için <a href="/trendyol-komisyon-hesaplama" style="color: #ff6b35; font-weight: bold; text-decoration: underline;">Komisyon Hesaplama</a> aracımızı ücretsiz kullanabilirsiniz.</p>
+        
+        <h3>Desi hesaplama tablosu 2026</h3>
+        
+        <p>Desi hesaplama formülü oldukça basittir:</p>
+        <div class="highlight-box">
+          <p><strong>Desi = (En × Boy × Yükseklik) / 3000</strong></p>
+        </div>
+        
+        <p>Bu formül ile bulduğunuz değere denk gelen fiyat baremi, 2026 güncel Trendyol kargo fiyat tablosundan okunarak faturanıza yansıtılır. Küçük ürünlerde paketleme boyutunu ne kadar optimize ederseniz, kargo maliyetiniz o kadar düşer.</p>
+
+        <div class="cta-box">
+          <h3>Tüm Kargo ve Komisyon Maliyetlerinizi Tek Seferde Hesaplayın!</h3>
+          <p>Kargo ücretini ve diğer kesintileri hesaplayarak zarar etmenin önüne geçin.</p>
+          <a href="/" class="cta-btn">Ana Sayfada Hesapla</a>
+        </div>
+        
+        <div class="back-to-home">
+          <a href="#" class="back-btn" onclick="showBlogList()">← Blog Listesine Dön</a>
+        </div>
+      `
+  },
+  {
     id: 'hesap-acma',
     title: 'Trendyol\'da Nasıl Hesap Açılır? Adım Adım Rehber',
     excerpt: 'Trendyol\'da satıcı hesabı açmak için gereken tüm adımları, belgeler ve süreçleri detaylı olarak öğrenin.',
