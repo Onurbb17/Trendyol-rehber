@@ -130,7 +130,7 @@ ${related
     isPartOf: {
       '@type': 'Blog',
       name: 'Trendyol Satıcı Rehberi - E-ticaret Blog',
-      url: `${BASE}/blog.html`
+      url: `${BASE}/blog`
     },
     publisher: {
       '@type': 'Organization',

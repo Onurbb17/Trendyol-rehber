@@ -26,9 +26,12 @@ Detaylı doküman listesi: [docs/README.md](docs/README.md).
 
 ```bash
 npm run generate       # blog HTML + sitemap
+npm run build          # aynı (Vercel “Build Command” için önerilen)
 npm run generate:blog
 npm run generate:sitemap
 ```
+
+Vercel: **Build Command** = `npm run build`, **Output Directory** = `dist` (her dağıtımda sitemap ve blog sayfaları yenilenir).
 
 Script açıklamaları: [scripts/README.md](scripts/README.md).
 

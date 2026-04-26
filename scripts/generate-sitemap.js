@@ -26,9 +26,11 @@ function walkHtml(dir, rootDir = dir) {
   return out;
 }
 
+/** Vercel cleanUrls: kanonik URL'ler sondaki .html olmadan (GSC yinelenen URL birleşimi). */
 function toLoc(rel) {
   if (rel === 'index.html') return `${BASE}/`;
-  return `${BASE}/${rel}`;
+  const noExt = rel.replace(/\.html$/i, '');
+  return `${BASE}/${noExt}`;
 }
 
 function lastmod(d) {
