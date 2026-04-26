@@ -32,7 +32,7 @@
       "@type": "WebApplication",
       "name": "Komisyon Hesaplama — Trendyol Satıcı Aracı",
       "description": "Komisyon tutarı ve gelişmiş maliyet kalemleriyle net kâr hesaplama. Trendyol komisyon oranları kategoriye göre değişir.",
-      "url": "https://trendyolrehber.com/trendyol-komisyon-hesaplama.html",
+      "url": "https://trendyolrehber.com/trendyol-komisyon-hesaplama",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" }
@@ -54,10 +54,26 @@
         },
         {
           "@type": "Question",
+          "name": "Komisyon oranını nereden bulurum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En doğru komisyon oranı satıcı panelinde görünür. Ürünün kategori bilgisini kontrol edin, komisyon/kesinti ekranında ilgili yüzdelik oranı bulun ve varsa kampanya/ek bedel şartlarını okuyun. Bu sayfadaki araca panelde gördüğünüz oranı girerek komisyon tutarını ve net kârı hesaplayabilirsiniz."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Komisyon satış fiyatından mı kesilir?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Evet. Trendyol komisyonu satış fiyatı (KDV dahil veya hariç, platform ayarına göre) üzerinden hesaplanır. Müşteri 100 TL öderse, komisyon %15 ise 15 TL Trendyol'a gider, satıcıya 85 TL kalır (kargo ve diğer kesintiler hariç)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Komisyon KDV dahil mi hesaplanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Komisyonun KDV dahil/hariç hangi tutar üzerinden kesileceği satıcı sözleşmesi ve kategori ayarlarına göre değişebilir. Bu yüzden en sağlıklı yöntem, bir örnek siparişte panelde görünen komisyon tutarıyla buradaki hesabı karşılaştırıp satış fiyatı alanınızı buna göre eşleştirmektir."
           }
         },
         {
@@ -106,9 +122,9 @@
         <p class="text-gray-600 mb-4">
           <strong>Komisyon hesaplama</strong> için satış fiyatını ve <strong>Trendyol komisyon oranlarını</strong> (satıcı panelinde ürün kategorinize göre
           görünen yüzdeyi) aşağıya girin. Oranlar kategoriye göre değişir; örnek aralıklar ve mantık için
-          <a href="trendyol-komisyon-oranlari" class="text-primary font-semibold hover:underline">Trendyol komisyon oranları</a> rehberine bakın.
+          <a href="/trendyol-komisyon-oranlari" class="text-primary font-semibold hover:underline">Trendyol komisyon oranları</a> rehberine bakın.
           “Hangi ürün işime yarar?” sorusu için
-          <a href="trendyol-ne-satilir-komisyon" class="text-primary font-semibold hover:underline">ne satılır &amp; komisyon</a> sayfasını okuyun.
+          <a href="/trendyol-ne-satilir-komisyon" class="text-primary font-semibold hover:underline">ne satılır &amp; komisyon</a> sayfasını okuyun.
         </p>
         <p class="text-gray-600 mb-8">İsteğe bağlı alanlara iade, paketleme, e-arşiv, reklam ve ceza/tazmin ekleyerek <strong>gerçek net kârı</strong> görün.</p>
 
@@ -212,6 +228,34 @@
           Komisyon satış fiyatı üzerinden hesaplanır. Müşteri 150 TL ödediyse ve komisyon oranınız %12 ise, Trendyol 18 TL alır, sizin elinize 132 TL geçer (kargo ve diğer kesintiler hariç). Bu nedenle fiyat belirlerken komisyonu mutlaka hesaba katmanız gerekir; aksi halde kar marjınız erir veya zarar edersiniz.
         </p>
 
+        <h2 id="orani-nereden-bulurum" class="text-xl font-bold text-gray-900 mt-12 mb-4">Komisyon Oranını Nereden Bulurum?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Komisyon oranı, <strong>ürün kategorisi</strong> ve bazen de <strong>kampanya/kural</strong> setlerine göre değiştiği için en doğru kaynak satıcı panelidir. Pratik yöntem:
+        </p>
+        <ol class="list-decimal pl-6 text-gray-600 space-y-2 mb-4">
+          <li><strong>Satıcı panelinde</strong> ilgili ürünün kategori bilgisini kontrol edin.</li>
+          <li><strong>Komisyon/Kesinti</strong> ekranında kategoriye karşılık gelen yüzdelik oranı bulun.</li>
+          <li>Kampanya katılımı varsa <strong>ek şartlar/ek bedeller</strong> bölümünü okuyun.</li>
+          <li>Buraya sadece gördüğünüz oranı yazın; bu sayfadaki hesaplayıcı komisyon tutarını ve net kârı otomatik çıkarır.</li>
+        </ol>
+
+        <h2 id="kdv-dahil-mi" class="text-xl font-bold text-gray-900 mt-12 mb-4">KDV Dahil mi, Hariç mi? (Neden Önemli)</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Komisyonun hangi tutar üzerinden kesildiği (KDV dahil/hariç) satıcı sözleşmesi ve kategori ayarlarına göre değişebilir. Bu yüzden aynı oranda bile
+          panelde gördüğünüz <strong>komisyon tutarı</strong> ile burada hesapladığınız tutar küçük farklar gösterebilir. Netlik için, bir siparişte paneldeki komisyon kesintisiyle bu sayfadaki sonucu karşılaştırıp
+          satış fiyatı alanını buna göre ayarlayın.
+        </p>
+
+        <h2 id="kampanya-etkisi" class="text-xl font-bold text-gray-900 mt-12 mb-4">Kampanya Döneminde Komisyon ve Kesintiler</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Kampanya dönemlerinde (ör. yüksek indirim dönemleri) yalnızca komisyon değil, <strong>kampanya katılım bedeli</strong> gibi ek kesintiler de oluşabilir. Bu nedenle karar vermeden önce şu 3 kontrolü yapın:
+        </p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+          <li><strong>İndirimli fiyat</strong> ile kâr hâlâ pozitif mi?</li>
+          <li>Ek kesinti varsa bunu <strong>Reklam Payı</strong> veya <strong>Genel Gider Payı</strong> alanına ortalama olarak ekleyebiliyor musunuz?</li>
+          <li>İade oranı yükseliyorsa <strong>İade Kargo</strong> alanını artırmanız gerekiyor mu?</li>
+        </ul>
+
         <h2 id="ornekler" class="text-xl font-bold text-gray-900 mt-12 mb-4">Gerçek Hesaplama Örnekleri</h2>
         <p class="text-gray-600 leading-relaxed mb-4"><strong>Örnek 1 — Tekstil ürünü:</strong></p>
         <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
@@ -287,7 +331,7 @@
         <h2 id="ipuclari" class="text-xl font-bold text-gray-900 mt-12 mb-4">Trendyol Satıcıları İçin İpuçları</h2>
         <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
           <li><strong>Kategori seçimini optimize edin:</strong> Aynı ürün birden fazla kategoriye uyuyorsa, düşük komisyonlu kategoriyi tercih edin. Trendyol Satıcı Paneli'nden kategori bazlı oranları kontrol edin.</li>
-          <li><strong>Kargo maliyetini doğru hesaplayın:</strong> Paket desinizi <a href="kargo-desi-hesaplama" class="text-primary font-medium hover:underline">Kargo Desi Hesaplama</a> aracı ile hesaplayıp kargo bedelini gerçekçi girin. Yanlış tahmin karı bozar.</li>
+          <li><strong>Kargo maliyetini doğru hesaplayın:</strong> Paket desinizi <a href="/kargo-desi-hesaplama" class="text-primary font-medium hover:underline">Kargo Desi Hesaplama</a> aracı ile hesaplayıp kargo bedelini gerçekçi girin. Yanlış tahmin karı bozar.</li>
           <li><strong>Kampanya öncesi hesaplama:</strong> İndirim dönemlerinde ek komisyon veya farklı oranlar uygulanabilir. Katılmadan önce net karınızı hesaplayın.</li>
           <li><strong>Minimum kar marjı belirleyin:</strong> Örneğin %20'nin altına düşmeyin. Düşük marjlı satışlar stok ve operasyon maliyetini karşılamayabilir.</li>
           <li><strong>Toplu alım avantajı:</strong> Ürün maliyetinizi düşürerek komisyon ve kargo yükünü dengeleyebilirsiniz.</li>
@@ -301,7 +345,7 @@
           </div>
           <div class="border-b border-gray-200 pb-4">
             <h3 class="font-semibold text-gray-900 mb-2">Trendyol komisyon oranı nedir?</h3>
-            <p class="text-gray-600 text-sm">Trendyol komisyon oranları ürün kategorisine göre değişir. Genellikle %5 ile %25 arasında değişen oranlar uygulanır. Elektronik, moda, ev ürünleri gibi kategorilerde oranlar farklıdır. Güncel oranları Trendyol Satıcı Paneli'nden veya satıcı sözleşmesinden kontrol edin. Örnek aralıklar için <a href="trendyol-komisyon-oranlari" class="text-primary font-medium hover:underline">komisyon oranları rehberimize</a> bakın.</p>
+            <p class="text-gray-600 text-sm">Trendyol komisyon oranları ürün kategorisine göre değişir. Genellikle %5 ile %25 arasında değişen oranlar uygulanır. Elektronik, moda, ev ürünleri gibi kategorilerde oranlar farklıdır. Güncel oranları Trendyol Satıcı Paneli'nden veya satıcı sözleşmesinden kontrol edin. Örnek aralıklar için <a href="/trendyol-komisyon-oranlari" class="text-primary font-medium hover:underline">komisyon oranları rehberimize</a> bakın.</p>
           </div>
           <div class="border-b border-gray-200 pb-4">
             <h3 class="font-semibold text-gray-900 mb-2">Komisyon satış fiyatından mı kesilir?</h3>
@@ -319,15 +363,15 @@
 
         <div class="mt-12 p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border border-orange-100">
           <h3 class="font-bold text-gray-900 mb-4">İlgili İçerikler</h3>
-          <p class="text-gray-600 text-sm mb-4">Kapsamlı rehber: <a href="trendyol-satici-rehberi" class="text-primary font-medium hover:underline">Trendyol Satıcı Rehberi</a></p>
+          <p class="text-gray-600 text-sm mb-4">Kapsamlı rehber: <a href="/trendyol-satici-rehberi" class="text-primary font-medium hover:underline">Trendyol Satıcı Rehberi</a></p>
           <ul class="space-y-2">
-            <li><a href="trendyol-komisyon-oranlari" class="text-primary font-medium hover:underline">Trendyol komisyon oranları</a> — Kategori ve panel rehberi</li>
-            <li><a href="trendyol-ne-satilir-komisyon" class="text-primary font-medium hover:underline">Ne satılır, komisyon nasıl etkiler?</a></li>
+            <li><a href="/trendyol-komisyon-oranlari" class="text-primary font-medium hover:underline">Trendyol komisyon oranları</a> — Kategori ve panel rehberi</li>
+            <li><a href="/trendyol-ne-satilir-komisyon" class="text-primary font-medium hover:underline">Ne satılır, komisyon nasıl etkiler?</a></li>
             <li><a href="/" class="text-primary font-medium hover:underline">Trendyol Kar Hesaplama</a> — Net kar, komisyon ve kargo dahil tam hesaplama</li>
-            <li><a href="kargo-desi-hesaplama" class="text-primary font-medium hover:underline">Kargo Desi Hesaplama</a> — Paket desi hesaplama aracı</li>
-            <li><a href="trendyol-satis-nasil-yapilir" class="text-primary font-medium hover:underline">Trendyol'da Satış Nasıl Yapılır</a> — Satıcı olma rehberi</li>
-            <li><a href="trendyol-rehber" class="text-primary font-medium hover:underline">Trendyol Satıcı Rehberi</a> — Kapsamlı rehber</li>
-            <li><a href="kargo-fiyatlari" class="text-primary font-medium hover:underline">Kargo Fiyatları</a> — Güncel kargo tarifeleri</li>
+            <li><a href="/kargo-desi-hesaplama" class="text-primary font-medium hover:underline">Kargo Desi Hesaplama</a> — Paket desi hesaplama aracı</li>
+            <li><a href="/trendyol-satis-nasil-yapilir" class="text-primary font-medium hover:underline">Trendyol'da Satış Nasıl Yapılır</a> — Satıcı olma rehberi</li>
+            <li><a href="/trendyol-rehber" class="text-primary font-medium hover:underline">Trendyol Satıcı Rehberi</a> — Kapsamlı rehber</li>
+            <li><a href="/kargo-fiyatlari" class="text-primary font-medium hover:underline">Kargo Fiyatları</a> — Güncel kargo tarifeleri</li>
           </ul>
         </div>
       </section>
@@ -336,12 +380,12 @@
     <footer class="border-t border-gray-200 mt-12 py-8 text-center text-sm text-gray-500">
       <div class="flex flex-wrap justify-center gap-4 mb-4">
         <a href="/" class="hover:text-primary">Ana Sayfa</a>
-        <a href="blog" class="hover:text-primary">E-ticaret Rehberi</a>
-        <a href="kargo-fiyatlari" class="hover:text-primary">Kargo Fiyatları</a>
-        <a href="trendyol-rehber" class="hover:text-primary">Trendyol Rehber</a>
-        <a href="gizlilik-politikasi" class="hover:text-primary">Gizlilik Politikası</a>
-        <a href="hakkimizda" class="hover:text-primary">Hakkımızda</a>
-        <a href="sss" class="hover:text-primary">SSS</a>
+        <a href="/blog" class="hover:text-primary">E-ticaret Rehberi</a>
+        <a href="/kargo-fiyatlari" class="hover:text-primary">Kargo Fiyatları</a>
+        <a href="/trendyol-rehber" class="hover:text-primary">Trendyol Rehber</a>
+        <a href="/gizlilik-politikasi" class="hover:text-primary">Gizlilik Politikası</a>
+        <a href="/hakkimizda" class="hover:text-primary">Hakkımızda</a>
+        <a href="/sss" class="hover:text-primary">SSS</a>
       </div>
       <p>© 2026 Trendyol Rehber</p>
     </footer>

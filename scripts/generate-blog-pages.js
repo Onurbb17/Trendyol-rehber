@@ -102,7 +102,7 @@ function buildPage(post, allPosts) {
 ${related
   .map(
     (p) =>
-      `    <li><a href="${p.id}">${escapeHtml(p.title)}</a> <span style="color:#8fa8d4;font-size:0.8rem;">(${escapeHtml(p.category)})</span></li>`
+      `    <li><a href="/blog/${p.id}">${escapeHtml(p.title)}</a> <span style="color:#8fa8d4;font-size:0.8rem;">(${escapeHtml(p.category)})</span></li>`
   )
   .join('\n')}
   </ul>
